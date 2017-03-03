@@ -26,7 +26,6 @@ import edu.iu.fileformat.MultiFileInputFormat;
 
 public class SCMapCollective extends Configured implements Tool {
 
-	int numMapTasks;
 	String template;
 	String graphDir;
 	String outDir;
@@ -43,18 +42,16 @@ public class SCMapCollective extends Configured implements Tool {
 	 */
 	public int run(String[] args) throws Exception {
 		if (args.length < 6) {
-			System.err.println("Usage: edu.iu.sahad.rotation.SCMapCollective <number of map tasks> <useLocalMultiThread> <template> <graphDir> <outDir> <num threads per node>");
+			System.err.println("Usage: edu.iu.sahad.rotation.SCMapCollective <useLocalMultiThread> <template> <graphDir> <outDir> <num threads per node>");
 			ToolRunner.printGenericCommandUsage(System.err);
 			return -1;
 		}
-		numMapTasks = Integer.parseInt(args[0]);
-		useLocalMultiThread = (Integer.parseInt(args[1])) == 0? false: true;
-		template = args[2];
-		graphDir = args[3];
-		outDir = args[4];
-		numThreads = Integer.parseInt(args[5]);
+		useLocalMultiThread = (Integer.parseInt(args[0])) == 0? false: true;
+		template = args[1];
+		graphDir = args[2];
+		outDir = args[3];
+		numThreads = Integer.parseInt(args[4]);
 		System.out.println("use Local MultiThread? "+useLocalMultiThread);
-		System.out.println("set Number of Map Tasks = " + numMapTasks);
 		System.out.println("set number of threads: "+numThreads);
 		launch();
 		return 0;
@@ -79,10 +76,8 @@ public class SCMapCollective extends Configured implements Tool {
 		job.setMapperClass(SCCollectiveMapper.class);
 		org.apache.hadoop.mapred.JobConf jobConf = (JobConf) job.getConfiguration();
 		jobConf.set("mapreduce.framework.name", "map-collective");
-		jobConf.setNumMapTasks(numMapTasks);
 		jobConf.setInt("mapreduce.job.max.split.locations", 10000);
 		job.setNumReduceTasks(0);
-		jobConfig.setInt(SCConstants.NUM_MAPPERS, numMapTasks);
 		jobConfig.set(SCConstants.TEMPLATE_PATH, template);
 		jobConfig.set(SCConstants.OUTPUT_PATH, outDir);
 		jobConfig.setBoolean(SCConstants.USE_LOCAL_MULTITHREAD, useLocalMultiThread);

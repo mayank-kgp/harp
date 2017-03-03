@@ -33,7 +33,6 @@ import it.unimi.dsi.fastutil.objects.ObjectCollection;
  * Instead of using allgather, using rotation
  */
 public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object, Object> {
-	private int numMappers;
 	private int numColor;
 	private int isom;
 	private int sizeTemplate;
@@ -49,7 +48,6 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 		LOG.info("start setup" + new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime()));
 		
 		Configuration configuration = context.getConfiguration();
-    	numMappers = configuration.getInt(SCConstants.NUM_MAPPERS, 10);
     	template = configuration.get(SCConstants.TEMPLATE_PATH);
     	useLocalMultiThread = configuration.getBoolean(SCConstants.USE_LOCAL_MULTITHREAD, true);
     	System.out.println("init template");
