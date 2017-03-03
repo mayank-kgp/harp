@@ -46,7 +46,7 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 	boolean useLocalMultiThread;
 	@Override
 	protected void setup(Context context) throws IOException, InterruptedException {
-		LOG.info("start setup" + new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime()));
+		LOG.info("start setup");
 		
 		Configuration configuration = context.getConfiguration();
     	numMappers = configuration.getInt(SCConstants.NUM_MAPPERS, 10);
@@ -71,7 +71,7 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 	}
 	
 	private  Table<IntArray> readGraphDataMultiThread( Configuration conf, List<String> graphFiles){
-			LOG.info("[BEGIN] SCCollectiveMapper.readGraphDataMultiThread: " + new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime()));
+			LOG.info("[BEGIN] SCCollectiveMapper.readGraphDataMultiThread" );
 		
 			Table<IntArray> graphData = new Table<>(0, new IntArrPlus());
 		 
@@ -101,7 +101,7 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 		    	}
 		    } 
 		    compute.stop();
-		    LOG.info("[END] SCCollectiveMapper.readGraphDataMultiThread: " + new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime()));
+		    LOG.info("[END] SCCollectiveMapper.readGraphDataMultiThread" );
 		 return graphData;
 	}
 	
@@ -144,7 +144,7 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 	}
     	
 	protected void mapCollective( KeyValReader reader, Context context) throws IOException, InterruptedException {
-		LOG.info("Start collective mapper:" + new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime()));
+		LOG.info("Start collective mapper" );
 		System.out.println("Start collective mapper.");
 		this.logMemUsage();
 		LOG.info("Memory Used: "+ (Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory()));
@@ -259,7 +259,7 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 				
 				 if(subjobname.equals(wholeTemplateName)){
 					 //If this is the whole template matching, then sum up the counts locally, then calculate the final result.
-					 LOG.info("[BEGIN] SCCollectiveMapper.mapCollective.final: " + new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime()));
+					 LOG.info("[BEGIN] SCCollectiveMapper.mapCollective.final ");
 						
 					 long wholetempbegintime = System.currentTimeMillis();
 
@@ -282,9 +282,9 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 					 
 					 long allreducebegintime = System.currentTimeMillis();
 					 
-					 LOG.info("[BEGIN] SCCollectiveMapper.mapCollective.final.allreduce: " + new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime()));
+					 LOG.info("[BEGIN] SCCollectiveMapper.mapCollective.final.allreduce " );
 					 allreduce(subjobname, "aggregate", localCountTable);
-					 LOG.info("[END] SCCollectiveMapper.mapCollective.final.allreduce: " + new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime()));
+					 LOG.info("[END] SCCollectiveMapper.mapCollective.final.allreduce" );
 					 
 					 long allreduceendtime = System.currentTimeMillis();
 					 System.out.println("allreduce is done."+"takes: "+ (allreduceendtime - allreducebegintime) +"ms");
@@ -305,7 +305,7 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 						 context.write("finalCount", finalCount);
 					 }
 					 
-					 LOG.info("[END] SCCollectiveMapper.mapCollective.final: " + new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime()));
+					 LOG.info("[END] SCCollectiveMapper.mapCollective.final" );
 						
 				 }else{
 
@@ -445,7 +445,7 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 	
 	//subtemplate matching in MultiThread way
 	private ColorCountPairsKVTable matchSubTemplateMultiThread(Table<IntArray> graphData, Map<String, ColorCountPairsKVTable> dataModelMap, SCSubJob subjob){
-		LOG.info("[BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread: " + new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime()));
+		LOG.info("[BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread" );
 		
 		ColorCountPairsKVTable modelTable = new ColorCountPairsKVTable(6);
 		ColorCountPairsKVTable passiveChild = dataModelMap.get(subjob.getPassiveChild());
@@ -464,7 +464,7 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 		int rotationNo = 0;
 		System.out.println("numWorkers: "+numWorkers+"; numMaxTheads: "+numMaxThreads+";numThreads:"+numThreads);
 		do{//do rotation
-			LOG.info("[BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Computation " +rotationNo+" :" + new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime()));
+			LOG.info("[BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Computation " +rotationNo);
 			long computationbegintime = System.currentTimeMillis();
 			List<SubMatchingTask> tasks = new LinkedList<>();
 			for (int i = 0; i < numThreads; i++) {
@@ -505,7 +505,7 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 		
 		}while(rotationNo < numWorkers);//will eventually rotate to the original distribution
 		
-		LOG.info("[END] SCCollectiveMapper.matchSubTemplateMultiThread: " + new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime()));
+		LOG.info("[END] SCCollectiveMapper.matchSubTemplateMultiThread" );
 		
 		return modelTable;
 	}
@@ -513,7 +513,7 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 	
 	//color the graph in MultiThread way
 	private  ColorCountPairsKVTable colorGraphMultiThread( Table<IntArray> graphData ){
-		LOG.info("[BEGIN] SCCollectiveMapper.colorGraphMultiThread: " + new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime()));
+		LOG.info("[BEGIN] SCCollectiveMapper.colorGraphMultiThread " );
 		
 		ColorCountPairsKVTable colorTable =  new ColorCountPairsKVTable(9);
 		
@@ -544,7 +544,7 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 	    } 
 	    compute.stop();
 		
-	    LOG.info("[END] SCCollectiveMapper.colorGraphMultiThread: " + new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime()));
+	    LOG.info("[END] SCCollectiveMapper.colorGraphMultiThread");
 		
 		return colorTable;
 	}
