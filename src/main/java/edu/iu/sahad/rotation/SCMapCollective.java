@@ -43,7 +43,7 @@ public class SCMapCollective extends Configured implements Tool {
 	 */
 	public int run(String[] args) throws Exception {
 		if (args.length < 6) {
-			System.err.println("Usage: edu.iu.sgcr.SCMapCollective <number of map tasks> <useLocalMultiThread> <template> <graphDir> <outDir> <num threads per node>");
+			System.err.println("Usage: edu.iu.sahad.rotation.SCMapCollective <number of map tasks> <useLocalMultiThread> <template> <graphDir> <outDir> <num threads per node>");
 			ToolRunner.printGenericCommandUsage(System.err);
 			return -1;
 		}
