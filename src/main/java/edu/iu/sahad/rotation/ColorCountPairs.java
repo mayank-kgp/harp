@@ -47,6 +47,16 @@ public class ColorCountPairs  extends Value {
 	public void setCounts(ArrayList<Long> counts) {
 		this.counts = counts;
 	}
+
+	public void copyTo(Value value){
+		ArrayList<Integer> othercolors = ((ColorCountPairs) value).getColors();
+		ArrayList<Long> othercounts = ((ColorCountPairs) value).getCounts();
+
+		for(int i=0; i<this.colors.size(); i++){
+			othercolors.add(this.colors.get(i));
+			othercounts.add(this.counts.get(i));
+		}
+	}
 	
 	@Override
 	public int getNumWriteBytes() {

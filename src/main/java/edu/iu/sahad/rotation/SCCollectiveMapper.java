@@ -52,21 +52,21 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
     	numMappers = configuration.getInt(SCConstants.NUM_MAPPERS, 10);
     	template = configuration.get(SCConstants.TEMPLATE_PATH);
     	useLocalMultiThread = configuration.getBoolean(SCConstants.USE_LOCAL_MULTITHREAD, true);
-    	System.out.println("init template");
-    	System.out.println(template);
+    	LOG.info("init template");
+    	LOG.info(template);
     	numMaxThreads = Runtime.getRuntime().availableProcessors();
         
     	numThreads =configuration.getInt(SCConstants.NUM_THREADS_PER_NODE, 10); 
         if(numMaxThreads < numThreads){//if the numMaxThreads is less than numThreads, use numMaxThreads
         	numThreads = numMaxThreads;
         }
-        System.out.println("numMaxTheads: "+numMaxThreads+";numThreads:"+numThreads);
+        LOG.info("numMaxTheads: "+numMaxThreads+";numThreads:"+numThreads);
 		
     	init(template);
-    	System.out.println("topologySort subjobs");
+    	LOG.info("topologySort subjobs");
     	subjoblist = topologySort(subjoblist);
     	for(SCSubJob ssj:subjoblist){
-    		System.out.println(ssj.toString());
+    		LOG.info(ssj.toString());
     	}
 	}
 	
@@ -80,7 +80,7 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 		    	tasks.add(new GraphLoadTask(conf));
 		    }
 		 
-		    DynamicScheduler<String, ArrayList<Partition<IntArray>>, GraphLoadTask> compute 
+		    DynamicScheduler<String, ArrayList<Partition<IntArray>>, GraphLoadTask> compute
 		    	= new DynamicScheduler<>(tasks);
 		    compute.start();
 		    
@@ -125,7 +125,7 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 					 //if the  length is zeor, it means that this vertex doesn't have any neighbors. So just skip it.
 					 //-Ethan 03/17/2016
 					 /*if(length == 0){
-						 System.out.println("skip data:"+keyText.toString()+":"+valueText.toString()+";"+"length="+length);
+						 LOG.info("skip data:"+keyText.toString()+":"+valueText.toString()+";"+"length="+length);
 						 continue;
 					 }*/
 					 int[] intValues = new int[length];
@@ -145,12 +145,12 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
     	
 	protected void mapCollective( KeyValReader reader, Context context) throws IOException, InterruptedException {
 		LOG.info("Start collective mapper" );
-		System.out.println("Start collective mapper.");
+		LOG.info("Start collective mapper.");
 		this.logMemUsage();
 		LOG.info("Memory Used: "+ (Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory()));
 		
 		List<String> graphFiles = new ArrayList<String>();
-		System.out.println("load Graph data files");
+		LOG.info("load Graph data files");
 		 
 		long readGraphbegintime = System.currentTimeMillis();
 		 
@@ -167,26 +167,22 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 		Map<String, ColorCountPairsKVTable> dataModelMap = new HashMap<>();
 		//graphData table stores the graph data
 		Table<IntArray> graphData = new Table<>(2, new IntArrPlus());
-		System.out.println("read Graph Data");
-		
+		LOG.info("read Graph Data");
 		if(useLocalMultiThread){
 			graphData = readGraphDataMultiThread(conf, graphFiles);
-		}else{
+		}else {
 			graphData = readGraphData(conf, graphFiles);
 		}
-		
-		 long readGraphendtime=System.currentTimeMillis();
-		 System.out.println("read graph takes: "+(readGraphendtime- readGraphbegintime  )+"ms"); 
-		 
-		 System.out.println("loading data size:"+graphData.getNumPartitions());
-		 LOG.info("after loading graph data");
-		 this.logMemUsage();
-		 LOG.info("Memory Used: "+ (Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory()));
-		 logGCTime();
-		 //---------------main computation----------------------------------
-		 for(SCSubJob subjob: subjoblist){
-			 String subjobname = subjob.getSubJobID();
-			 System.out.println("The subjob is: "+ subjobname);
+		long readGraphendtime=System.currentTimeMillis();
+
+		LOG.info("Loaded graph data size: " + graphData.getNumPartitions()+"; Takes "+ (readGraphendtime- readGraphbegintime  )+"ms");
+		this.logMemUsage();
+		LOG.info("Memory Used: "+ (Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory()));
+		logGCTime();
+		//---------------main computation----------------------------------
+		for(SCSubJob subjob: subjoblist){
+			String subjobname = subjob.getSubJobID();
+			LOG.info("The subjob is: "+ subjobname);
 			 if( subjobname.equals("i")){//color the graph, and then store the result in obj at Map<"i", obj>
 				 
 				 long coloringGraphbegintime = System.currentTimeMillis();
@@ -196,18 +192,18 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 				 if(useLocalMultiThread){
 					 coloredModel = colorGraphMultiThread(graphData);
 				 }else{
-					 System.out.println("before colorGraph"+ subjobname);
+					 LOG.info("before colorGraph"+ subjobname);
 					 coloredModel = colorGraph(graphData);
 				 }
 
 				 dataModelMap.put("i", coloredModel);
 				 
-				 LOG.info("after color the graph");
+				 LOG.info("Done coloring the graph: size="+coloredModel.getNumPartitions());
 				 this.logMemUsage();
 				 LOG.info("Memory Used: "+ (Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory()));
 				 
 				 long coloringGraphendtime = System.currentTimeMillis();
-				 System.out.println("color graph takes: "+(coloringGraphendtime-coloringGraphbegintime  )+"ms"); 
+				 LOG.info("color graph takes: "+(coloringGraphendtime-coloringGraphbegintime  )+"ms");
 				 logGCTime();	
 			 }
 			 else if(subjobname.equals("final")){// compute the final count, write back the result to HDFS
@@ -215,7 +211,7 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 				 /* String activeChild = subjob.getActiveChild();
 				 ArrTable<IntArray> wholeMatchingTable = dataModelMap.get(activeChild);
 				 int finalCount = finalCounting(wholeMatchingTable);
-				 System.out.println("finalCount:"+finalCount);
+				 LOG.info("finalCount:"+finalCount);
 				 */
 				 continue;
 			 }
@@ -231,7 +227,7 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 				 }
 				 
 				 long subjobendtime = System.currentTimeMillis();
-				 System.out.println(subjobname+" is done."+"takes: "+ (subjobendtime- subjobbegintime ) +"ms");
+				 LOG.info(subjobname+" is done."+"takes: "+ (subjobendtime- subjobbegintime ) +"ms"+"; size="+subMatchingTable.getNumPartitions());
 				 
 				 for(SCSubJob ssj: subjoblist){
 					 if(ssj.getSubJobID().equals(subjob.getActiveChild())){
@@ -241,19 +237,13 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 						 ssj.referedNum--;
 					 }
 					 if(ssj.referedNum == 0 && dataModelMap.containsKey(ssj.getSubJobID())){//abolish
-							 System.out.println("Before abolishing: Total Memory (bytes): " + " "
+							 LOG.info("Before abolishing: Total Memory (bytes): " + " "
 								      + Runtime.getRuntime().totalMemory()
 								      + ", Free Memory (bytes): "
 								      + Runtime.getRuntime().freeMemory());
 							 
 							 dataModelMap.remove(ssj.getSubJobID());
-							 
-							 System.out.println("Abolished table "+ssj.getSubJobID());
-							 System.out.println("But I don't know if it works or not. Let's test it.");
-							 System.out.println("After abolishing: Total Memory (bytes): " + " "
-								      + Runtime.getRuntime().totalMemory()
-								      + ", Free Memory (bytes): "
-								      + Runtime.getRuntime().freeMemory());
+							 LOG.info("Abolished table "+ssj.getSubJobID());
 						 }
 				 }
 				
@@ -266,7 +256,7 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 					 long localCount = localAggregate(subMatchingTable);
 					 //do allgather to aggregate the final counting
 					 ColorCountPairsKVTable localCountTable =  new ColorCountPairsKVTable(3);
-					 
+					 LOG.info("localcount: "+localCount);
 					 int key = -1;// -1 represents total counts, not a color.
 					 
 					 ColorCountPairs ccp = new ColorCountPairs();
@@ -287,7 +277,7 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 					 LOG.info("[END] SCCollectiveMapper.mapCollective.final.allreduce" );
 					 
 					 long allreduceendtime = System.currentTimeMillis();
-					 System.out.println("allreduce is done."+"takes: "+ (allreduceendtime - allreducebegintime) +"ms");
+					 LOG.info("allreduce is done."+"takes: "+ (allreduceendtime - allreducebegintime) +"ms");
 					 
 					 LOG.info("after subjob: "+subjobname+": allreduce");
 					 this.logMemUsage();
@@ -298,7 +288,7 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 					 finalCount /= SCUtils.Prob(numColor, sizeTemplate);
 					 
 					 long wholetempendtime = System.currentTimeMillis();
-					 System.out.println(subjobname+" is done."+"takes: "+ (wholetempendtime- wholetempbegintime ) +"ms");
+					 LOG.info(subjobname+" is done."+"takes: "+ (wholetempendtime- wholetempbegintime ) +"ms");
 					 logGCTime();	
 					 
 					 if(this.isMaster()){
@@ -327,8 +317,10 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 	private long localAggregate (ColorCountPairsKVTable subMatchingTable){
 		long count = 0;
 		for(int  parID: subMatchingTable.getPartitionIDs()){
+			LOG.info("localaggregate: parID="+parID);
 			ColorCountPairs ccp = subMatchingTable.getVal(parID);
 			for(int i = 0; i< ccp.getCounts().size(); i++){
+				LOG.info("localaggredate: partial="+ccp.getCounts().get(i));
 				count +=  ccp.getCounts().get(i);
 			}
 		}
@@ -343,6 +335,7 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 			int key = par.id();
 			ColorCountPairs ccp = par.get().getVal(key);
 			ColorCountPairs newccp = new ColorCountPairs();
+			ccp.copyTo(newccp);
 			newTable.addKeyVal(key, newccp);
 		}
 	}
@@ -368,7 +361,7 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 		Map<Integer, Long> colorCountMap;
 		
 		int numWorkers = this.getNumWorkers();
-		System.out.println("numWorkers: "+numWorkers);
+		LOG.info("numWorkers: "+numWorkers);
 		int rotationNo = 0;
 		
 		do{//do rotation
@@ -393,10 +386,10 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 				
 				
 				if(activeValuelist==null){
-					System.out.println("activeValuelist is null for key = "+key);
+					LOG.info("activeValuelist is null for key = "+key);
 				}
 				if(activeValuelist.getColors()==null){
-					System.out.println("activeValuelist.getColors is null for key = "+key);
+					LOG.info("activeValuelist.getColors is null for key = "+key);
 				}
 				
 				//compute the new result using these two valuepairlist
@@ -408,7 +401,7 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 
 						 int passiveColor =  passiveValuelist.getColors().get(k);
 		                 long passiveCount =passiveValuelist.getCounts().get(k);
-		              //  System.out.println("color:"+activeColor +":"+activeCount+":"+passiveColor+":"+passiveCount);
+		              //  LOG.info("color:"+activeColor +":"+activeCount+":"+passiveColor+":"+passiveCount);
 		                 if ((activeColor & passiveColor) == 0)
 		                  // color set intersection is empty
 		                  {
@@ -437,7 +430,7 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 		
 		rotate (subjob.getSubJobID(),"rotation"+rotationNo, passiveChild, null);
 		rotationNo++;
-		System.out.println("rotationNo:"+rotationNo);
+		LOG.info("rotationNo:"+rotationNo);
 		}while(rotationNo < numWorkers);//will eventually rotate to the original distribution
 		
 		return modelTable;
@@ -446,7 +439,7 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 	//subtemplate matching in MultiThread way
 	private ColorCountPairsKVTable matchSubTemplateMultiThread(Table<IntArray> graphData, Map<String, ColorCountPairsKVTable> dataModelMap, SCSubJob subjob){
 		LOG.info("[BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread" );
-		
+
 		ColorCountPairsKVTable modelTable = new ColorCountPairsKVTable(6);
 		ColorCountPairsKVTable passiveChild = dataModelMap.get(subjob.getPassiveChild());
 		ColorCountPairsKVTable activeChild;
@@ -454,15 +447,16 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 			//if the active and passive children are the same one
 			//clone an activeChild
 			activeChild = new ColorCountPairsKVTable(7);
-			cloneTable(dataModelMap.get(subjob.getActiveChild()),activeChild);
+			cloneTable(dataModelMap.get(subjob.getPassiveChild()),activeChild);
 			//this activeChild won't do rotation
 		}else{
 			activeChild = dataModelMap.get(subjob.getActiveChild());
 		}
-		
+		LOG.info("active child = "+ subjob.getActiveChild()+"; size="+activeChild.getNumPartitions()+"; passiveChild ="+subjob.getPassiveChild()+";size="+passiveChild.getNumPartitions());
+
 		int numWorkers = this.getNumWorkers();
 		int rotationNo = 0;
-		System.out.println("numWorkers: "+numWorkers+"; numMaxTheads: "+numMaxThreads+";numThreads:"+numThreads);
+		LOG.info("numWorkers: "+numWorkers+"; numMaxTheads: "+numMaxThreads+";numThreads:"+numThreads);
 		do{//do rotation
 			LOG.info("[BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Computation " +rotationNo);
 			long computationbegintime = System.currentTimeMillis();
@@ -474,17 +468,19 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 			DynamicScheduler<Partition<ColorCountPairsKVPartition>, Map<Integer, ColorCountPairs>, SubMatchingTask> 
 				compute = new DynamicScheduler<>(tasks);
 			compute.start();
-			
+
 			for (Partition<ColorCountPairsKVPartition> partition : activeChild.getPartitions()) {
-	    		compute.submit(partition);
+				compute.submit(partition);
 			}
 		
 			Map<Integer, ColorCountPairs> output=null;
 			while(compute.hasOutput()){
 				output = compute.waitForOutput();
-				if(output != null){ 
+				if(output != null){
+						LOG.info("output not null");
 						Map<Integer, ColorCountPairs> outmp   = (Map<Integer, ColorCountPairs>) output;
 						for(int key: outmp.keySet()){
+							LOG.info("key="+key);
 							modelTable.addKeyVal(key, outmp.get(key));
 						}
 				}
@@ -497,11 +493,11 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 			LOG.info("[BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation " +rotationNo);
 			rotate(subjob.getSubJobID(),"rotation"+rotationNo, passiveChild, null);
 			long rotationendtime = System.currentTimeMillis();
-			System.out.println(subjob.getSubJobID() +": rotation_"+rotationNo+"takes: "+(rotationendtime - rotationbegintime  )+"ms");
+			LOG.info(subjob.getSubJobID() +": rotation_"+rotationNo+"takes: "+(rotationendtime - rotationbegintime  )+"ms");
 			LOG.info("[END] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation " +rotationNo+"; it takes: "+(rotationendtime - rotationbegintime  )+"ms");
 			
 			rotationNo++;
-			System.out.println("rotation "+rotationNo);
+			LOG.info("rotation "+rotationNo);
 		
 		}while(rotationNo < numWorkers);//will eventually rotate to the original distribution
 		
@@ -538,6 +534,7 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 	    	if(output != null){
 	    		Map<Integer, ColorCountPairs> outmp   = output;
 	    		for(int key: outmp.keySet()){
+	    			ColorCountPairs cc=outmp.get(key);
 	    			colorTable.addKeyVal(key, outmp.get(key));
 	    		}
 	    	}
@@ -553,7 +550,7 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 	private ColorCountPairsKVTable colorGraph( Table<IntArray> graphData ){
 		ColorCountPairsKVTable table = new ColorCountPairsKVTable(8);
 		for(int ID: graphData.getPartitionIDs()){
-			//System.out.println("for ID:=" + ID);
+			//LOG.info("for ID:=" + ID);
 			//int colorBit = SCUtils.power(2, rand.nextInt(numColor));
 			int colorBit = SCUtils.power(2, ID % numColor );
 			ColorCountPairs ccp = new ColorCountPairs();

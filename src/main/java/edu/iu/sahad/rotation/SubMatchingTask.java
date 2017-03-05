@@ -27,13 +27,12 @@ public class SubMatchingTask implements Task<Partition<ColorCountPairsKVPartitio
 		Partition<ColorCountPairsKVPartition> activeChild =  input;
 		int key = activeChild.id();
 		//get valuepairlist from activeChild
+
 		ColorCountPairs activeValuelist = activeChild.get().getVal(key);
-		
 		ColorCountPairs passiveValuelist = null;
 		
 		colorCountMap = new HashMap<Integer, Long>();
 		Partition<IntArray> graphpar= graphData.getPartition(key);
-		
 		for(int i = graphpar.get().start(); i < graphpar.get().size(); i++){
 			int neighbor = graphpar.get().get()[i];
 			passiveValuelist = passiveChild.getVal(neighbor);
