@@ -97,15 +97,6 @@ public class SCMapCollective extends Configured implements Tool {
 		Job scJob = configureSCJob();
 		// ----------------------------------------------------------
 		jobSuccess =scJob.waitForCompletion(true);
-		do{
-			if (!jobSuccess) {
-				System.out.println("SubgraphCounting Job failed.retry");
-				jobRetryCount++;
-				if (jobRetryCount == 3) {
-					break;
-				}
-			}
-		}while(!jobSuccess);
 		// ----------------------------------------------------------
 	}
 	

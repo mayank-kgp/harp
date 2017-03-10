@@ -256,7 +256,6 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 					 long localCount = localAggregate(subMatchingTable);
 					 //do allgather to aggregate the final counting
 					 ColorCountPairsKVTable localCountTable =  new ColorCountPairsKVTable(3);
-					 LOG.info("localcount: "+localCount);
 					 int key = -1;// -1 represents total counts, not a color.
 					 
 					 ColorCountPairs ccp = new ColorCountPairs();
@@ -317,10 +316,8 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 	private long localAggregate (ColorCountPairsKVTable subMatchingTable){
 		long count = 0;
 		for(int  parID: subMatchingTable.getPartitionIDs()){
-			LOG.info("localaggregate: parID="+parID);
 			ColorCountPairs ccp = subMatchingTable.getVal(parID);
 			for(int i = 0; i< ccp.getCounts().size(); i++){
-				LOG.info("localaggredate: partial="+ccp.getCounts().get(i));
 				count +=  ccp.getCounts().get(i);
 			}
 		}
@@ -329,7 +326,7 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 	
 	//clone table
 	private void cloneTable( ColorCountPairsKVTable curTable, ColorCountPairsKVTable newTable){
-
+		LOG.info("[BEGIN] clone table");
 		for(Partition<ColorCountPairsKVPartition> par: curTable.getPartitions())
 		{
 			int key = par.id();
@@ -338,6 +335,7 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 			ccp.copyTo(newccp);
 			newTable.addKeyVal(key, newccp);
 		}
+		LOG.info("[END] clone table");
 	}
 		
 	//subtemplate matching
@@ -383,15 +381,8 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 				if(passiveValuelist == null){
 					continue;
 				}
-				
-				
-				if(activeValuelist==null){
-					LOG.info("activeValuelist is null for key = "+key);
-				}
-				if(activeValuelist.getColors()==null){
-					LOG.info("activeValuelist.getColors is null for key = "+key);
-				}
-				
+
+
 				//compute the new result using these two valuepairlist
 				for(int j = 0; j < activeValuelist.getColors().size(); j++){
 
@@ -477,10 +468,8 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 			while(compute.hasOutput()){
 				output = compute.waitForOutput();
 				if(output != null){
-						LOG.info("output not null");
 						Map<Integer, ColorCountPairs> outmp   = (Map<Integer, ColorCountPairs>) output;
 						for(int key: outmp.keySet()){
-							LOG.info("key="+key);
 							modelTable.addKeyVal(key, outmp.get(key));
 						}
 				}
