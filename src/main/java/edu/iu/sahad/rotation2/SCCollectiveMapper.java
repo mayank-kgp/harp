@@ -303,15 +303,39 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 	}
 
 	//local aggregate the counts
-	//TODO: make it multi-threading
 	private long localAggregate (ColorCountPairsKVTable subMatchingTable){
 		long count = 0;
-		for(int  parID: subMatchingTable.getPartitionIDs()){
+		//sequential code.
+		/*for(int  parID: subMatchingTable.getPartitionIDs()){
 			ColorCountPairs ccp = subMatchingTable.getVal(parID);
 			for(int i = 0; i< ccp.getCounts().size(); i++){
 				count +=  ccp.getCounts().getLong(i);
 			}
 		}
+		return count;*/
+
+		List<AggregationTask> tasks = new LinkedList<>();
+		for (int i = 0; i < numThreads; i++) {
+			tasks.add(new AggregationTask());
+		}
+		// doTasks(cenPartitions, output, tasks);
+		DynamicScheduler<ColorCountPairs,  Long, AggregationTask>
+				compute = new DynamicScheduler<>(tasks);
+		compute.start();
+
+		for(int parID: subMatchingTable.getPartitionIDs()){
+			ColorCountPairs ccp = subMatchingTable.getVal(parID);
+			compute.submit(ccp);
+		}
+
+		Long output=null;
+		while(compute.hasOutput()){
+			output = compute.waitForOutput();
+			if(output != null){
+				count += output;
+			}
+		}
+		compute.stop();
 		return count;
 	}
 
