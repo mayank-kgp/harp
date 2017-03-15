@@ -6,7 +6,7 @@
  * This version is trying to improve performance by adjusting data structure, etc, if possible.
  * 03/15/2017
  * 1. can skip the final rotate in every model rotation task (done)
- * 2. make remained sequential parts multi-theading.
+ * 2. make remained sequential parts multi-theading (done)
  * 3. add pipeline
  * 4. abolish non-useful tables
  */

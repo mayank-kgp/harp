@@ -340,9 +340,11 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 	}
 
 	//clone table
-	//TODO: make it multi-threading
 	private void cloneTable(ColorCountPairsKVTable curTable, ColorCountPairsKVTable newTable){
 		LOG.info("[BEGIN] clone table");
+
+		/*sequential code*/
+		/*
 		for(Partition<ColorCountPairsKVPartition> par: curTable.getPartitions())
 		{
 			int key = par.id();
@@ -350,8 +352,32 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 			ColorCountPairs newccp = new ColorCountPairs();
 			ccp.copyTo(newccp);
 			newTable.addKeyVal(key, newccp);
+		}*/
+
+		List<CloneTask> tasks = new LinkedList<>();
+		for (int i = 0; i < numThreads; i++) {
+			tasks.add(new CloneTask());
 		}
+		// doTasks(cenPartitions, output, tasks);
+		DynamicScheduler<Partition<ColorCountPairsKVPartition>,  CloneTask.CloneTaskOutput, CloneTask>
+				compute = new DynamicScheduler<>(tasks);
+		compute.start();
+
+		for(Partition<ColorCountPairsKVPartition> par: curTable.getPartitions()){
+			compute.submit(par);
+		}
+
+		CloneTask.CloneTaskOutput output=null;
+		while(compute.hasOutput()){
+			output = compute.waitForOutput();
+			if(output != null){
+				newTable.addKeyVal(output.key, output.colorCountPairs);
+			}
+		}
+		compute.stop();
+
 		LOG.info("[END] clone table");
+
 	}
 
 	//subtemplate matching
