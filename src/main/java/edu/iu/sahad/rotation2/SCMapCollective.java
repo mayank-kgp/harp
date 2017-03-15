@@ -8,7 +8,7 @@
  * 1. can skip the final rotate in every model rotation task (done)
  * 2. make remained sequential parts multi-theading (done)
  * 3. add pipeline
- * 4. abolish non-useful tables
+ * 4. abolish non-useful tables (done,not sure if works)
  */
 package edu.iu.sahad.rotation2;
 
@@ -46,7 +46,7 @@ public class SCMapCollective extends Configured implements Tool {
 	 */
 	public int run(String[] args) throws Exception {
 		if (args.length < 6) {
-			System.err.println("Usage: edu.iu.sahad.rotation.SCMapCollective <number of map tasks> <useLocalMultiThread> <template> <graphDir> <outDir> <num threads per node>");
+			System.err.println("Usage: edu.iu.sahad.rotation2.SCMapCollective <number of map tasks> <useLocalMultiThread> <template> <graphDir> <outDir> <num threads per node>");
 			ToolRunner.printGenericCommandUsage(System.err);
 			return -1;
 		}

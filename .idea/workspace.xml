@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6006d5f0-2287-4202-a961-142c7629ee32" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/edu/iu/sahad/rotation2/CloneTask.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/experiments/analysis/experiments-on-juliet-201703.xlsx" afterPath="$PROJECT_DIR$/experiments/analysis/experiments-on-juliet-201703.xlsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/iu/sahad/rotation2/SCCollectiveMapper.java" afterPath="$PROJECT_DIR$/src/main/java/edu/iu/sahad/rotation2/SCCollectiveMapper.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/iu/sahad/rotation2/SCMapCollective.java" afterPath="$PROJECT_DIR$/src/main/java/edu/iu/sahad/rotation2/SCMapCollective.java" />
     </list>
@@ -24,8 +25,8 @@
       <file leaf-file-name="SCMapCollective.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/iu/sahad/rotation2/SCMapCollective.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="58" lean-forward="false" selection-start-line="8" selection-start-column="58" selection-end-line="8" selection-end-column="58" />
+            <state relative-caret-position="150">
+              <caret line="10" column="56" lean-forward="false" selection-start-line="10" selection-start-column="56" selection-end-line="10" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -51,21 +52,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SubMatchingTask.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/iu/sahad/rotation2/SubMatchingTask.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="675">
-              <caret line="51" column="40" lean-forward="false" selection-start-line="51" selection-start-column="40" selection-end-line="51" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="SCCollectiveMapper.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/iu/sahad/rotation2/SCCollectiveMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="341" column="17" lean-forward="false" selection-start-line="341" selection-start-column="17" selection-end-line="341" selection-end-column="17" />
+            <state relative-caret-position="391">
+              <caret line="278" column="33" lean-forward="true" selection-start-line="278" selection-start-column="33" selection-end-line="278" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -143,6 +134,9 @@
       <find>LOG.</find>
       <find>ColorCountPairs</find>
       <find>abolishing</find>
+      <find>color</find>
+      <find>Colortas</find>
+      <find>dereference</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -614,7 +608,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21448864" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29545453" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1000,7 +994,7 @@
         <state relative-caret-position="60">
           <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1049,10 +1043,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/iu/sahad/rotation2/CloneTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="22" column="59" lean-forward="false" selection-start-line="22" selection-start-column="56" selection-end-line="22" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/iu/sahad/rotation2/SCSubJob.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/iu/sahad/rotation2/SubMatchingTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-825">
+          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1065,28 +1077,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/iu/sahad/rotation2/SubMatchingTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="51" column="40" lean-forward="false" selection-start-line="51" selection-start-column="40" selection-end-line="51" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/iu/sahad/rotation2/CloneTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="22" column="59" lean-forward="false" selection-start-line="22" selection-start-column="56" selection-end-line="22" selection-end-column="59" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/iu/sahad/rotation2/SCCollectiveMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="341" column="17" lean-forward="false" selection-start-line="341" selection-start-column="17" selection-end-line="341" selection-end-column="17" />
+        <state relative-caret-position="391">
+          <caret line="278" column="33" lean-forward="true" selection-start-line="278" selection-start-column="33" selection-end-line="278" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1095,8 +1089,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/iu/sahad/rotation2/SCMapCollective.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="58" lean-forward="false" selection-start-line="8" selection-start-column="58" selection-end-line="8" selection-end-column="58" />
+        <state relative-caret-position="150">
+          <caret line="10" column="56" lean-forward="false" selection-start-line="10" selection-start-column="56" selection-end-line="10" selection-end-column="56" />
           <folding />
         </state>
       </provider>

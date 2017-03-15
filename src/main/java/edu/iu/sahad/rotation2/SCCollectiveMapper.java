@@ -182,6 +182,7 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 				 }
 
 				 dataModelMap.put("i", coloredModel);
+				 coloredModel = null; //dereference
 
 				 LOG.info("Done coloring the graph: size="+coloredModel.getNumPartitions());
 				 this.logMemUsage();
@@ -268,6 +269,7 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 				 }else{
 
 					 dataModelMap.put(subjobname, subMatchingTable);
+					 subMatchingTable = null; //dereference
 
 					 LOG.info("after subjob: "+subjobname);
 					 this.logMemUsage();
