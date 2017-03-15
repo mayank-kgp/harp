@@ -442,7 +442,7 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 		int numWorkers = this.getNumWorkers();
 		int rotationNo = 0;
 		LOG.info("numWorkers: "+numWorkers+"; numMaxTheads: "+numMaxThreads+";numThreads:"+numThreads);
-		do{//do rotation
+		do{//compute numWorkers rounds, rotate numWorkers-1 rounds.
 			LOG.info("[BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Computation " +rotationNo);
 			long computationbegintime = System.currentTimeMillis();
 			List<SubMatchingTask> tasks = new LinkedList<>();
@@ -469,17 +469,20 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 
 			long computationendtime = System.currentTimeMillis();
 			LOG.info("[END] SCCollectiveMapper.matchSubTemplateMultiThread. Computation " +rotationNo+"; it takes: "+(computationendtime - computationbegintime)+"ms");
-			long rotationbegintime = System.currentTimeMillis();
-			LOG.info("[BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation " +rotationNo);
-			rotate(subjob.getSubJobID(),"rotation"+rotationNo, passiveChild, null);
-			long rotationendtime = System.currentTimeMillis();
-			LOG.info(subjob.getSubJobID() +": rotation_"+rotationNo+"takes: "+(rotationendtime - rotationbegintime  )+"ms");
-			LOG.info("[END] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation " +rotationNo+"; it takes: "+(rotationendtime - rotationbegintime  )+"ms");
+
+			//only need numWorkers-1 rounds rotation.
+			if(rotationNo < numWorkers - 1) {
+				long rotationbegintime = System.currentTimeMillis();
+				LOG.info("[BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation " + rotationNo);
+				rotate(subjob.getSubJobID(), "rotation" + rotationNo, passiveChild, null);
+				long rotationendtime = System.currentTimeMillis();
+				LOG.info(subjob.getSubJobID() + ": rotation_" + rotationNo + "takes: " + (rotationendtime - rotationbegintime) + "ms");
+				LOG.info("[END] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation " + rotationNo + "; it takes: " + (rotationendtime - rotationbegintime) + "ms");
+			}
 
 			rotationNo++;
-			LOG.info("rotation "+rotationNo);
 
-		}while(rotationNo < numWorkers);//will eventually rotate to the original distribution
+		}while(rotationNo < numWorkers);
 
 		LOG.info("[END] SCCollectiveMapper.matchSubTemplateMultiThread" );
 
