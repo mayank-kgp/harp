@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6006d5f0-2287-4202-a961-142c7629ee32" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/iu/sahad/rotation2/SCCollectiveMapper.java" afterPath="$PROJECT_DIR$/src/main/java/edu/iu/sahad/rotation2/SCCollectiveMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/experiments/analysis/experiments-on-juliet-201703.xlsx" afterPath="$PROJECT_DIR$/experiments/analysis/experiments-on-juliet-201703.xlsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/iu/sahad/rotation2/SCMapCollective.java" afterPath="$PROJECT_DIR$/src/main/java/edu/iu/sahad/rotation2/SCMapCollective.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -19,21 +21,21 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SCMapCollective.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SCMapCollective.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/iu/sahad/rotation2/SCMapCollective.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-330">
-              <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+            <state relative-caret-position="77">
+              <caret line="6" column="13" lean-forward="true" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SCCollectiveMapper.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SCCollectiveMapper.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/iu/sahad/rotation2/SCCollectiveMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
-              <caret line="481" column="12" lean-forward="false" selection-start-line="481" selection-start-column="12" selection-end-line="481" selection-end-column="12" />
+            <state relative-caret-position="-1357">
+              <caret line="484" column="40" lean-forward="true" selection-start-line="484" selection-start-column="40" selection-end-line="484" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -133,11 +135,11 @@
         <option value="$PROJECT_DIR$/src/main/java/edu/iu/sahad/rotation/SCMapCollective.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/iu/sahad/rotation/SCCollectiveMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/iu/sahad/rotation2/SCSubJob.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/iu/sahad/rotation2/SCMapCollective.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/iu/sahad/rotation2/ColorTask.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/iu/sahad/rotation2/ColorCountPairs.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/iu/sahad/rotation2/SubMatchingTask.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/iu/sahad/rotation2/SCCollectiveMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/iu/sahad/rotation2/SCMapCollective.java" />
       </list>
     </option>
   </component>
@@ -1028,18 +1030,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/iu/sahad/rotation2/SCMapCollective.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/iu/sahad/rotation2/SCCollectiveMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-330">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        <state relative-caret-position="-1357">
+          <caret line="484" column="40" lean-forward="true" selection-start-line="484" selection-start-column="40" selection-end-line="484" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/iu/sahad/rotation2/SCCollectiveMapper.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/iu/sahad/rotation2/SCMapCollective.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="481" column="12" lean-forward="false" selection-start-line="481" selection-start-column="12" selection-end-line="481" selection-end-column="12" />
+        <state relative-caret-position="77">
+          <caret line="6" column="13" lean-forward="true" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
           <folding />
         </state>
       </provider>
