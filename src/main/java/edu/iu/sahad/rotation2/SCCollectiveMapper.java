@@ -182,9 +182,10 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 				 }
 
 				 dataModelMap.put("i", coloredModel);
-				 coloredModel = null; //dereference
 
 				 LOG.info("Done coloring the graph: size="+coloredModel.getNumPartitions());
+				 coloredModel = null; //dereference
+
 				 this.logMemUsage();
 				 LOG.info("Memory Used: "+ (Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory()));
 
