@@ -1,0 +1,347 @@
+17/03/16 01:32:58 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/03/16 01:32:59 INFO fs.TrashPolicyDefault: Namenode trash configuration: Deletion interval = 0 minutes, Emptier interval = 0 minutes.
+Deleted sahad-output/miami/miami-u-e-1/40threads/1
+use Local MultiThread? true
+set Number of Map Tasks = 1
+set number of threads: 40
+17/03/16 01:33:00 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Get map collective runner
+17/03/16 01:33:00 INFO client.RMProxy: Connecting to ResourceManager at j-011/172.16.0.11:8032
+17/03/16 01:33:01 INFO input.FileInputFormat: Total input paths to process : 1
+17/03/16 01:33:01 INFO fileformat.MultiFileInputFormat: NUMBER OF FILES: 1
+17/03/16 01:33:01 INFO fileformat.MultiFileInputFormat: NUMBER OF MAPS: 1
+17/03/16 01:33:01 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-061.juliet.futuresystems.org j-053.juliet.futuresystems.org j-012.juliet.futuresystems.org j-065.juliet.futuresystems.org j-060.juliet.futuresystems.org j-056.juliet.futuresystems.org j-057.juliet.futuresystems.org j-062.juliet.futuresystems.org j-058.juliet.futuresystems.org j-054.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/16 01:33:01 INFO fileformat.MultiFileInputFormat: Total # of splits: 1
+17/03/16 01:33:01 INFO mapreduce.JobSubmitter: number of splits:1
+17/03/16 01:33:01 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1489165733656_0194
+command: $JAVA_HOME/bin/java -Dlog4j.configuration=container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dyarn.app.container.log.filesize=0 -Dhadoop.root.logger=INFO,CLA  -Xmx1024m org.apache.hadoop.mapreduce.v2.app.MapCollectiveAppMaster 1><LOG_DIR>/stdout 2><LOG_DIR>/stderr 
+17/03/16 01:33:01 INFO impl.YarnClientImpl: Submitted application application_1489165733656_0194
+17/03/16 01:33:01 INFO mapreduce.Job: The url to track the job: http://j-011:8088/proxy/application_1489165733656_0194/
+17/03/16 01:33:01 INFO mapreduce.Job: Running job: job_1489165733656_0194
+17/03/16 01:33:06 INFO mapreduce.Job: Job job_1489165733656_0194 running in uber mode : false
+17/03/16 01:33:06 INFO mapreduce.Job:  map 0% reduce 0%
+17/03/16 01:33:16 INFO mapreduce.Job:  map 100% reduce 0%
+17/03/16 01:34:13 INFO mapreduce.Job: Job job_1489165733656_0194 completed successfully
+17/03/16 01:34:13 INFO mapreduce.Job: Counters: 30
+	File System Counters
+		FILE: Number of bytes read=0
+		FILE: Number of bytes written=106327
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=775110071
+		HDFS: Number of bytes written=22
+		HDFS: Number of read operations=8
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=2
+	Job Counters 
+		Launched map tasks=1
+		Other local map tasks=1
+		Total time spent by all maps in occupied slots (ms)=63580
+		Total time spent by all reduces in occupied slots (ms)=0
+		Total time spent by all map tasks (ms)=63580
+		Total vcore-seconds taken by all map tasks=63580
+		Total megabyte-seconds taken by all map tasks=65105920
+	Map-Reduce Framework
+		Map input records=1
+		Map output records=1
+		Input split bytes=116
+		Spilled Records=0
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=3296
+		CPU time spent (ms)=522670
+		Physical memory (bytes) snapshot=26238607360
+		Virtual memory (bytes) snapshot=81135861760
+		Total committed heap usage (bytes)=74088185856
+	File Input Format Counters 
+		Bytes Read=0
+	File Output Format Counters 
+		Bytes Written=22
+73670ms
+17/03/16 01:34:14 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+finalCount	3750462688
+[The 1 times] Above experiment is: ./runHarpSgcr.sh /N/u/mengli/harp-sahad/experiments/template/u3-1.t sahad-data/miami/miami-u-e-1 sahad-output/miami/miami-u-e-1/40threads/1 1 40
+17/03/16 01:34:15 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/03/16 01:34:16 INFO fs.TrashPolicyDefault: Namenode trash configuration: Deletion interval = 0 minutes, Emptier interval = 0 minutes.
+Deleted sahad-output/miami/miami-u-e-2/40threads/1
+use Local MultiThread? true
+set Number of Map Tasks = 2
+set number of threads: 40
+17/03/16 01:34:17 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Get map collective runner
+17/03/16 01:34:18 INFO client.RMProxy: Connecting to ResourceManager at j-011/172.16.0.11:8032
+17/03/16 01:34:18 INFO input.FileInputFormat: Total input paths to process : 2
+17/03/16 01:34:18 INFO fileformat.MultiFileInputFormat: NUMBER OF FILES: 2
+17/03/16 01:34:18 INFO fileformat.MultiFileInputFormat: NUMBER OF MAPS: 2
+17/03/16 01:34:18 INFO fileformat.MultiFileInputFormat: Split on host: j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-061.juliet.futuresystems.org j-012.juliet.futuresystems.org j-053.juliet.futuresystems.org j-062.juliet.futuresystems.org j-065.juliet.futuresystems.org j-058.juliet.futuresystems.org j-060.juliet.futuresystems.org 
+17/03/16 01:34:18 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-055.juliet.futuresystems.org j-062.juliet.futuresystems.org j-060.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/16 01:34:18 INFO fileformat.MultiFileInputFormat: Total # of splits: 2
+17/03/16 01:34:18 INFO mapreduce.JobSubmitter: number of splits:2
+17/03/16 01:34:18 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1489165733656_0195
+command: $JAVA_HOME/bin/java -Dlog4j.configuration=container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dyarn.app.container.log.filesize=0 -Dhadoop.root.logger=INFO,CLA  -Xmx1024m org.apache.hadoop.mapreduce.v2.app.MapCollectiveAppMaster 1><LOG_DIR>/stdout 2><LOG_DIR>/stderr 
+17/03/16 01:34:18 INFO impl.YarnClientImpl: Submitted application application_1489165733656_0195
+17/03/16 01:34:18 INFO mapreduce.Job: The url to track the job: http://j-011:8088/proxy/application_1489165733656_0195/
+17/03/16 01:34:18 INFO mapreduce.Job: Running job: job_1489165733656_0195
+17/03/16 01:34:24 INFO mapreduce.Job: Job job_1489165733656_0195 running in uber mode : false
+17/03/16 01:34:24 INFO mapreduce.Job:  map 0% reduce 0%
+17/03/16 01:34:34 INFO mapreduce.Job:  map 100% reduce 0%
+17/03/16 01:35:51 INFO mapreduce.Job: Job job_1489165733656_0195 completed successfully
+17/03/16 01:35:51 INFO mapreduce.Job: Counters: 30
+	File System Counters
+		FILE: Number of bytes read=0
+		FILE: Number of bytes written=212654
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=775110279
+		HDFS: Number of bytes written=22
+		HDFS: Number of read operations=16
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=4
+	Job Counters 
+		Launched map tasks=2
+		Other local map tasks=2
+		Total time spent by all maps in occupied slots (ms)=171480
+		Total time spent by all reduces in occupied slots (ms)=0
+		Total time spent by all map tasks (ms)=171480
+		Total vcore-seconds taken by all map tasks=171480
+		Total megabyte-seconds taken by all map tasks=175595520
+	Map-Reduce Framework
+		Map input records=2
+		Map output records=1
+		Input split bytes=216
+		Spilled Records=0
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=3353
+		CPU time spent (ms)=639000
+		Physical memory (bytes) snapshot=47673114624
+		Virtual memory (bytes) snapshot=162267648000
+		Total committed heap usage (bytes)=148176371712
+	File Input Format Counters 
+		Bytes Read=0
+	File Output Format Counters 
+		Bytes Written=22
+94822ms
+17/03/16 01:35:52 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+finalCount	3750335109
+[The 1 times] Above experiment is: ./runHarpSgcr.sh /N/u/mengli/harp-sahad/experiments/template/u3-1.t sahad-data/miami/miami-u-e-2 sahad-output/miami/miami-u-e-2/40threads/1 2 40
+17/03/16 01:35:54 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/03/16 01:35:54 INFO fs.TrashPolicyDefault: Namenode trash configuration: Deletion interval = 0 minutes, Emptier interval = 0 minutes.
+Deleted sahad-output/miami/miami-u-e-4/40threads/1
+use Local MultiThread? true
+set Number of Map Tasks = 4
+set number of threads: 40
+17/03/16 01:35:55 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Get map collective runner
+17/03/16 01:35:56 INFO client.RMProxy: Connecting to ResourceManager at j-011/172.16.0.11:8032
+17/03/16 01:35:57 INFO input.FileInputFormat: Total input paths to process : 4
+17/03/16 01:35:57 INFO fileformat.MultiFileInputFormat: NUMBER OF FILES: 4
+17/03/16 01:35:57 INFO fileformat.MultiFileInputFormat: NUMBER OF MAPS: 4
+17/03/16 01:35:57 INFO fileformat.MultiFileInputFormat: Split on host: j-056.juliet.futuresystems.org j-059.juliet.futuresystems.org j-061.juliet.futuresystems.org j-057.juliet.futuresystems.org j-058.juliet.futuresystems.org j-060.juliet.futuresystems.org 
+17/03/16 01:35:57 INFO fileformat.MultiFileInputFormat: Split on host: j-056.juliet.futuresystems.org j-066.juliet.futuresystems.org j-063.juliet.futuresystems.org j-062.juliet.futuresystems.org j-060.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/16 01:35:57 INFO fileformat.MultiFileInputFormat: Split on host: j-059.juliet.futuresystems.org j-061.juliet.futuresystems.org j-012.juliet.futuresystems.org j-062.juliet.futuresystems.org j-064.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/16 01:35:57 INFO fileformat.MultiFileInputFormat: Split on host: j-063.juliet.futuresystems.org j-065.juliet.futuresystems.org j-060.juliet.futuresystems.org 
+17/03/16 01:35:57 INFO fileformat.MultiFileInputFormat: Total # of splits: 4
+17/03/16 01:35:57 INFO mapreduce.JobSubmitter: number of splits:4
+17/03/16 01:35:57 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1489165733656_0196
+command: $JAVA_HOME/bin/java -Dlog4j.configuration=container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dyarn.app.container.log.filesize=0 -Dhadoop.root.logger=INFO,CLA  -Xmx1024m org.apache.hadoop.mapreduce.v2.app.MapCollectiveAppMaster 1><LOG_DIR>/stdout 2><LOG_DIR>/stderr 
+17/03/16 01:35:57 INFO impl.YarnClientImpl: Submitted application application_1489165733656_0196
+17/03/16 01:35:57 INFO mapreduce.Job: The url to track the job: http://j-011:8088/proxy/application_1489165733656_0196/
+17/03/16 01:35:57 INFO mapreduce.Job: Running job: job_1489165733656_0196
+17/03/16 01:36:03 INFO mapreduce.Job: Job job_1489165733656_0196 running in uber mode : false
+17/03/16 01:36:03 INFO mapreduce.Job:  map 0% reduce 0%
+17/03/16 01:36:13 INFO mapreduce.Job:  map 100% reduce 0%
+17/03/16 01:37:26 INFO mapreduce.Job: Job job_1489165733656_0196 completed successfully
+17/03/16 01:37:26 INFO mapreduce.Job: Counters: 30
+	File System Counters
+		FILE: Number of bytes read=0
+		FILE: Number of bytes written=425308
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=775110921
+		HDFS: Number of bytes written=22
+		HDFS: Number of read operations=32
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=8
+	Job Counters 
+		Launched map tasks=4
+		Other local map tasks=4
+		Total time spent by all maps in occupied slots (ms)=323841
+		Total time spent by all reduces in occupied slots (ms)=0
+		Total time spent by all map tasks (ms)=323841
+		Total vcore-seconds taken by all map tasks=323841
+		Total megabyte-seconds taken by all map tasks=331613184
+	Map-Reduce Framework
+		Map input records=4
+		Map output records=1
+		Input split bytes=432
+		Spilled Records=0
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=2637
+		CPU time spent (ms)=832700
+		Physical memory (bytes) snapshot=67540897792
+		Virtual memory (bytes) snapshot=324536012800
+		Total committed heap usage (bytes)=296352743424
+	File Input Format Counters 
+		Bytes Read=0
+	File Output Format Counters 
+		Bytes Written=22
+90844ms
+17/03/16 01:37:27 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+finalCount	3751189560
+[The 1 times] Above experiment is: ./runHarpSgcr.sh /N/u/mengli/harp-sahad/experiments/template/u3-1.t sahad-data/miami/miami-u-e-4 sahad-output/miami/miami-u-e-4/40threads/1 4 40
+17/03/16 01:37:29 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/03/16 01:37:29 INFO fs.TrashPolicyDefault: Namenode trash configuration: Deletion interval = 0 minutes, Emptier interval = 0 minutes.
+Deleted sahad-output/miami/miami-u-e-8/40threads/1
+use Local MultiThread? true
+set Number of Map Tasks = 8
+set number of threads: 40
+17/03/16 01:37:30 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Get map collective runner
+17/03/16 01:37:31 INFO client.RMProxy: Connecting to ResourceManager at j-011/172.16.0.11:8032
+17/03/16 01:37:31 INFO input.FileInputFormat: Total input paths to process : 8
+17/03/16 01:37:31 INFO fileformat.MultiFileInputFormat: NUMBER OF FILES: 8
+17/03/16 01:37:31 INFO fileformat.MultiFileInputFormat: NUMBER OF MAPS: 8
+17/03/16 01:37:31 INFO fileformat.MultiFileInputFormat: Split on host: j-056.juliet.futuresystems.org j-066.juliet.futuresystems.org j-062.juliet.futuresystems.org 
+17/03/16 01:37:31 INFO fileformat.MultiFileInputFormat: Split on host: j-059.juliet.futuresystems.org j-012.juliet.futuresystems.org j-065.juliet.futuresystems.org 
+17/03/16 01:37:31 INFO fileformat.MultiFileInputFormat: Split on host: j-012.juliet.futuresystems.org j-058.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/16 01:37:31 INFO fileformat.MultiFileInputFormat: Split on host: j-053.juliet.futuresystems.org j-065.juliet.futuresystems.org j-058.juliet.futuresystems.org 
+17/03/16 01:37:31 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-057.juliet.futuresystems.org j-055.juliet.futuresystems.org 
+17/03/16 01:37:31 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/16 01:37:31 INFO fileformat.MultiFileInputFormat: Split on host: j-056.juliet.futuresystems.org j-012.juliet.futuresystems.org j-060.juliet.futuresystems.org 
+17/03/16 01:37:31 INFO fileformat.MultiFileInputFormat: Split on host: j-061.juliet.futuresystems.org j-057.juliet.futuresystems.org j-062.juliet.futuresystems.org 
+17/03/16 01:37:31 INFO fileformat.MultiFileInputFormat: Total # of splits: 8
+17/03/16 01:37:31 INFO mapreduce.JobSubmitter: number of splits:8
+17/03/16 01:37:31 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1489165733656_0197
+command: $JAVA_HOME/bin/java -Dlog4j.configuration=container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dyarn.app.container.log.filesize=0 -Dhadoop.root.logger=INFO,CLA  -Xmx1024m org.apache.hadoop.mapreduce.v2.app.MapCollectiveAppMaster 1><LOG_DIR>/stdout 2><LOG_DIR>/stderr 
+17/03/16 01:37:32 INFO impl.YarnClientImpl: Submitted application application_1489165733656_0197
+17/03/16 01:37:32 INFO mapreduce.Job: The url to track the job: http://j-011:8088/proxy/application_1489165733656_0197/
+17/03/16 01:37:32 INFO mapreduce.Job: Running job: job_1489165733656_0197
+17/03/16 01:37:37 INFO mapreduce.Job: Job job_1489165733656_0197 running in uber mode : false
+17/03/16 01:37:37 INFO mapreduce.Job:  map 0% reduce 0%
+17/03/16 01:37:48 INFO mapreduce.Job:  map 100% reduce 0%
+17/03/16 01:39:00 INFO mapreduce.Job: Job job_1489165733656_0197 completed successfully
+17/03/16 01:39:00 INFO mapreduce.Job: Counters: 30
+	File System Counters
+		FILE: Number of bytes read=0
+		FILE: Number of bytes written=850616
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=775113045
+		HDFS: Number of bytes written=22
+		HDFS: Number of read operations=64
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=16
+	Job Counters 
+		Launched map tasks=8
+		Other local map tasks=8
+		Total time spent by all maps in occupied slots (ms)=644475
+		Total time spent by all reduces in occupied slots (ms)=0
+		Total time spent by all map tasks (ms)=644475
+		Total vcore-seconds taken by all map tasks=644475
+		Total megabyte-seconds taken by all map tasks=659942400
+	Map-Reduce Framework
+		Map input records=8
+		Map output records=1
+		Input split bytes=864
+		Spilled Records=0
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=3366
+		CPU time spent (ms)=1310670
+		Physical memory (bytes) snapshot=106981388288
+		Virtual memory (bytes) snapshot=649165938688
+		Total committed heap usage (bytes)=592705486848
+	File Input Format Counters 
+		Bytes Read=0
+	File Output Format Counters 
+		Bytes Written=22
+90808ms
+17/03/16 01:39:02 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+finalCount	3750661804
+[The 1 times] Above experiment is: ./runHarpSgcr.sh /N/u/mengli/harp-sahad/experiments/template/u3-1.t sahad-data/miami/miami-u-e-8 sahad-output/miami/miami-u-e-8/40threads/1 8 40
+17/03/16 01:39:03 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/03/16 01:39:04 INFO fs.TrashPolicyDefault: Namenode trash configuration: Deletion interval = 0 minutes, Emptier interval = 0 minutes.
+Deleted sahad-output/miami/miami-u-e-16/40threads/1
+use Local MultiThread? true
+set Number of Map Tasks = 16
+set number of threads: 40
+17/03/16 01:39:05 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Get map collective runner
+17/03/16 01:39:05 INFO client.RMProxy: Connecting to ResourceManager at j-011/172.16.0.11:8032
+17/03/16 01:39:06 INFO input.FileInputFormat: Total input paths to process : 16
+17/03/16 01:39:06 INFO fileformat.MultiFileInputFormat: NUMBER OF FILES: 16
+17/03/16 01:39:06 INFO fileformat.MultiFileInputFormat: NUMBER OF MAPS: 16
+17/03/16 01:39:06 INFO fileformat.MultiFileInputFormat: Split on host: j-059.juliet.futuresystems.org j-057.juliet.futuresystems.org j-055.juliet.futuresystems.org 
+17/03/16 01:39:06 INFO fileformat.MultiFileInputFormat: Split on host: j-061.juliet.futuresystems.org j-012.juliet.futuresystems.org j-064.juliet.futuresystems.org 
+17/03/16 01:39:06 INFO fileformat.MultiFileInputFormat: Split on host: j-055.juliet.futuresystems.org j-065.juliet.futuresystems.org j-058.juliet.futuresystems.org 
+17/03/16 01:39:06 INFO fileformat.MultiFileInputFormat: Split on host: j-056.juliet.futuresystems.org j-066.juliet.futuresystems.org j-053.juliet.futuresystems.org 
+17/03/16 01:39:06 INFO fileformat.MultiFileInputFormat: Split on host: j-057.juliet.futuresystems.org j-065.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/16 01:39:06 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-063.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/16 01:39:06 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-055.juliet.futuresystems.org j-062.juliet.futuresystems.org 
+17/03/16 01:39:06 INFO fileformat.MultiFileInputFormat: Split on host: j-057.juliet.futuresystems.org j-053.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/16 01:39:06 INFO fileformat.MultiFileInputFormat: Split on host: j-064.juliet.futuresystems.org j-058.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/16 01:39:06 INFO fileformat.MultiFileInputFormat: Split on host: j-056.juliet.futuresystems.org j-059.juliet.futuresystems.org j-060.juliet.futuresystems.org 
+17/03/16 01:39:06 INFO fileformat.MultiFileInputFormat: Split on host: j-061.juliet.futuresystems.org j-064.juliet.futuresystems.org j-060.juliet.futuresystems.org 
+17/03/16 01:39:06 INFO fileformat.MultiFileInputFormat: Split on host: j-063.juliet.futuresystems.org j-012.juliet.futuresystems.org j-065.juliet.futuresystems.org 
+17/03/16 01:39:06 INFO fileformat.MultiFileInputFormat: Split on host: j-059.juliet.futuresystems.org j-063.juliet.futuresystems.org j-065.juliet.futuresystems.org 
+17/03/16 01:39:06 INFO fileformat.MultiFileInputFormat: Split on host: j-061.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org 
+17/03/16 01:39:06 INFO fileformat.MultiFileInputFormat: Split on host: j-062.juliet.futuresystems.org j-064.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/16 01:39:06 INFO fileformat.MultiFileInputFormat: Split on host: j-063.juliet.futuresystems.org j-055.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/16 01:39:06 INFO fileformat.MultiFileInputFormat: Total # of splits: 16
+17/03/16 01:39:06 INFO mapreduce.JobSubmitter: number of splits:16
+17/03/16 01:39:06 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1489165733656_0198
+command: $JAVA_HOME/bin/java -Dlog4j.configuration=container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dyarn.app.container.log.filesize=0 -Dhadoop.root.logger=INFO,CLA  -Xmx1024m org.apache.hadoop.mapreduce.v2.app.MapCollectiveAppMaster 1><LOG_DIR>/stdout 2><LOG_DIR>/stderr 
+17/03/16 01:39:06 INFO impl.YarnClientImpl: Submitted application application_1489165733656_0198
+17/03/16 01:39:06 INFO mapreduce.Job: The url to track the job: http://j-011:8088/proxy/application_1489165733656_0198/
+17/03/16 01:39:06 INFO mapreduce.Job: Running job: job_1489165733656_0198
+17/03/16 01:39:11 INFO mapreduce.Job: Job job_1489165733656_0198 running in uber mode : false
+17/03/16 01:39:11 INFO mapreduce.Job:  map 0% reduce 0%
+17/03/16 01:39:22 INFO mapreduce.Job:  map 94% reduce 0%
+17/03/16 01:39:23 INFO mapreduce.Job:  map 100% reduce 0%
+17/03/16 01:41:11 INFO mapreduce.Job: Job job_1489165733656_0198 completed successfully
+17/03/16 01:41:11 INFO mapreduce.Job: Counters: 30
+	File System Counters
+		FILE: Number of bytes read=0
+		FILE: Number of bytes written=1701334
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=775120861
+		HDFS: Number of bytes written=22
+		HDFS: Number of read operations=128
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=32
+	Job Counters 
+		Launched map tasks=16
+		Other local map tasks=16
+		Total time spent by all maps in occupied slots (ms)=1876003
+		Total time spent by all reduces in occupied slots (ms)=0
+		Total time spent by all map tasks (ms)=1876003
+		Total vcore-seconds taken by all map tasks=1876003
+		Total megabyte-seconds taken by all map tasks=1921027072
+	Map-Reduce Framework
+		Map input records=16
+		Map output records=1
+		Input split bytes=1744
+		Spilled Records=0
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=11621
+		CPU time spent (ms)=2872950
+		Physical memory (bytes) snapshot=187826868224
+		Virtual memory (bytes) snapshot=1298301476864
+		Total committed heap usage (bytes)=1185410973696
+	File Input Format Counters 
+		Bytes Read=0
+	File Output Format Counters 
+		Bytes Written=22
+127047ms
+17/03/16 01:41:12 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+finalCount	3749486674
+[The 1 times] Above experiment is: ./runHarpSgcr.sh /N/u/mengli/harp-sahad/experiments/template/u3-1.t sahad-data/miami/miami-u-e-16 sahad-output/miami/miami-u-e-16/40threads/1 16 40
