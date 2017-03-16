@@ -1,3 +1,4 @@
+#!/usr/bin/python
 #transfer nlist to fascia format
 
 import os

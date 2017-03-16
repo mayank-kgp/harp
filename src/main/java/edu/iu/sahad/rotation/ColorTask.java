@@ -22,8 +22,8 @@ public class ColorTask implements Task<Partition<IntArray>,  Map<Integer, ColorC
 		Partition<IntArray> graphPartition = (Partition<IntArray>) input;
 		int partitionID = graphPartition.id();
 		
-		// int colorBit = SCUtils.power(2, rand.nextInt(numColor));
-		int colorBit = SCUtils.power(2, partitionID % numColor );
+		int colorBit = SCUtils.power(2, rand.nextInt(numColor));
+		//int colorBit = SCUtils.power(2, partitionID % numColor );
 		
 		ColorCountPairs ccp = new ColorCountPairs();
 		ccp.addAPair(colorBit, 1);
