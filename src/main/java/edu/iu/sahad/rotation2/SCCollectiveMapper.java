@@ -101,27 +101,23 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 			 try {
 			      String line ="";
 			      while((line=br.readLine())!=null){
-			      String keyText = line.split("\t")[0];
-			      String valueText = line.split("\t")[1];
-
-			      int key = Integer.parseInt(keyText.toString());
-					 String[] itr = valueText.toString().split(",");
-					 // the last one is " "; so discard it.
-					 int length = itr.length-1;
-					 //if the  length is zeor, it means that this vertex doesn't have any neighbors. So just skip it.
-					 //-Ethan 03/17/2016
-					 /*if(length == 0){
-						 LOG.info("skip data:"+keyText.toString()+":"+valueText.toString()+";"+"length="+length);
-						 continue;
-					 }*/
-					 int[] intValues = new int[length];
-					 for(int i=0; i< length; i++){
-						 intValues[i]= Integer.parseInt(itr[i]);
-				     }
-					 Partition<IntArray> partialgraph = new Partition<IntArray>(key, new IntArray(intValues, 0, length));
-					 graphData.addPartition(partialgraph);
+			          line = line.trim();
+				  String splits[] = line.split("\\s+");
+				  String keyText = splits[0];
+	 			  int key = Integer.parseInt(keyText);	
+				  if( splits.length == 2){
+			       	      String valueText = splits[1];
+				      String[] itr = valueText.split(",");
+			   	      int length = itr.length;
+				      int[] intValues = new int[length];
+		   		      for(int i=0; i< length; i++){
+				 	  intValues[i]= Integer.parseInt(itr[i]);
+				      }
+			  	      Partition<IntArray> partialgraph = new Partition<IntArray>(key, new IntArray(intValues, 0, length));
+				      graphData.addPartition(partialgraph);
+				  }
 			      }
-			  	} finally {
+			 } finally {
 			      in.close();
 			 }
 

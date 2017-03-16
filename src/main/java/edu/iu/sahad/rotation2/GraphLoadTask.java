@@ -1,8 +1,9 @@
 package edu.iu.sahad.rotation2;
 
-import edu.iu.harp.partition.Partition;
-import edu.iu.harp.resource.IntArray;
-import edu.iu.harp.schdynamic.Task;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.hadoop.conf.Configuration;
@@ -10,9 +11,9 @@ import org.apache.hadoop.fs.FSDataInputStream;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
+import edu.iu.harp.partition.Partition;
+import edu.iu.harp.resource.IntArray;
+import edu.iu.harp.schdynamic.Task;
 
 public class GraphLoadTask implements Task<String, ArrayList<Partition<IntArray>>>{
 	protected static final Log LOG = LogFactory
@@ -35,27 +36,25 @@ public class GraphLoadTask implements Task<String, ArrayList<Partition<IntArray>
 		 try {
 		      String line ="";
 		      while((line=br.readLine())!=null){
-		      String keyText = line.split("\t")[0];
-		      String valueText = line.split("\t")[1];
+		          line = line.trim();
+			  String splits[] = line.split("\\s+");
+			  String keyText = splits[0];
+			  int key = Integer.parseInt(keyText);
+		
+			  if( splits.length == 2){
+			  	String valueText = splits[1];
 		      
-		      int key = Integer.parseInt(keyText.toString());
-				 String[] itr = valueText.toString().split(",");
-				 // the last one is " "; so discard it.
-				 int length = itr.length-1;
-				 //if the  length is zeor, it means that this vertex doesn't have any neighbors. So just skip it.
-				 //-Ethan 03/17/2016
-				 /*if(length == 0){
-					 System.out.println("skip data:"+keyText.toString()+":"+valueText.toString()+";"+"length="+length);
-					 continue;
-				 }*/
-				 int[] intValues = new int[length];
-				 for(int i=0; i< length; i++){
-					 intValues[i]= Integer.parseInt(itr[i]);
-			     }
+				String[] itr = valueText.split(",");
+				int length = itr.length;
+				int[] intValues = new int[length];
+				for(int i=0; i< length; i++){
+				    intValues[i]= Integer.parseInt(itr[i]);
+			        }
 				 Partition<IntArray> partialgraph = new Partition<IntArray>(key, new IntArray(intValues, 0, length));
 				 partialGraphDataList.add(partialgraph);
+			 }
 		      }
-		  	} finally {
+		  } finally {
 		      in.close();
 		 }
 		return partialGraphDataList;
