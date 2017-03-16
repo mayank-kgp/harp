@@ -32,7 +32,11 @@ for iterD in range(5):
 		if n % 1000 == 0: 
 			print 'ITER ' + str(iterD) + \
 					' generating degree seq: ' + str(n) + ' node have been processed'
-		deg = len(line.split()[1].split(',')) + D*iterD
+		entry = line.split()
+		if len(entry) <= 1:
+			n -= 1
+			continue
+		deg = len(entry[1].split(',')) + D*iterD
 		fDeg.write(str(deg) + '\n')
 
 	fNlist.close()
