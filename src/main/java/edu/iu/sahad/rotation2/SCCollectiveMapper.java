@@ -14,6 +14,8 @@ import org.apache.hadoop.mapred.CollectiveMapper;
 import java.io.*;
 import java.util.*;
 
+import edu.iu.dymoro.*;
+
 /*
  * use key-object; in-memory
  * Instead of using allgather, using rotation
@@ -30,6 +32,7 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 	private int numMaxThreads;
 	private int numThreads;
 	boolean useLocalMultiThread;
+	int numModelSlices; // number of slices for pipeline optimization
 	@Override
 	protected void setup(Context context) throws IOException, InterruptedException {
 		LOG.info("start setup");
@@ -54,6 +57,8 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
     	for(SCSubJob ssj:subjoblist){
     		LOG.info(ssj.toString());
     	}
+    	//set to 2. Not support configuration currently
+		numModelSlices = 2;
 	}
 
 	private  Table<IntArray> readGraphDataMultiThread( Configuration conf, List<String> graphFiles){
@@ -145,7 +150,7 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 		Configuration conf = context.getConfiguration();
 
 		//dataModelMap store all the intermediate result of computation
-		Map<String, ColorCountPairsKVTable> dataModelMap = new HashMap<>();
+		Map<String, ColorCountPairsKVTable[]> dataModelMap = new HashMap<>();
 		//graphData table stores the graph data
 		Table<IntArray> graphData = new Table<>(2, new IntArrPlus());
 		LOG.info("read Graph Data");
@@ -168,18 +173,11 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 
 				 long coloringGraphbegintime = System.currentTimeMillis();
 
-				 ColorCountPairsKVTable coloredModel =null;
-
-				 if(useLocalMultiThread){
-					 coloredModel = colorGraphMultiThread(graphData);
-				 }else{
-					 LOG.info("before colorGraph"+ subjobname);
-					 coloredModel = colorGraph(graphData);
-				 }
+				 ColorCountPairsKVTable[] coloredModel  = colorGraphMultiThread(graphData);
 
 				 dataModelMap.put("i", coloredModel);
 
-				 LOG.info("Done coloring the graph: size="+coloredModel.getNumPartitions());
+				 LOG.info("Done coloring the graph: size=" + getModelSize(coloredModel));
 				 coloredModel = null; //dereference
 
 				 this.logMemUsage();
@@ -202,15 +200,10 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 
 				 long subjobbegintime = System.currentTimeMillis();
 
-				 ColorCountPairsKVTable subMatchingTable = null;
-				 if(useLocalMultiThread){
-					 subMatchingTable =  matchSubTemplateMultiThread(graphData, dataModelMap, subjob);
-				 }else{
-					 subMatchingTable =  matchSubTemplate(graphData, dataModelMap, subjob);
-				 }
+				 ColorCountPairsKVTable[] subMatchingModel =  matchSubTemplateMultiThread(graphData, dataModelMap, subjob);
 
 				 long subjobendtime = System.currentTimeMillis();
-				 LOG.info(subjobname+" is done."+"takes: "+ (subjobendtime- subjobbegintime ) +"ms"+"; size="+subMatchingTable.getNumPartitions());
+				 LOG.info(subjobname+" is done."+"takes: "+ (subjobendtime- subjobbegintime ) +"ms"+"; size="+getModelSize(subMatchingModel));
 
 				 tryAbolish(subjob, dataModelMap);
 
@@ -220,7 +213,7 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 
 					 long wholetempbegintime = System.currentTimeMillis();
 
-					 long localCount = localAggregate(subMatchingTable);
+					 long localCount = localAggregate(subMatchingModel);
 					 //do allgather to aggregate the final counting
 					 ColorCountPairsKVTable localCountTable =  new ColorCountPairsKVTable(3);
 					 int key = -1;// -1 represents total counts, not a color.
@@ -265,8 +258,8 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 
 				 }else{
 
-					 dataModelMap.put(subjobname, subMatchingTable);
-					 subMatchingTable = null; //dereference
+					 dataModelMap.put(subjobname, subMatchingModel);
+					 subMatchingModel = null; //dereference
 
 					 LOG.info("after subjob: "+subjobname);
 					 this.logMemUsage();
@@ -280,8 +273,15 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 		//-------------------------------------------------------------------
 	}
 
+	private int getModelSize(ColorCountPairsKVTable[] model){
+		int modelSize = 0;
+		for(int i = 0; i <model.length; i++){
+			modelSize += model[i].getNumPartitions();
+		}
+		return modelSize;
+	}
 	//TODO: try to abolish tables which won't be used anymore. No effect?
-	private void tryAbolish(SCSubJob subjob, Map<String, ColorCountPairsKVTable> dataModelMap){
+	private void tryAbolish(SCSubJob subjob, Map<String, ColorCountPairsKVTable[]> dataModelMap){
 		for(SCSubJob ssj: subjoblist){
 			if(ssj.getSubJobID().equals(subjob.getActiveChild())){
 				ssj.referedNum--;
@@ -302,16 +302,8 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 	}
 
 	//local aggregate the counts
-	private long localAggregate (ColorCountPairsKVTable subMatchingTable){
+	private long localAggregate (ColorCountPairsKVTable[] subMatchingModel){
 		long count = 0;
-		//sequential code.
-		/*for(int  parID: subMatchingTable.getPartitionIDs()){
-			ColorCountPairs ccp = subMatchingTable.getVal(parID);
-			for(int i = 0; i< ccp.getCounts().size(); i++){
-				count +=  ccp.getCounts().getLong(i);
-			}
-		}
-		return count;*/
 
 		List<AggregationTask> tasks = new LinkedList<>();
 		for (int i = 0; i < numThreads; i++) {
@@ -321,12 +313,14 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 		DynamicScheduler<ColorCountPairs,  Long, AggregationTask>
 				compute = new DynamicScheduler<>(tasks);
 		compute.start();
+		for( int i = 0; i < subMatchingModel.length; i++) {
+			ColorCountPairsKVTable subMatchingTable = subMatchingModel[i];
+			for (int parID : subMatchingTable.getPartitionIDs()) {
+				ColorCountPairs ccp = subMatchingTable.getVal(parID);
+				compute.submit(ccp);
+			}
 
-		for(int parID: subMatchingTable.getPartitionIDs()){
-			ColorCountPairs ccp = subMatchingTable.getVal(parID);
-			compute.submit(ccp);
 		}
-
 		Long output=null;
 		while(compute.hasOutput()){
 			output = compute.waitForOutput();
@@ -339,19 +333,8 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 	}
 
 	//clone table
-	private void cloneTable(ColorCountPairsKVTable curTable, ColorCountPairsKVTable newTable){
+	private void cloneTable(ColorCountPairsKVTable[] curModel, ColorCountPairsKVTable[] newModel){
 		LOG.info("[BEGIN] clone table");
-
-		/*sequential code*/
-		/*
-		for(Partition<ColorCountPairsKVPartition> par: curTable.getPartitions())
-		{
-			int key = par.id();
-			ColorCountPairs ccp = par.get().getVal(key);
-			ColorCountPairs newccp = new ColorCountPairs();
-			ccp.copyTo(newccp);
-			newTable.addKeyVal(key, newccp);
-		}*/
 
 		List<CloneTask> tasks = new LinkedList<>();
 		for (int i = 0; i < numThreads; i++) {
@@ -361,186 +344,129 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 		DynamicScheduler<Partition<ColorCountPairsKVPartition>,  CloneTask.CloneTaskOutput, CloneTask>
 				compute = new DynamicScheduler<>(tasks);
 		compute.start();
-
-		for(Partition<ColorCountPairsKVPartition> par: curTable.getPartitions()){
-			compute.submit(par);
+		for(int i = 0; i < curModel.length; i++) {
+			ColorCountPairsKVTable curTable = curModel[i];
+			for (Partition<ColorCountPairsKVPartition> par : curTable.getPartitions()) {
+				compute.submit(par);
+			}
 		}
-
+		int sliceId = 0;
+		int partitionPerSlice = getModelSize(curModel) / numModelSlices
+				+ ( getModelSize(curModel) % numModelSlices == 0? 0 : 1);
 		CloneTask.CloneTaskOutput output=null;
 		while(compute.hasOutput()){
 			output = compute.waitForOutput();
 			if(output != null){
-				newTable.addKeyVal(output.key, output.colorCountPairs);
+				if(newModel[sliceId].getNumPartitions() >= partitionPerSlice){
+					sliceId++;
+				}
+				newModel[sliceId].addKeyVal(output.key, output.colorCountPairs);
 			}
 		}
 		compute.stop();
 
 		LOG.info("[END] clone table");
-
-	}
-
-	//subtemplate matching
-	//using rotation model
-	private ColorCountPairsKVTable matchSubTemplate(Table<IntArray> graphData, Map<String, ColorCountPairsKVTable> dataModelMap, SCSubJob subjob){
-		ColorCountPairsKVTable modelTable =new ColorCountPairsKVTable(4);
-
-		ColorCountPairsKVTable passiveChild = dataModelMap.get(subjob.getPassiveChild());
-		ColorCountPairsKVTable activeChild;
-		if(subjob.getActiveChild().equals(subjob.getPassiveChild())){
-			//if the active and passive children are the same one
-			//clone an activeChild
-			activeChild = new ColorCountPairsKVTable(5);
-			cloneTable(dataModelMap.get(subjob.getActiveChild()),activeChild);
-			//this activeChild won't do rotation
-
-		}else{
-			activeChild = dataModelMap.get(subjob.getActiveChild());
-		}
-
-		Map<Integer, Long> colorCountMap;
-
-		int numWorkers = this.getNumWorkers();
-		LOG.info("numWorkers: "+numWorkers);
-		int rotationNo = 0;
-
-		do{//do rotation
-
-		for(Partition<IntArray> graphpar: graphData.getPartitions())
-		 {
-			 int key =graphpar.id();
-			 //get valuepairlist from activeChild
-			 ColorCountPairs activeValuelist = activeChild.getVal(key);
-			 ColorCountPairs passiveValuelist = null;
-			 colorCountMap = new HashMap<Integer, Long>();
-
-			 for(int i = graphpar.get().start(); i<graphpar.get().size(); i++){
-				int neighbor = graphpar.get().get()[i];
-
-				//get valuepairlist form passiveChild
-				passiveValuelist = passiveChild.getVal(neighbor);
-
-				if(passiveValuelist == null){
-					continue;
-				}
-
-
-				//compute the new result using these two valuepairlist
-				for(int j = 0; j < activeValuelist.getColors().size(); j++){
-
-					int activeColor =activeValuelist.getColors().get(j);
-		            long activeCount = activeValuelist.getCounts().get(j);
-					for(int k = 0; k < passiveValuelist.getColors().size(); k++){
-
-						 int passiveColor =  passiveValuelist.getColors().get(k);
-		                 long passiveCount =passiveValuelist.getCounts().get(k);
-		              //  LOG.info("color:"+activeColor +":"+activeCount+":"+passiveColor+":"+passiveCount);
-		                 if ((activeColor & passiveColor) == 0)
-		                  // color set intersection is empty
-		                  {
-		                	 int newColor = activeColor | passiveColor;
-		                     if (!colorCountMap.containsKey(newColor)) {
-		                            colorCountMap.put(new Integer(newColor),
-		                            		new Long(activeCount * passiveCount));
-		                     } else {
-		                            Long count = colorCountMap.get(newColor);
-		                            count += activeCount * passiveCount;
-		                            colorCountMap.put(new Integer(newColor),
-		                                    new Long(count));
-		                        }
-		                    }
-					}
-				}
-			 }
-
-			 ColorCountPairs newccp = new ColorCountPairs();
-			 for (int color : colorCountMap.keySet()) {
-				 Long count = colorCountMap.get(color);
-				 newccp.addAPair(color, count);
-			 }
-				 modelTable.addKeyVal(key, newccp);//combine
-			 }
-
-		rotate (subjob.getSubJobID(),"rotation"+rotationNo, passiveChild, null);
-		rotationNo++;
-		LOG.info("rotationNo:"+rotationNo);
-		}while(rotationNo < numWorkers);//will eventually rotate to the original distribution
-
-		return modelTable;
 	}
 
 	//subtemplate matching in MultiThread way
-	//TODO: doesn't need rotate back.
-	//TODO: add pipeline
-	private ColorCountPairsKVTable matchSubTemplateMultiThread(Table<IntArray> graphData, Map<String, ColorCountPairsKVTable> dataModelMap, SCSubJob subjob){
+	private ColorCountPairsKVTable[] matchSubTemplateMultiThread(Table<IntArray> graphData, Map<String, ColorCountPairsKVTable[]> dataModelMap, SCSubJob subjob){
 		LOG.info("[BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread" );
 
-		ColorCountPairsKVTable modelTable = new ColorCountPairsKVTable(6);
-		ColorCountPairsKVTable passiveChild = dataModelMap.get(subjob.getPassiveChild());
-		ColorCountPairsKVTable activeChild;
+		ColorCountPairsKVTable[] modelTable = new ColorCountPairsKVTable[numModelSlices];
+		for(int i = 0; i < numModelSlices; i++){
+			modelTable[i] = new ColorCountPairsKVTable(6);
+		}
+
+		ColorCountPairsKVTable[] passiveChild = dataModelMap.get(subjob.getPassiveChild());
+		ColorCountPairsKVTable[] activeChild;
 		if(subjob.getActiveChild().equals(subjob.getPassiveChild())){
 			//if the active and passive children are the same one
 			//clone an activeChild
-			activeChild = new ColorCountPairsKVTable(7);
+			activeChild = new ColorCountPairsKVTable[numModelSlices];
+			for(int i = 0; i < numModelSlices; i++){
+				activeChild[i] = new ColorCountPairsKVTable(7);
+			}
 			cloneTable(dataModelMap.get(subjob.getPassiveChild()),activeChild);
 			//this activeChild won't do rotation
 		}else{
 			activeChild = dataModelMap.get(subjob.getActiveChild());
 		}
-		LOG.info("active child = "+ subjob.getActiveChild()+"; size="+activeChild.getNumPartitions()+"; passiveChild ="+subjob.getPassiveChild()+";size="+passiveChild.getNumPartitions());
+		LOG.info("active child = "+ subjob.getActiveChild()+"; size="+getModelSize(activeChild)
+				+"; passiveChild ="+subjob.getPassiveChild()+";size="+getModelSize(passiveChild));
 
 		int numWorkers = this.getNumWorkers();
-		int rotationNo = 0;
 		LOG.info("numWorkers: "+numWorkers+"; numMaxTheads: "+numMaxThreads+";numThreads:"+numThreads);
-		do{//compute numWorkers rounds, rotate numWorkers-1 rounds.
-			LOG.info("[BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Computation " +rotationNo);
-			long computationbegintime = System.currentTimeMillis();
-			List<SubMatchingTask> tasks = new LinkedList<>();
-			for (int i = 0; i < numThreads; i++) {
-				tasks.add(new SubMatchingTask(graphData,passiveChild ));
-			}
-			// doTasks(cenPartitions, output, tasks);
-			DynamicScheduler<Partition<ColorCountPairsKVPartition>, SubMatchingTask.SubMatchingTaskOutput, SubMatchingTask>
-				compute = new DynamicScheduler<>(tasks);
-			compute.start();
+		int numColSplits = 1;
 
-			for (Partition<ColorCountPairsKVPartition> partition : activeChild.getPartitions()) {
-				compute.submit(partition);
-			}
+		LOG.info("[BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread.Rotator" );
+		Rotator<ColorCountPairsKVPartition> rotator =
+				new Rotator<>(passiveChild, numColSplits,
+						false, this, null, "subgraph-" + subjob.getSubJobID());
+		long computeTime = 0;
+		long rotatorBegin = System.currentTimeMillis();
+		for(int j = 0; j < numWorkers; j++){
+			LOG.info("[BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Rotate " +j);
+			for(int k = 0; k < numModelSlices; k++){
+				List<Partition<ColorCountPairsKVPartition>>[] receivedPassiveChild =
+						rotator.getSplitMap(k);
 
-			SubMatchingTask.SubMatchingTaskOutput output=null;
-			while(compute.hasOutput()){
-				output = compute.waitForOutput();
-				if(output != null){
-					modelTable.addKeyVal(output.key, output.colorCountPairs);
+				long computateBegin = System.currentTimeMillis();
+				//compose
+				for(int lis = 0; lis < receivedPassiveChild.length; lis++) {
+					for (Partition<ColorCountPairsKVPartition> partition : receivedPassiveChild[lis]) {
+						passiveChild[k].addPartition(partition);
+					}
 				}
+				List<SubMatchingTask> tasks = new LinkedList<>();
+				for (int i = 0; i < numThreads; i++) {
+					tasks.add(new SubMatchingTask(graphData,passiveChild[k]));
+				}
+
+				DynamicScheduler<Partition<ColorCountPairsKVPartition>, SubMatchingTask.SubMatchingTaskOutput, SubMatchingTask>
+						compute = new DynamicScheduler<>(tasks);
+				compute.start();
+				//submit
+				for(int i = 0; i < activeChild.length; i++) {
+					for (Partition<ColorCountPairsKVPartition> partition : activeChild[i].getPartitions()) {
+						compute.submit(partition);
+					}
+				}
+
+				SubMatchingTask.SubMatchingTaskOutput output=null;
+				while(compute.hasOutput()){
+					output = compute.waitForOutput();
+					if(output != null){
+						modelTable[k].addKeyVal(output.key, output.colorCountPairs);
+					}
+				}
+				long computateEnd = System.currentTimeMillis();
+				computeTime += computateEnd - computateBegin;
+
+				rotator.rotate(k);
+				compute.stop();
 			}
-			compute.stop();
+			LOG.info("[END] SCCollectiveMapper.matchSubTemplateMultiThread. Rotate " +j);
+		}
+		rotator.stop();
+		long rotatorEnd = System.currentTimeMillis();
+		long rotatorTotal = rotatorEnd - rotatorBegin;
 
-			long computationendtime = System.currentTimeMillis();
-			LOG.info("[END] SCCollectiveMapper.matchSubTemplateMultiThread. Computation " +rotationNo+"; it takes: "+(computationendtime - computationbegintime)+"ms");
-
-				long rotationbegintime = System.currentTimeMillis();
-				LOG.info("[BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation " + rotationNo);
-				rotate(subjob.getSubJobID(), "rotation" + rotationNo, passiveChild, null);
-				long rotationendtime = System.currentTimeMillis();
-				LOG.info(subjob.getSubJobID() + ": rotation_" + rotationNo + "takes: " + (rotationendtime - rotationbegintime) + "ms");
-				LOG.info("[END] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation " + rotationNo + "; it takes: " + (rotationendtime - rotationbegintime) + "ms");
-
-			rotationNo++;
-
-		}while(rotationNo < numWorkers);
+		LOG.info("[END] SCCollectiveMapper.matchSubTemplateMultiThread.Rotator: "
+				+"computation: " + computeTime + "ms; communication:" + (rotatorTotal - computeTime) + "ms" );
 
 		LOG.info("[END] SCCollectiveMapper.matchSubTemplateMultiThread" );
-
 		return modelTable;
 	}
 
 
 	//color the graph in MultiThread way
-	private ColorCountPairsKVTable colorGraphMultiThread(Table<IntArray> graphData ){
+	private ColorCountPairsKVTable[] colorGraphMultiThread(Table<IntArray> graphData ){
 		LOG.info("[BEGIN] SCCollectiveMapper.colorGraphMultiThread " );
 
-		ColorCountPairsKVTable colorTable =  new ColorCountPairsKVTable(9);
+		ColorCountPairsKVTable[] colorTable =  new ColorCountPairsKVTable[numModelSlices];
+		for(int i = 0; i < numModelSlices; i++){
+			colorTable[i] = new ColorCountPairsKVTable(9);
+		}
 
 		Collection<Partition<IntArray>> graphPartitions = graphData.getPartitions();
 	    List<ColorTask> tasks = new LinkedList<>();
@@ -555,12 +481,17 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 	    for (Partition<IntArray> partition : graphPartitions) {
 	    	compute.submit(partition);
 	    }
-
+		int modelSliceId = 0;
+	    int partitionPerSlice = graphData.getNumPartitions() / numModelSlices
+								+ ( graphData.getNumPartitions() % numModelSlices == 0? 0 : 1);
 		ColorTask.ColorTaskOutput output=null;
 	    while(compute.hasOutput()){
 	    	output = compute.waitForOutput();
 	    	if(output != null){
-				colorTable.addKeyVal(output.partitionId, output.colorCountPairs);
+	    		if( colorTable[modelSliceId].getNumPartitions() >= partitionPerSlice){
+	    			modelSliceId++;
+				}
+				colorTable[modelSliceId].addKeyVal(output.partitionId, output.colorCountPairs);
 	    	}
 	    }
 	    compute.stop();
