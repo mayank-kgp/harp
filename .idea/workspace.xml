@@ -4,9 +4,8 @@
     <list default="true" id="6006d5f0-2287-4202-a961-142c7629ee32" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/experiments/analysis/experiments-on-juliet-201703.xlsx" afterPath="$PROJECT_DIR$/experiments/analysis/experiments-on-juliet-201703.xlsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/harp-sahad.iml" afterPath="$PROJECT_DIR$/harp-sahad.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/iu/sahad/rotation2/SCCollectiveMapper.java" afterPath="$PROJECT_DIR$/src/main/java/edu/iu/sahad/rotation2/SCCollectiveMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/iu/sahad/rotation2/SubMatchingTask.java" afterPath="$PROJECT_DIR$/src/main/java/edu/iu/sahad/rotation2/SubMatchingTask.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -26,10 +25,14 @@
       <file leaf-file-name="SCCollectiveMapper.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/iu/sahad/rotation2/SCCollectiveMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="99">
-              <caret line="370" column="45" lean-forward="false" selection-start-line="370" selection-start-column="45" selection-end-line="370" selection-end-column="45" />
+            <state relative-caret-position="315">
+              <caret line="428" column="17" lean-forward="true" selection-start-line="428" selection-start-column="17" selection-end-line="428" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#4308#4318#0" expanded="true" />
+                <element signature="e#4821#4829#0" expanded="true" />
+                <element signature="e#23514#23524#0" expanded="true" />
+                <element signature="e#23565#23573#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -38,7 +41,7 @@
       <file leaf-file-name="Rotator.class" pinned="false" current-in-tab="false">
         <entry file="jar://$MAVEN_REPOSITORY$/edu/iu/harp/harp-app/1.0-SNAPSHOT/harp-app-1.0-SNAPSHOT.jar!/edu/iu/dymoro/Rotator.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
+            <state relative-caret-position="300">
               <caret line="32" column="32" lean-forward="false" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
               <folding />
             </state>
@@ -48,9 +51,12 @@
       <file leaf-file-name="SubMatchingTask.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/iu/sahad/rotation2/SubMatchingTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="27" column="57" lean-forward="false" selection-start-line="27" selection-start-column="46" selection-end-line="27" selection-end-column="57" />
-              <folding />
+            <state relative-caret-position="270">
+              <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+              <folding>
+                <element signature="e#782#783#0" expanded="true" />
+                <element signature="e#815#816#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -58,12 +64,9 @@
       <file leaf-file-name="Table.class" pinned="false" current-in-tab="false">
         <entry file="jar://$MAVEN_REPOSITORY$/edu/iu/harp/harp-project/1.0-SNAPSHOT/harp-project-1.0-SNAPSHOT.jar!/edu/iu/harp/partition/Table.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
+            <state relative-caret-position="315">
               <caret line="36" column="31" lean-forward="false" selection-start-line="36" selection-start-column="31" selection-end-line="36" selection-end-column="31" />
-              <folding>
-                <element signature="e#1084#1085#0" expanded="true" />
-                <element signature="e#1129#1130#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -71,12 +74,9 @@
       <file leaf-file-name="Int2ObjectOpenHashMap.class" pinned="false" current-in-tab="false">
         <entry file="jar://$MAVEN_REPOSITORY$/it/unimi/dsi/fastutil/7.0.13/fastutil-7.0.13.jar!/it/unimi/dsi/fastutil/ints/Int2ObjectOpenHashMap.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
+            <state relative-caret-position="5760">
               <caret line="419" column="15" lean-forward="false" selection-start-line="419" selection-start-column="15" selection-end-line="419" selection-end-column="15" />
-              <folding>
-                <element signature="e#12181#12182#0" expanded="true" />
-                <element signature="e#12213#12214#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -137,12 +137,12 @@
         <option value="$PROJECT_DIR$/src/main/java/edu/iu/sahad/rotation2/SCSubJob.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/iu/sahad/rotation2/ColorTask.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/iu/sahad/rotation2/ColorCountPairs.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/iu/sahad/rotation2/SubMatchingTask.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/iu/sahad/rotation2/AggregationTask.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/iu/sahad/rotation2/CloneTask.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/iu/sahad/rotation2/SCMapCollective.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/iu/sahad/rotation/SCCollectiveMapper.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/iu/sahad/rotation2/SubMatchingTask.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/iu/sahad/rotation2/SCCollectiveMapper.java" />
       </list>
     </option>
@@ -173,9 +173,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -585,7 +585,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19547658" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20193861" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -593,7 +593,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36647728" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1903409" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -948,9 +948,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="38" column="37" lean-forward="true" selection-start-line="38" selection-start-column="37" selection-end-line="38" selection-end-column="37" />
-          <folding>
-            <element signature="e#1819#1829#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -958,7 +955,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="17" column="22" lean-forward="false" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -980,29 +976,23 @@
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/edu/iu/harp/harp-project/1.0-SNAPSHOT/harp-project-1.0-SNAPSHOT.jar!/edu/iu/harp/partition/Table.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
+        <state relative-caret-position="315">
           <caret line="36" column="31" lean-forward="false" selection-start-line="36" selection-start-column="31" selection-end-line="36" selection-end-column="31" />
-          <folding>
-            <element signature="e#1084#1085#0" expanded="true" />
-            <element signature="e#1129#1130#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/it/unimi/dsi/fastutil/7.0.13/fastutil-7.0.13.jar!/it/unimi/dsi/fastutil/ints/Int2ObjectOpenHashMap.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
+        <state relative-caret-position="5760">
           <caret line="419" column="15" lean-forward="false" selection-start-line="419" selection-start-column="15" selection-end-line="419" selection-end-column="15" />
-          <folding>
-            <element signature="e#12181#12182#0" expanded="true" />
-            <element signature="e#12213#12214#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/edu/iu/harp/harp-app/1.0-SNAPSHOT/harp-app-1.0-SNAPSHOT.jar!/edu/iu/dymoro/Rotator.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
+        <state relative-caret-position="300">
           <caret line="32" column="32" lean-forward="false" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
           <folding />
         </state>
@@ -1010,18 +1000,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/iu/sahad/rotation2/SubMatchingTask.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="27" column="57" lean-forward="false" selection-start-line="27" selection-start-column="46" selection-end-line="27" selection-end-column="57" />
-          <folding />
+        <state relative-caret-position="270">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding>
+            <element signature="e#782#783#0" expanded="true" />
+            <element signature="e#815#816#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/iu/sahad/rotation2/SCCollectiveMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="370" column="45" lean-forward="false" selection-start-line="370" selection-start-column="45" selection-end-line="370" selection-end-column="45" />
+        <state relative-caret-position="315">
+          <caret line="428" column="17" lean-forward="true" selection-start-line="428" selection-start-column="17" selection-end-line="428" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#4308#4318#0" expanded="true" />
+            <element signature="e#4821#4829#0" expanded="true" />
+            <element signature="e#23514#23524#0" expanded="true" />
+            <element signature="e#23565#23573#0" expanded="true" />
           </folding>
         </state>
       </provider>

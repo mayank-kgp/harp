@@ -20,6 +20,9 @@ public class SubMatchingTask implements Task<Partition<ColorCountPairsKVPartitio
 		this.graphData= graphData;
 		this.passiveChild=passiveChild;
 	}
+	public void setPassiveChild(ColorCountPairsKVTable pChild){
+		this.passiveChild = pChild;
+	}
 
 	@Override
 	public SubMatchingTaskOutput run(Partition<ColorCountPairsKVPartition> input) throws Exception {

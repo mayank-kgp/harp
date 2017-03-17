@@ -425,7 +425,7 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 				long computateBegin = System.currentTimeMillis();
 				//update tasks
 				for (int i = 0; i < numThreads; i++) {
-				    compute.getTasks().set(i, new SubMatchingTask(graphData,passiveChild[k]));
+					compute.getTasks().get(i).setPassiveChild(passiveChild[k]);
 				}
 				LOG.info("task updated");
 				compute.start();
