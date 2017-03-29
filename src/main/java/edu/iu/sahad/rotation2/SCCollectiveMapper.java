@@ -428,12 +428,15 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 					compute.getTasks().get(i).setPassiveChild(passiveChild[k]);
 				}
 				LOG.info("task updated");
-				compute.start();
+				//compute.start();
 				//submit
+				LOG.info("submitting tasks");
 				for(int i = 0; i < activeChild.length; i++) {
 					compute.submitAll(activeChild[i].getPartitions());
 				}
-				LOG.info("submitted");
+				LOG.info("submitted; Start tasks");
+				//start tasks here
+				compute.start();
 				SubMatchingTask.SubMatchingTaskOutput output=null;
 				while(compute.hasOutput()){
 					output = compute.waitForOutput();
@@ -442,6 +445,7 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 					}
 				}
 				compute.pause();
+				LOG.info("tasks finished");
 				long computateEnd = System.currentTimeMillis();
 				computeTime += computateEnd - computateBegin;
 				rotator.rotate(k);
