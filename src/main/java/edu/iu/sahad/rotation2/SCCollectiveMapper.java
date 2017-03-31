@@ -344,12 +344,15 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 		DynamicScheduler<Partition<ColorCountPairsKVPartition>,  CloneTask.CloneTaskOutput, CloneTask>
 				compute = new DynamicScheduler<>(tasks);
 		compute.start();
+		long totalBytes = 0;
 		for(int i = 0; i < curModel.length; i++) {
 			ColorCountPairsKVTable curTable = curModel[i];
 			for (Partition<ColorCountPairsKVPartition> par : curTable.getPartitions()) {
+				totalBytes += par.getNumEnocdeBytes();
 				compute.submit(par);
 			}
 		}
+		LOG.info("Total Bytes submitted: " + totalBytes);
 		int sliceId = 0;
 		int partitionPerSlice = getModelSize(curModel) / numModelSlices
 				+ ( getModelSize(curModel) % numModelSlices == 0? 0 : 1);
@@ -393,6 +396,10 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 		}
 		LOG.info("active child = "+ subjob.getActiveChild()+"; size="+getModelSize(activeChild)
 				+"; passiveChild ="+subjob.getPassiveChild()+";size="+getModelSize(passiveChild));
+
+		//test the bytes of passiveChild
+		LOG.info("Total bytes of passiveChild[0]: " + getNumBytes(passiveChild[0]));
+		LOG.info("Total bytes of passiveChild[1]: " + getNumBytes(passiveChild[1]));
 
 		int numWorkers = this.getNumWorkers();
 		LOG.info("numWorkers: "+numWorkers+"; numMaxTheads: "+numMaxThreads+";numThreads:"+numThreads);
@@ -463,7 +470,13 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 		LOG.info("[END] SCCollectiveMapper.matchSubTemplateMultiThread" );
 		return modelTable;
 	}
-
+    private long getNumBytes(ColorCountPairsKVTable passiveChild) {
+		long totalBytes = 0;
+		for (Partition<ColorCountPairsKVPartition> par: passiveChild.getPartitions()){
+			totalBytes += par.getNumEnocdeBytes();
+		}
+		return totalBytes;
+	}
 
 	//color the graph in MultiThread way
 	private ColorCountPairsKVTable[] colorGraphMultiThread(Table<IntArray> graphData ){
