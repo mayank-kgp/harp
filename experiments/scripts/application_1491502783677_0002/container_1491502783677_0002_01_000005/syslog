@@ -1,0 +1,299 @@
+2017-04-06 14:23:20,971 WARN [main] org.apache.hadoop.util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2017-04-06 14:23:21,099 INFO [main] org.apache.hadoop.metrics2.impl.MetricsConfig: loaded properties from hadoop-metrics2.properties
+2017-04-06 14:23:21,166 INFO [main] org.apache.hadoop.metrics2.impl.MetricsSystemImpl: Scheduled snapshot period at 10 second(s).
+2017-04-06 14:23:21,166 INFO [main] org.apache.hadoop.metrics2.impl.MetricsSystemImpl: MapTask metrics system started
+2017-04-06 14:23:21,178 INFO [main] org.apache.hadoop.mapred.YarnChild: Executing with tokens:
+2017-04-06 14:23:21,178 INFO [main] org.apache.hadoop.mapred.YarnChild: Kind: mapreduce.job, Service: job_1491502783677_0002, Ident: (org.apache.hadoop.mapreduce.security.token.JobTokenIdentifier@293a5bf6)
+2017-04-06 14:23:21,254 INFO [main] org.apache.hadoop.mapred.YarnChild: Sleeping for 0ms before retrying again. Got null now.
+2017-04-06 14:23:21,465 INFO [main] org.apache.hadoop.mapred.YarnChild: mapreduce.cluster.local.dir for child: /scratch/meng/hadoop-2.6.0/tmp/nm-local-dir/usercache/mengli/appcache/application_1491502783677_0002
+2017-04-06 14:23:21,617 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: session.id is deprecated. Instead, use dfs.metrics.session-id
+2017-04-06 14:23:22,008 INFO [main] org.apache.hadoop.mapred.Task:  Using ResourceCalculatorProcessTree : [ ]
+2017-04-06 14:23:22,254 INFO [main] org.apache.hadoop.mapred.MapTask: Processing split: edu.iu.fileformat.MultiFileSplit@2d36e77e
+2017-04-06 14:23:22,284 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: TRY LOCK FILE job_1491502783677_0002/lock hdfs://j-011:9010/user/mengli
+2017-04-06 14:23:22,289 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: Get task file job_1491502783677_0002/tasks
+2017-04-06 14:23:22,294 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: Task ID 3
+2017-04-06 14:23:22,294 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: WORKER ID: 14
+2017-04-06 14:23:22,294 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: Get nodes file job_1491502783677_0002/nodes
+2017-04-06 14:23:22,327 INFO [main] edu.iu.harp.server.Server: Server on j-065.juliet.futuresystems.org 12814 starts.
+2017-04-06 14:23:22,350 INFO [main] edu.iu.harp.collective.Communication: Start sending barrier.
+2017-04-06 14:23:22,358 ERROR [main] edu.iu.harp.io.ConnPool: Error when connecting j-012.juliet.futuresystems.org:12800, Connection refused
+2017-04-06 14:23:23,360 INFO [main] edu.iu.harp.collective.Communication: Send barrier: true
+2017-04-06 14:23:23,408 INFO [main] edu.iu.harp.collective.Communication: Barrier is received.
+2017-04-06 14:23:23,408 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: Barrier: true
+2017-04-06 14:23:23,408 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: Initialize Harp components (ms): 1124
+2017-04-06 14:23:23,408 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: start setup
+2017-04-06 14:23:23,409 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: init template
+2017-04-06 14:23:23,409 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: /N/u/mengli/harp-sahad/experiments/template/u3-1.t
+2017-04-06 14:23:23,409 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: numMaxTheads: 48;numThreads:40
+2017-04-06 14:23:23,412 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: topologySort subjobs
+2017-04-06 14:23:23,412 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: SCSubJob [SubJobID=i, activeChild=null, passiveChild=null, referedNum=3]
+2017-04-06 14:23:23,412 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: SCSubJob [SubJobID=u2, activeChild=i, passiveChild=i, referedNum=1]
+2017-04-06 14:23:23,412 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: SCSubJob [SubJobID=u3-1, activeChild=i, passiveChild=u2, referedNum=1]
+2017-04-06 14:23:23,412 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: SCSubJob [SubJobID=final, activeChild=u3-1, passiveChild=null, referedNum=0]
+2017-04-06 14:23:23,413 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: Start collective mapper
+2017-04-06 14:23:23,413 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: Start collective mapper.
+2017-04-06 14:23:23,413 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: Total Memory (bytes):  74088185856, Free Memory (bytes): 71751745832
+2017-04-06 14:23:23,413 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: Memory Used: 2336440024
+2017-04-06 14:23:23,413 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: load Graph data files
+2017-04-06 14:23:23,414 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: Key: hdfs://j-011:9010/user/mengli/sahad-data/nyc/nyc-u-e-16/xaj, Value: hdfs://j-011:9010/user/mengli/sahad-data/nyc/nyc-u-e-16/xaj
+2017-04-06 14:23:23,414 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: read Graph Data
+2017-04-06 14:23:23,414 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.readGraphDataMultiThread
+2017-04-06 14:23:39,368 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.readGraphDataMultiThread
+2017-04-06 14:23:39,369 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: Loaded graph data size: 1117268; Takes 15956ms
+2017-04-06 14:23:39,369 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: Total Memory (bytes):  74088185856, Free Memory (bytes): 56897167664
+2017-04-06 14:23:39,369 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: Memory Used: 17191018192
+2017-04-06 14:23:39,369 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: Total Garbage Collections: 2, Total Garbage Collection Time (ms): 72
+2017-04-06 14:23:39,369 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: The subjob is: i
+2017-04-06 14:23:39,369 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.colorGraphMultiThread 
+2017-04-06 14:24:03,316 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.colorGraphMultiThread
+2017-04-06 14:24:03,316 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: Done coloring the graph: size=1117268
+2017-04-06 14:24:03,316 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: Total Memory (bytes):  74088185856, Free Memory (bytes): 69944735376
+2017-04-06 14:24:03,316 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: Memory Used: 4143450480
+2017-04-06 14:24:03,316 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: color graph takes: 23947ms
+2017-04-06 14:24:03,316 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: Total Garbage Collections: 3, Total Garbage Collection Time (ms): 231
+2017-04-06 14:24:03,316 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: The subjob is: u2
+2017-04-06 14:24:03,316 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread
+2017-04-06 14:24:03,316 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] clone table
+2017-04-06 14:24:17,223 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] clone table
+2017-04-06 14:24:17,223 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: active child = i; size=1117268; passiveChild =i;size=1117268
+2017-04-06 14:24:17,223 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: numWorkers: 16; numMaxTheads: 48;numThreads:40
+2017-04-06 14:24:17,223 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 0
+2017-04-06 14:24:36,193 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 0; it takes: 18970ms
+2017-04-06 14:24:36,193 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 0
+2017-04-06 14:25:06,492 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: u2: rotation_0takes: 30299ms
+2017-04-06 14:25:06,492 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 0; it takes: 30299ms
+2017-04-06 14:25:06,492 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: rotation 1
+2017-04-06 14:25:06,492 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 1
+2017-04-06 14:25:17,738 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 1; it takes: 11246ms
+2017-04-06 14:25:17,738 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 1
+2017-04-06 14:25:47,502 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: u2: rotation_1takes: 29764ms
+2017-04-06 14:25:47,503 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 1; it takes: 29764ms
+2017-04-06 14:25:47,503 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: rotation 2
+2017-04-06 14:25:47,503 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 2
+2017-04-06 14:25:58,841 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 2; it takes: 11338ms
+2017-04-06 14:25:58,841 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 2
+2017-04-06 14:26:21,272 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: u2: rotation_2takes: 22431ms
+2017-04-06 14:26:21,272 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 2; it takes: 22431ms
+2017-04-06 14:26:21,272 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: rotation 3
+2017-04-06 14:26:21,272 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 3
+2017-04-06 14:26:25,541 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 3; it takes: 4269ms
+2017-04-06 14:26:25,541 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 3
+2017-04-06 14:26:57,330 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: u2: rotation_3takes: 31788ms
+2017-04-06 14:26:57,330 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 3; it takes: 31788ms
+2017-04-06 14:26:57,330 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: rotation 4
+2017-04-06 14:26:57,330 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 4
+2017-04-06 14:27:08,304 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 4; it takes: 10973ms
+2017-04-06 14:27:08,304 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 4
+2017-04-06 14:27:37,514 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: u2: rotation_4takes: 29210ms
+2017-04-06 14:27:37,514 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 4; it takes: 29210ms
+2017-04-06 14:27:37,514 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: rotation 5
+2017-04-06 14:27:37,514 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 5
+2017-04-06 14:27:48,188 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 5; it takes: 10674ms
+2017-04-06 14:27:48,188 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 5
+2017-04-06 14:28:24,076 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: u2: rotation_5takes: 35888ms
+2017-04-06 14:28:24,076 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 5; it takes: 35888ms
+2017-04-06 14:28:24,076 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: rotation 6
+2017-04-06 14:28:24,076 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 6
+2017-04-06 14:28:34,615 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 6; it takes: 10539ms
+2017-04-06 14:28:34,615 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 6
+2017-04-06 14:28:58,327 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: u2: rotation_6takes: 23711ms
+2017-04-06 14:28:58,327 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 6; it takes: 23711ms
+2017-04-06 14:28:58,327 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: rotation 7
+2017-04-06 14:28:58,327 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 7
+2017-04-06 14:29:07,248 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 7; it takes: 8921ms
+2017-04-06 14:29:07,249 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 7
+2017-04-06 14:29:43,576 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: u2: rotation_7takes: 36327ms
+2017-04-06 14:29:43,576 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 7; it takes: 36327ms
+2017-04-06 14:29:43,576 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: rotation 8
+2017-04-06 14:29:43,576 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 8
+2017-04-06 14:29:55,088 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 8; it takes: 11512ms
+2017-04-06 14:29:55,089 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 8
+2017-04-06 14:30:20,779 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: u2: rotation_8takes: 25691ms
+2017-04-06 14:30:20,779 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 8; it takes: 25691ms
+2017-04-06 14:30:20,779 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: rotation 9
+2017-04-06 14:30:20,779 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 9
+2017-04-06 14:30:30,607 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 9; it takes: 9828ms
+2017-04-06 14:30:30,607 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 9
+2017-04-06 14:30:59,875 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: u2: rotation_9takes: 29268ms
+2017-04-06 14:30:59,875 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 9; it takes: 29268ms
+2017-04-06 14:30:59,875 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: rotation 10
+2017-04-06 14:30:59,875 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 10
+2017-04-06 14:31:08,832 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 10; it takes: 8957ms
+2017-04-06 14:31:08,833 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 10
+2017-04-06 14:31:47,680 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: u2: rotation_10takes: 38847ms
+2017-04-06 14:31:47,680 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 10; it takes: 38847ms
+2017-04-06 14:31:47,680 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: rotation 11
+2017-04-06 14:31:47,680 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 11
+2017-04-06 14:31:55,615 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 11; it takes: 7935ms
+2017-04-06 14:31:55,616 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 11
+2017-04-06 14:32:35,009 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: u2: rotation_11takes: 39393ms
+2017-04-06 14:32:35,009 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 11; it takes: 39393ms
+2017-04-06 14:32:35,009 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: rotation 12
+2017-04-06 14:32:35,009 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 12
+2017-04-06 14:32:44,456 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 12; it takes: 9446ms
+2017-04-06 14:32:44,456 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 12
+2017-04-06 14:33:25,196 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: u2: rotation_12takes: 40740ms
+2017-04-06 14:33:25,196 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 12; it takes: 40740ms
+2017-04-06 14:33:25,196 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: rotation 13
+2017-04-06 14:33:25,196 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 13
+2017-04-06 14:33:29,407 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 13; it takes: 4211ms
+2017-04-06 14:33:29,408 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 13
+2017-04-06 14:34:14,201 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: u2: rotation_13takes: 44793ms
+2017-04-06 14:34:14,201 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 13; it takes: 44793ms
+2017-04-06 14:34:14,201 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: rotation 14
+2017-04-06 14:34:14,201 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 14
+2017-04-06 14:34:24,872 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 14; it takes: 10671ms
+2017-04-06 14:34:24,873 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 14
+2017-04-06 14:35:04,897 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: u2: rotation_14takes: 40024ms
+2017-04-06 14:35:04,897 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 14; it takes: 40024ms
+2017-04-06 14:35:04,897 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: rotation 15
+2017-04-06 14:35:04,897 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 15
+2017-04-06 14:35:13,935 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 15; it takes: 9038ms
+2017-04-06 14:35:13,935 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 15
+2017-04-06 14:35:51,621 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: u2: rotation_15takes: 37686ms
+2017-04-06 14:35:51,622 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 15; it takes: 37686ms
+2017-04-06 14:35:51,622 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: rotation 16
+2017-04-06 14:35:51,622 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread
+2017-04-06 14:35:51,622 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: u2 is done.takes: 708306ms; size=1115422
+2017-04-06 14:35:51,622 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: after subjob: u2
+2017-04-06 14:35:51,622 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: Total Memory (bytes):  74088185856, Free Memory (bytes): 61212295480
+2017-04-06 14:35:51,622 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: Memory Used: 12875890376
+2017-04-06 14:35:51,622 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: Total Garbage Collections: 5, Total Garbage Collection Time (ms): 2697
+2017-04-06 14:35:51,622 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: The subjob is: u3-1
+2017-04-06 14:35:51,622 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread
+2017-04-06 14:35:51,622 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: active child = i; size=1117268; passiveChild =u2;size=1115422
+2017-04-06 14:35:51,622 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: numWorkers: 16; numMaxTheads: 48;numThreads:40
+2017-04-06 14:35:51,622 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 0
+2017-04-06 14:36:08,568 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 0; it takes: 16946ms
+2017-04-06 14:36:08,568 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 0
+2017-04-06 14:36:41,615 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: u3-1: rotation_0takes: 33047ms
+2017-04-06 14:36:41,615 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 0; it takes: 33047ms
+2017-04-06 14:36:41,615 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: rotation 1
+2017-04-06 14:36:41,615 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 1
+2017-04-06 14:36:50,799 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 1; it takes: 9184ms
+2017-04-06 14:36:50,799 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 1
+2017-04-06 14:37:19,544 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: u3-1: rotation_1takes: 28744ms
+2017-04-06 14:37:19,544 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 1; it takes: 28744ms
+2017-04-06 14:37:19,544 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: rotation 2
+2017-04-06 14:37:19,544 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 2
+2017-04-06 14:37:25,016 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 2; it takes: 5472ms
+2017-04-06 14:37:25,016 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 2
+2017-04-06 14:37:56,781 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: u3-1: rotation_2takes: 31765ms
+2017-04-06 14:37:56,782 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 2; it takes: 31765ms
+2017-04-06 14:37:56,782 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: rotation 3
+2017-04-06 14:37:56,782 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 3
+2017-04-06 14:38:05,146 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 3; it takes: 8364ms
+2017-04-06 14:38:05,147 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 3
+2017-04-06 14:38:36,062 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: u3-1: rotation_3takes: 30915ms
+2017-04-06 14:38:36,062 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 3; it takes: 30915ms
+2017-04-06 14:38:36,062 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: rotation 4
+2017-04-06 14:38:36,062 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 4
+2017-04-06 14:38:46,718 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 4; it takes: 10656ms
+2017-04-06 14:38:46,718 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 4
+2017-04-06 14:39:15,857 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: u3-1: rotation_4takes: 29138ms
+2017-04-06 14:39:15,857 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 4; it takes: 29138ms
+2017-04-06 14:39:15,857 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: rotation 5
+2017-04-06 14:39:15,857 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 5
+2017-04-06 14:39:23,484 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 5; it takes: 7627ms
+2017-04-06 14:39:23,484 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 5
+2017-04-06 14:39:52,615 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: u3-1: rotation_5takes: 29131ms
+2017-04-06 14:39:52,615 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 5; it takes: 29131ms
+2017-04-06 14:39:52,615 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: rotation 6
+2017-04-06 14:39:52,615 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 6
+2017-04-06 14:40:00,895 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 6; it takes: 8280ms
+2017-04-06 14:40:00,895 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 6
+2017-04-06 14:40:31,894 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: u3-1: rotation_6takes: 30999ms
+2017-04-06 14:40:31,894 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 6; it takes: 30999ms
+2017-04-06 14:40:31,895 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: rotation 7
+2017-04-06 14:40:31,895 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 7
+2017-04-06 14:40:40,643 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 7; it takes: 8748ms
+2017-04-06 14:40:40,643 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 7
+2017-04-06 14:41:10,025 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: u3-1: rotation_7takes: 29382ms
+2017-04-06 14:41:10,025 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 7; it takes: 29382ms
+2017-04-06 14:41:10,025 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: rotation 8
+2017-04-06 14:41:10,025 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 8
+2017-04-06 14:41:19,510 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 8; it takes: 9485ms
+2017-04-06 14:41:19,510 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 8
+2017-04-06 14:41:56,706 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: u3-1: rotation_8takes: 37196ms
+2017-04-06 14:41:56,707 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 8; it takes: 37196ms
+2017-04-06 14:41:56,707 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: rotation 9
+2017-04-06 14:41:56,707 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 9
+2017-04-06 14:42:03,666 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 9; it takes: 6959ms
+2017-04-06 14:42:03,666 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 9
+2017-04-06 14:43:02,846 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: u3-1: rotation_9takes: 59180ms
+2017-04-06 14:43:02,847 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 9; it takes: 59180ms
+2017-04-06 14:43:02,847 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: rotation 10
+2017-04-06 14:43:02,847 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 10
+2017-04-06 14:43:13,218 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 10; it takes: 10371ms
+2017-04-06 14:43:13,218 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 10
+2017-04-06 14:43:52,074 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: u3-1: rotation_10takes: 38856ms
+2017-04-06 14:43:52,074 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 10; it takes: 38856ms
+2017-04-06 14:43:52,074 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: rotation 11
+2017-04-06 14:43:52,074 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 11
+2017-04-06 14:43:59,295 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 11; it takes: 7221ms
+2017-04-06 14:43:59,295 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 11
+2017-04-06 14:44:31,498 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: u3-1: rotation_11takes: 32203ms
+2017-04-06 14:44:31,498 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 11; it takes: 32203ms
+2017-04-06 14:44:31,498 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: rotation 12
+2017-04-06 14:44:31,498 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 12
+2017-04-06 14:44:41,447 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 12; it takes: 9949ms
+2017-04-06 14:44:41,447 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 12
+2017-04-06 14:45:11,725 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: u3-1: rotation_12takes: 30278ms
+2017-04-06 14:45:11,726 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 12; it takes: 30278ms
+2017-04-06 14:45:11,726 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: rotation 13
+2017-04-06 14:45:11,726 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 13
+2017-04-06 14:45:21,335 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 13; it takes: 9609ms
+2017-04-06 14:45:21,335 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 13
+2017-04-06 14:45:51,904 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: u3-1: rotation_13takes: 30568ms
+2017-04-06 14:45:51,904 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 13; it takes: 30568ms
+2017-04-06 14:45:51,904 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: rotation 14
+2017-04-06 14:45:51,904 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 14
+2017-04-06 14:45:58,348 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 14; it takes: 6444ms
+2017-04-06 14:45:58,348 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 14
+2017-04-06 14:46:40,136 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: u3-1: rotation_14takes: 41788ms
+2017-04-06 14:46:40,136 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 14; it takes: 41788ms
+2017-04-06 14:46:40,136 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: rotation 15
+2017-04-06 14:46:40,136 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 15
+2017-04-06 14:46:49,908 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Computation 15; it takes: 9772ms
+2017-04-06 14:46:49,908 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 15
+2017-04-06 14:47:19,992 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: u3-1: rotation_15takes: 30084ms
+2017-04-06 14:47:19,992 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation 15; it takes: 30084ms
+2017-04-06 14:47:19,992 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: rotation 16
+2017-04-06 14:47:19,992 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.matchSubTemplateMultiThread
+2017-04-06 14:47:19,992 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: u3-1 is done.takes: 688370ms; size=1114933
+2017-04-06 14:47:19,992 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: Before abolishing: Total Memory (bytes):  68122836992, Free Memory (bytes): 53998055352
+2017-04-06 14:47:19,992 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: Abolished table i
+2017-04-06 14:47:19,992 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: Before abolishing: Total Memory (bytes):  68122836992, Free Memory (bytes): 53998055352
+2017-04-06 14:47:19,992 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: Abolished table u2
+2017-04-06 14:47:19,992 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.mapCollective.final 
+2017-04-06 14:47:20,353 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: after subjob: u3-1
+2017-04-06 14:47:20,354 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: Total Memory (bytes):  68122836992, Free Memory (bytes): 53920818896
+2017-04-06 14:47:20,354 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: Memory Used: 14202018096
+2017-04-06 14:47:20,354 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: Total Garbage Collections: 7, Total Garbage Collection Time (ms): 4330
+2017-04-06 14:47:20,354 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [BEGIN] SCCollectiveMapper.mapCollective.final.allreduce 
+2017-04-06 14:47:37,685 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.mapCollective.final.allreduce
+2017-04-06 14:47:37,685 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: allreduce is done.takes: 17331ms
+2017-04-06 14:47:37,685 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: after subjob: u3-1: allreduce
+2017-04-06 14:47:37,686 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: Total Memory (bytes):  68122836992, Free Memory (bytes): 53860687664
+2017-04-06 14:47:37,686 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: u3-1 is done.takes: 17694ms
+2017-04-06 14:47:37,686 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: Total Garbage Collections: 7, Total Garbage Collection Time (ms): 4330
+2017-04-06 14:47:37,686 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: [END] SCCollectiveMapper.mapCollective.final
+2017-04-06 14:47:37,686 INFO [main] org.apache.hadoop.mapred.CollectiveMapper: The subjob is: final
+2017-04-06 14:47:37,686 INFO [main] edu.iu.harp.resource.ArrayPool: edu.iu.harp.resource.BytesPool@782f32c5: size=64, use=0, released=3
+2017-04-06 14:47:37,686 INFO [main] edu.iu.harp.resource.ArrayPool: edu.iu.harp.resource.BytesPool@782f32c5: size=128, use=0, released=2
+2017-04-06 14:47:37,686 INFO [main] edu.iu.harp.resource.ArrayPool: edu.iu.harp.resource.BytesPool@782f32c5: size=256, use=0, released=1
+2017-04-06 14:47:37,686 INFO [main] edu.iu.harp.resource.ArrayPool: edu.iu.harp.resource.BytesPool@782f32c5: size=4, use=0, released=2
+2017-04-06 14:47:37,686 INFO [main] edu.iu.harp.resource.ArrayPool: edu.iu.harp.resource.BytesPool@782f32c5: size=268435456, use=0, released=2
+2017-04-06 14:47:37,692 INFO [main] edu.iu.harp.resource.WritablePool: class: class edu.iu.harp.util.PartitionCount, use=0, released=2
+2017-04-06 14:47:37,692 INFO [main] edu.iu.harp.resource.WritablePool: class: class edu.iu.harp.util.Barrier, use=0, released=1
+2017-04-06 14:47:37,692 INFO [main] edu.iu.harp.resource.WritablePool: class: class edu.iu.sahad.rotation.ColorCountPairsKVPartition, use=4464892, released=1114729
+2017-04-06 14:47:37,693 INFO [main] edu.iu.harp.io.ConnPool: connection=j-063.juliet.futuresystems.org:12812, use=0, released=1
+2017-04-06 14:47:37,693 INFO [main] edu.iu.harp.io.ConnPool: connection=j-066.juliet.futuresystems.org:12815, use=0, released=1
+2017-04-06 14:47:37,693 INFO [main] edu.iu.harp.io.ConnPool: connection=j-061.juliet.futuresystems.org:12810, use=0, released=1
+2017-04-06 14:47:37,693 INFO [main] edu.iu.harp.io.ConnPool: connection=j-012.juliet.futuresystems.org:12800, use=0, released=1
+2017-04-06 14:47:37,693 INFO [main] edu.iu.harp.io.ConnPool: connection=j-057.juliet.futuresystems.org:12806, use=0, released=1
+2017-04-06 14:47:37,697 INFO [main] edu.iu.harp.server.Server: Server on j-065.juliet.futuresystems.org 12814 is stopped.
+2017-04-06 14:47:37,731 INFO [main] org.apache.hadoop.mapred.Task: Task:attempt_1491502783677_0002_m_000003_0 is done. And is in the process of committing
+2017-04-06 14:47:37,802 INFO [main] org.apache.hadoop.mapred.Task: Task attempt_1491502783677_0002_m_000003_0 is allowed to commit now
+2017-04-06 14:47:37,811 INFO [main] org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter: Saved output of task 'attempt_1491502783677_0002_m_000003_0' to hdfs://j-011:9010/user/mengli/sahad-output/nyc/nyc-u-e-16/40-threads/1/_temporary/1/task_1491502783677_0002_m_000003
+2017-04-06 14:47:37,877 INFO [main] org.apache.hadoop.mapred.Task: Task 'attempt_1491502783677_0002_m_000003_0' done.

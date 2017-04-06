@@ -1,0 +1,20 @@
+node: j-012.juliet.futuresystems.org
+node: j-013.juliet.futuresystems.org
+node: j-053.juliet.futuresystems.org
+node: j-054.juliet.futuresystems.org
+node: j-055.juliet.futuresystems.org
+node: j-056.juliet.futuresystems.org
+node: j-057.juliet.futuresystems.org
+node: j-058.juliet.futuresystems.org
+node: j-059.juliet.futuresystems.org
+node: j-060.juliet.futuresystems.org
+node: j-061.juliet.futuresystems.org
+node: j-062.juliet.futuresystems.org
+node: j-063.juliet.futuresystems.org
+node: j-064.juliet.futuresystems.org
+node: j-065.juliet.futuresystems.org
+node: j-066.juliet.futuresystems.org
+In getProgress : 0
+in current key hdfs://j-011:9010/user/mengli/sahad-data/nyc/nyc-u-e-16/xaj.
+ get Current Value hdfs://j-011:9010/user/mengli/sahad-data/nyc/nyc-u-e-16/xaj.
+In getProgress : 1

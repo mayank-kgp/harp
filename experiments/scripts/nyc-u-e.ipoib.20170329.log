@@ -1,0 +1,1309 @@
+17/03/29 15:45:37 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/03/29 15:45:38 INFO fs.TrashPolicyDefault: Namenode trash configuration: Deletion interval = 0 minutes, Emptier interval = 0 minutes.
+Deleted sahad-output/nyc/nyc-u-e-4/40-threads/1
+use Local MultiThread? true
+set Number of Map Tasks = 4
+set number of threads: 40
+17/03/29 15:45:39 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Get map collective runner
+17/03/29 15:45:39 INFO client.RMProxy: Connecting to ResourceManager at j-011/172.16.0.11:8032
+17/03/29 15:45:41 INFO input.FileInputFormat: Total input paths to process : 4
+17/03/29 15:45:41 INFO fileformat.MultiFileInputFormat: NUMBER OF FILES: 4
+17/03/29 15:45:41 INFO fileformat.MultiFileInputFormat: NUMBER OF MAPS: 4
+17/03/29 15:45:41 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-061.juliet.futuresystems.org j-012.juliet.futuresystems.org j-053.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-060.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-055.juliet.futuresystems.org j-057.juliet.futuresystems.org j-062.juliet.futuresystems.org j-054.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/29 15:45:41 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-012.juliet.futuresystems.org j-053.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-060.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-055.juliet.futuresystems.org j-057.juliet.futuresystems.org j-062.juliet.futuresystems.org j-058.juliet.futuresystems.org j-054.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/29 15:45:41 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-061.juliet.futuresystems.org j-012.juliet.futuresystems.org j-053.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-060.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-057.juliet.futuresystems.org j-055.juliet.futuresystems.org j-062.juliet.futuresystems.org j-058.juliet.futuresystems.org j-013.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/29 15:45:41 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-061.juliet.futuresystems.org j-012.juliet.futuresystems.org j-053.juliet.futuresystems.org j-065.juliet.futuresystems.org j-060.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-055.juliet.futuresystems.org j-057.juliet.futuresystems.org j-062.juliet.futuresystems.org j-058.juliet.futuresystems.org j-013.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/29 15:45:41 INFO fileformat.MultiFileInputFormat: Total # of splits: 4
+17/03/29 15:45:41 INFO mapreduce.JobSubmitter: number of splits:4
+17/03/29 15:45:42 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1490816615146_0001
+command: $JAVA_HOME/bin/java -Dlog4j.configuration=container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dyarn.app.container.log.filesize=0 -Dhadoop.root.logger=INFO,CLA  -Xmx1024m org.apache.hadoop.mapreduce.v2.app.MapCollectiveAppMaster 1><LOG_DIR>/stdout 2><LOG_DIR>/stderr 
+17/03/29 15:45:42 INFO impl.YarnClientImpl: Submitted application application_1490816615146_0001
+17/03/29 15:45:42 INFO mapreduce.Job: The url to track the job: http://j-011:8088/proxy/application_1490816615146_0001/
+17/03/29 15:45:42 INFO mapreduce.Job: Running job: job_1490816615146_0001
+17/03/29 15:45:48 INFO mapreduce.Job: Job job_1490816615146_0001 running in uber mode : false
+17/03/29 15:45:48 INFO mapreduce.Job:  map 0% reduce 0%
+17/03/29 15:46:00 INFO mapreduce.Job:  map 100% reduce 0%
+17/03/29 17:05:03 INFO mapreduce.Job: Job job_1490816615146_0001 completed successfully
+17/03/29 17:05:03 INFO mapreduce.Job: Counters: 30
+	File System Counters
+		FILE: Number of bytes read=0
+		FILE: Number of bytes written=425256
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=8237093843
+		HDFS: Number of bytes written=23
+		HDFS: Number of read operations=32
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=8
+	Job Counters 
+		Launched map tasks=4
+		Other local map tasks=4
+		Total time spent by all maps in occupied slots (ms)=19007242
+		Total time spent by all reduces in occupied slots (ms)=0
+		Total time spent by all map tasks (ms)=19007242
+		Total vcore-seconds taken by all map tasks=19007242
+		Total megabyte-seconds taken by all map tasks=19463415808
+	Map-Reduce Framework
+		Map input records=4
+		Map output records=1
+		Input split bytes=416
+		Spilled Records=0
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=144369
+		CPU time spent (ms)=25620000
+		Physical memory (bytes) snapshot=222291263488
+		Virtual memory (bytes) snapshot=324589445120
+		Total committed heap usage (bytes)=274877906944
+	File Input Format Counters 
+		Bytes Read=0
+	File Output Format Counters 
+		Bytes Written=23
+4764778ms
+17/03/29 17:05:04 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+finalCount	37648394626
+[The 1 times] Above experiment is: ./runHarpSgcr.sh /N/u/mengli/harp-sahad/experiments/template/u3-1.t sahad-data/nyc/nyc-u-e-4 sahad-output/nyc/nyc-u-e-4/40-threads/1 4 40
+17/03/29 17:05:06 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+rm: `sahad-output/nyc/nyc-u-e-8/40-threads/1': No such file or directory
+use Local MultiThread? true
+set Number of Map Tasks = 8
+set number of threads: 40
+17/03/29 17:05:07 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Get map collective runner
+17/03/29 17:05:08 INFO client.RMProxy: Connecting to ResourceManager at j-011/172.16.0.11:8032
+17/03/29 17:05:08 INFO input.FileInputFormat: Total input paths to process : 8
+17/03/29 17:05:08 INFO fileformat.MultiFileInputFormat: NUMBER OF FILES: 8
+17/03/29 17:05:08 INFO fileformat.MultiFileInputFormat: NUMBER OF MAPS: 8
+17/03/29 17:05:08 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-061.juliet.futuresystems.org j-053.juliet.futuresystems.org j-012.juliet.futuresystems.org j-064.juliet.futuresystems.org j-060.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-057.juliet.futuresystems.org j-062.juliet.futuresystems.org j-058.juliet.futuresystems.org j-013.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/29 17:05:08 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-061.juliet.futuresystems.org j-012.juliet.futuresystems.org j-053.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-060.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-057.juliet.futuresystems.org j-062.juliet.futuresystems.org j-058.juliet.futuresystems.org j-054.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/29 17:05:08 INFO fileformat.MultiFileInputFormat: Split on host: j-056.juliet.futuresystems.org j-066.juliet.futuresystems.org j-063.juliet.futuresystems.org j-061.juliet.futuresystems.org j-057.juliet.futuresystems.org j-055.juliet.futuresystems.org j-012.juliet.futuresystems.org j-053.juliet.futuresystems.org j-062.juliet.futuresystems.org j-065.juliet.futuresystems.org j-058.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/29 17:05:08 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-057.juliet.futuresystems.org j-055.juliet.futuresystems.org j-053.juliet.futuresystems.org j-062.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-058.juliet.futuresystems.org j-060.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/29 17:05:08 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-061.juliet.futuresystems.org j-053.juliet.futuresystems.org j-012.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-060.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-055.juliet.futuresystems.org j-057.juliet.futuresystems.org j-062.juliet.futuresystems.org j-058.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/29 17:05:08 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-061.juliet.futuresystems.org j-053.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-060.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-055.juliet.futuresystems.org j-057.juliet.futuresystems.org j-062.juliet.futuresystems.org j-058.juliet.futuresystems.org j-013.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/29 17:05:08 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-061.juliet.futuresystems.org j-053.juliet.futuresystems.org j-012.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-060.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-055.juliet.futuresystems.org j-057.juliet.futuresystems.org j-062.juliet.futuresystems.org j-013.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/29 17:05:08 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-063.juliet.futuresystems.org j-061.juliet.futuresystems.org j-012.juliet.futuresystems.org j-053.juliet.futuresystems.org j-062.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-058.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/29 17:05:08 INFO fileformat.MultiFileInputFormat: Total # of splits: 8
+17/03/29 17:05:09 INFO mapreduce.JobSubmitter: number of splits:8
+17/03/29 17:05:09 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1490816615146_0002
+command: $JAVA_HOME/bin/java -Dlog4j.configuration=container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dyarn.app.container.log.filesize=0 -Dhadoop.root.logger=INFO,CLA  -Xmx1024m org.apache.hadoop.mapreduce.v2.app.MapCollectiveAppMaster 1><LOG_DIR>/stdout 2><LOG_DIR>/stderr 
+17/03/29 17:05:09 INFO impl.YarnClientImpl: Submitted application application_1490816615146_0002
+17/03/29 17:05:09 INFO mapreduce.Job: The url to track the job: http://j-011:8088/proxy/application_1490816615146_0002/
+17/03/29 17:05:09 INFO mapreduce.Job: Running job: job_1490816615146_0002
+17/03/29 17:05:14 INFO mapreduce.Job: Job job_1490816615146_0002 running in uber mode : false
+17/03/29 17:05:14 INFO mapreduce.Job:  map 0% reduce 0%
+17/03/29 17:05:24 INFO mapreduce.Job:  map 63% reduce 0%
+17/03/29 17:05:25 INFO mapreduce.Job:  map 88% reduce 0%
+17/03/29 17:05:26 INFO mapreduce.Job:  map 100% reduce 0%
+17/03/29 17:43:30 INFO mapreduce.Job: Job job_1490816615146_0002 completed successfully
+17/03/29 17:43:30 INFO mapreduce.Job: Counters: 30
+	File System Counters
+		FILE: Number of bytes read=0
+		FILE: Number of bytes written=850512
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=8237096047
+		HDFS: Number of bytes written=23
+		HDFS: Number of read operations=64
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=16
+	Job Counters 
+		Launched map tasks=8
+		Other local map tasks=8
+		Total time spent by all maps in occupied slots (ms)=18347223
+		Total time spent by all reduces in occupied slots (ms)=0
+		Total time spent by all map tasks (ms)=18347223
+		Total vcore-seconds taken by all map tasks=18347223
+		Total megabyte-seconds taken by all map tasks=18787556352
+	Map-Reduce Framework
+		Map input records=8
+		Map output records=1
+		Input split bytes=832
+		Spilled Records=0
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=89492
+		CPU time spent (ms)=25096720
+		Physical memory (bytes) snapshot=313031524352
+		Virtual memory (bytes) snapshot=649167253504
+		Total committed heap usage (bytes)=550705823744
+	File Input Format Counters 
+		Bytes Read=0
+	File Output Format Counters 
+		Bytes Written=23
+2303259ms
+17/03/29 17:43:31 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+finalCount	37653232302
+[The 1 times] Above experiment is: ./runHarpSgcr.sh /N/u/mengli/harp-sahad/experiments/template/u3-1.t sahad-data/nyc/nyc-u-e-8 sahad-output/nyc/nyc-u-e-8/40-threads/1 8 40
+17/03/29 17:43:33 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+rm: `sahad-output/nyc/nyc-u-e-16/40-threads/1': No such file or directory
+use Local MultiThread? true
+set Number of Map Tasks = 16
+set number of threads: 40
+17/03/29 17:43:34 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Get map collective runner
+17/03/29 17:43:35 INFO client.RMProxy: Connecting to ResourceManager at j-011/172.16.0.11:8032
+17/03/29 17:43:36 INFO input.FileInputFormat: Total input paths to process : 16
+17/03/29 17:43:36 INFO fileformat.MultiFileInputFormat: NUMBER OF FILES: 16
+17/03/29 17:43:36 INFO fileformat.MultiFileInputFormat: NUMBER OF MAPS: 16
+17/03/29 17:43:36 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-056.juliet.futuresystems.org j-059.juliet.futuresystems.org j-063.juliet.futuresystems.org j-055.juliet.futuresystems.org j-053.juliet.futuresystems.org j-062.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-060.juliet.futuresystems.org 
+17/03/29 17:43:36 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-063.juliet.futuresystems.org j-061.juliet.futuresystems.org j-055.juliet.futuresystems.org j-053.juliet.futuresystems.org j-012.juliet.futuresystems.org j-058.juliet.futuresystems.org j-054.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/29 17:43:36 INFO fileformat.MultiFileInputFormat: Split on host: j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-059.juliet.futuresystems.org j-061.juliet.futuresystems.org j-057.juliet.futuresystems.org j-012.juliet.futuresystems.org j-053.juliet.futuresystems.org j-065.juliet.futuresystems.org j-058.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/29 17:43:36 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-063.juliet.futuresystems.org j-055.juliet.futuresystems.org j-057.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-058.juliet.futuresystems.org j-060.juliet.futuresystems.org 
+17/03/29 17:43:36 INFO fileformat.MultiFileInputFormat: Split on host: j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-055.juliet.futuresystems.org j-057.juliet.futuresystems.org j-012.juliet.futuresystems.org j-053.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-058.juliet.futuresystems.org j-060.juliet.futuresystems.org 
+17/03/29 17:43:36 INFO fileformat.MultiFileInputFormat: Split on host: j-056.juliet.futuresystems.org j-066.juliet.futuresystems.org j-063.juliet.futuresystems.org j-061.juliet.futuresystems.org j-055.juliet.futuresystems.org j-053.juliet.futuresystems.org j-012.juliet.futuresystems.org j-062.juliet.futuresystems.org j-058.juliet.futuresystems.org j-060.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/29 17:43:36 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-061.juliet.futuresystems.org j-055.juliet.futuresystems.org j-053.juliet.futuresystems.org j-062.juliet.futuresystems.org j-065.juliet.futuresystems.org j-060.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/29 17:43:36 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-063.juliet.futuresystems.org j-061.juliet.futuresystems.org j-057.juliet.futuresystems.org j-055.juliet.futuresystems.org j-053.juliet.futuresystems.org j-012.juliet.futuresystems.org j-058.juliet.futuresystems.org j-060.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/29 17:43:36 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-061.juliet.futuresystems.org j-053.juliet.futuresystems.org j-062.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-058.juliet.futuresystems.org j-060.juliet.futuresystems.org j-054.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/29 17:43:36 INFO fileformat.MultiFileInputFormat: Split on host: j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-059.juliet.futuresystems.org j-061.juliet.futuresystems.org j-057.juliet.futuresystems.org j-053.juliet.futuresystems.org j-012.juliet.futuresystems.org j-064.juliet.futuresystems.org j-058.juliet.futuresystems.org j-060.juliet.futuresystems.org 
+17/03/29 17:43:36 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-063.juliet.futuresystems.org j-057.juliet.futuresystems.org j-055.juliet.futuresystems.org j-053.juliet.futuresystems.org j-012.juliet.futuresystems.org j-065.juliet.futuresystems.org j-058.juliet.futuresystems.org j-060.juliet.futuresystems.org j-013.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/29 17:43:36 INFO fileformat.MultiFileInputFormat: Split on host: j-056.juliet.futuresystems.org j-066.juliet.futuresystems.org j-063.juliet.futuresystems.org j-061.juliet.futuresystems.org j-057.juliet.futuresystems.org j-053.juliet.futuresystems.org j-062.juliet.futuresystems.org j-065.juliet.futuresystems.org j-060.juliet.futuresystems.org j-013.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/29 17:43:36 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-056.juliet.futuresystems.org j-059.juliet.futuresystems.org j-055.juliet.futuresystems.org j-053.juliet.futuresystems.org j-012.juliet.futuresystems.org j-062.juliet.futuresystems.org j-064.juliet.futuresystems.org j-058.juliet.futuresystems.org j-060.juliet.futuresystems.org j-054.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/29 17:43:36 INFO fileformat.MultiFileInputFormat: Split on host: j-056.juliet.futuresystems.org j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-063.juliet.futuresystems.org j-061.juliet.futuresystems.org j-057.juliet.futuresystems.org j-053.juliet.futuresystems.org j-065.juliet.futuresystems.org j-060.juliet.futuresystems.org j-013.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/29 17:43:36 INFO fileformat.MultiFileInputFormat: Split on host: j-059.juliet.futuresystems.org j-063.juliet.futuresystems.org j-061.juliet.futuresystems.org j-057.juliet.futuresystems.org j-062.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-060.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/29 17:43:36 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-056.juliet.futuresystems.org j-061.juliet.futuresystems.org j-055.juliet.futuresystems.org j-012.juliet.futuresystems.org j-058.juliet.futuresystems.org j-054.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/29 17:43:36 INFO fileformat.MultiFileInputFormat: Total # of splits: 16
+17/03/29 17:43:36 INFO mapreduce.JobSubmitter: number of splits:16
+17/03/29 17:43:36 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1490816615146_0003
+command: $JAVA_HOME/bin/java -Dlog4j.configuration=container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dyarn.app.container.log.filesize=0 -Dhadoop.root.logger=INFO,CLA  -Xmx1024m org.apache.hadoop.mapreduce.v2.app.MapCollectiveAppMaster 1><LOG_DIR>/stdout 2><LOG_DIR>/stderr 
+17/03/29 17:43:36 INFO impl.YarnClientImpl: Submitted application application_1490816615146_0003
+17/03/29 17:43:36 INFO mapreduce.Job: The url to track the job: http://j-011:8088/proxy/application_1490816615146_0003/
+17/03/29 17:43:36 INFO mapreduce.Job: Running job: job_1490816615146_0003
+17/03/29 17:43:41 INFO mapreduce.Job: Job job_1490816615146_0003 running in uber mode : false
+17/03/29 17:43:41 INFO mapreduce.Job:  map 0% reduce 0%
+17/03/29 17:43:53 INFO mapreduce.Job:  map 50% reduce 0%
+17/03/29 17:43:54 INFO mapreduce.Job:  map 100% reduce 0%
+17/03/29 18:08:35 INFO mapreduce.Job: Job job_1490816615146_0003 completed successfully
+17/03/29 18:08:35 INFO mapreduce.Job: Counters: 30
+	File System Counters
+		FILE: Number of bytes read=0
+		FILE: Number of bytes written=1701126
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=8237104215
+		HDFS: Number of bytes written=23
+		HDFS: Number of read operations=128
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=32
+	Job Counters 
+		Launched map tasks=16
+		Other local map tasks=16
+		Total time spent by all maps in occupied slots (ms)=23835296
+		Total time spent by all reduces in occupied slots (ms)=0
+		Total time spent by all map tasks (ms)=23835296
+		Total vcore-seconds taken by all map tasks=23835296
+		Total megabyte-seconds taken by all map tasks=24407343104
+	Map-Reduce Framework
+		Map input records=16
+		Map output records=1
+		Input split bytes=1680
+		Spilled Records=0
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=98105
+		CPU time spent (ms)=34263260
+		Physical memory (bytes) snapshot=481446256640
+		Virtual memory (bytes) snapshot=1298318725120
+		Total committed heap usage (bytes)=1098053058560
+	File Input Format Counters 
+		Bytes Read=0
+	File Output Format Counters 
+		Bytes Written=23
+1500704ms
+17/03/29 18:08:36 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+finalCount	37649037658
+[The 1 times] Above experiment is: ./runHarpSgcr.sh /N/u/mengli/harp-sahad/experiments/template/u3-1.t sahad-data/nyc/nyc-u-e-16 sahad-output/nyc/nyc-u-e-16/40-threads/1 16 40
+17/03/29 18:08:37 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/03/29 18:08:38 INFO fs.TrashPolicyDefault: Namenode trash configuration: Deletion interval = 0 minutes, Emptier interval = 0 minutes.
+Deleted sahad-output/nyc/nyc-u-e-4/40-threads/1
+use Local MultiThread? true
+set Number of Map Tasks = 4
+set number of threads: 40
+17/03/29 18:08:39 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Get map collective runner
+17/03/29 18:08:40 INFO client.RMProxy: Connecting to ResourceManager at j-011/172.16.0.11:8032
+17/03/29 18:08:40 INFO input.FileInputFormat: Total input paths to process : 4
+17/03/29 18:08:40 INFO fileformat.MultiFileInputFormat: NUMBER OF FILES: 4
+17/03/29 18:08:40 INFO fileformat.MultiFileInputFormat: NUMBER OF MAPS: 4
+17/03/29 18:08:40 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-061.juliet.futuresystems.org j-012.juliet.futuresystems.org j-053.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-060.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-055.juliet.futuresystems.org j-057.juliet.futuresystems.org j-062.juliet.futuresystems.org j-054.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/29 18:08:40 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-012.juliet.futuresystems.org j-053.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-060.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-055.juliet.futuresystems.org j-057.juliet.futuresystems.org j-062.juliet.futuresystems.org j-058.juliet.futuresystems.org j-013.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/29 18:08:40 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-061.juliet.futuresystems.org j-012.juliet.futuresystems.org j-053.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-060.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-057.juliet.futuresystems.org j-055.juliet.futuresystems.org j-062.juliet.futuresystems.org j-058.juliet.futuresystems.org j-013.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/29 18:08:40 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-061.juliet.futuresystems.org j-012.juliet.futuresystems.org j-053.juliet.futuresystems.org j-065.juliet.futuresystems.org j-060.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-055.juliet.futuresystems.org j-057.juliet.futuresystems.org j-062.juliet.futuresystems.org j-058.juliet.futuresystems.org j-013.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/29 18:08:40 INFO fileformat.MultiFileInputFormat: Total # of splits: 4
+17/03/29 18:08:40 INFO mapreduce.JobSubmitter: number of splits:4
+17/03/29 18:08:40 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1490816615146_0004
+command: $JAVA_HOME/bin/java -Dlog4j.configuration=container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dyarn.app.container.log.filesize=0 -Dhadoop.root.logger=INFO,CLA  -Xmx1024m org.apache.hadoop.mapreduce.v2.app.MapCollectiveAppMaster 1><LOG_DIR>/stdout 2><LOG_DIR>/stderr 
+17/03/29 18:08:41 INFO impl.YarnClientImpl: Submitted application application_1490816615146_0004
+17/03/29 18:08:41 INFO mapreduce.Job: The url to track the job: http://j-011:8088/proxy/application_1490816615146_0004/
+17/03/29 18:08:41 INFO mapreduce.Job: Running job: job_1490816615146_0004
+17/03/29 18:08:46 INFO mapreduce.Job: Job job_1490816615146_0004 running in uber mode : false
+17/03/29 18:08:46 INFO mapreduce.Job:  map 0% reduce 0%
+17/03/29 18:08:56 INFO mapreduce.Job:  map 75% reduce 0%
+17/03/29 18:08:57 INFO mapreduce.Job:  map 100% reduce 0%
+17/03/29 19:55:35 INFO mapreduce.Job: Job job_1490816615146_0004 completed successfully
+17/03/29 19:55:36 INFO mapreduce.Job: Counters: 30
+	File System Counters
+		FILE: Number of bytes read=0
+		FILE: Number of bytes written=425256
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=8237093843
+		HDFS: Number of bytes written=27
+		HDFS: Number of read operations=32
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=8
+	Job Counters 
+		Launched map tasks=4
+		Other local map tasks=4
+		Total time spent by all maps in occupied slots (ms)=25629119
+		Total time spent by all reduces in occupied slots (ms)=0
+		Total time spent by all map tasks (ms)=25629119
+		Total vcore-seconds taken by all map tasks=25629119
+		Total megabyte-seconds taken by all map tasks=26244217856
+	Map-Reduce Framework
+		Map input records=4
+		Map output records=1
+		Input split bytes=416
+		Spilled Records=0
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=271086
+		CPU time spent (ms)=38479290
+		Physical memory (bytes) snapshot=280031182848
+		Virtual memory (bytes) snapshot=324608430080
+		Total committed heap usage (bytes)=276250492928
+	File Input Format Counters 
+		Bytes Read=0
+	File Output Format Counters 
+		Bytes Written=27
+6416983ms
+17/03/29 19:55:37 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+finalCount	274079809778411
+[The 1 times] Above experiment is: ./runHarpSgcr.sh /N/u/mengli/harp-sahad/experiments/template/u5-1.t sahad-data/nyc/nyc-u-e-4 sahad-output/nyc/nyc-u-e-4/40-threads/1 4 40
+17/03/29 19:55:38 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/03/29 19:55:39 INFO fs.TrashPolicyDefault: Namenode trash configuration: Deletion interval = 0 minutes, Emptier interval = 0 minutes.
+Deleted sahad-output/nyc/nyc-u-e-8/40-threads/1
+use Local MultiThread? true
+set Number of Map Tasks = 8
+set number of threads: 40
+17/03/29 19:55:40 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Get map collective runner
+17/03/29 19:55:41 INFO client.RMProxy: Connecting to ResourceManager at j-011/172.16.0.11:8032
+17/03/29 19:55:41 INFO input.FileInputFormat: Total input paths to process : 8
+17/03/29 19:55:41 INFO fileformat.MultiFileInputFormat: NUMBER OF FILES: 8
+17/03/29 19:55:41 INFO fileformat.MultiFileInputFormat: NUMBER OF MAPS: 8
+17/03/29 19:55:41 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-061.juliet.futuresystems.org j-053.juliet.futuresystems.org j-012.juliet.futuresystems.org j-064.juliet.futuresystems.org j-060.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-057.juliet.futuresystems.org j-062.juliet.futuresystems.org j-058.juliet.futuresystems.org j-013.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/29 19:55:41 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-061.juliet.futuresystems.org j-012.juliet.futuresystems.org j-053.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-060.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-057.juliet.futuresystems.org j-062.juliet.futuresystems.org j-058.juliet.futuresystems.org j-054.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/29 19:55:41 INFO fileformat.MultiFileInputFormat: Split on host: j-056.juliet.futuresystems.org j-066.juliet.futuresystems.org j-063.juliet.futuresystems.org j-061.juliet.futuresystems.org j-057.juliet.futuresystems.org j-055.juliet.futuresystems.org j-012.juliet.futuresystems.org j-053.juliet.futuresystems.org j-062.juliet.futuresystems.org j-065.juliet.futuresystems.org j-058.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/29 19:55:41 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-057.juliet.futuresystems.org j-055.juliet.futuresystems.org j-053.juliet.futuresystems.org j-062.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-058.juliet.futuresystems.org j-060.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/29 19:55:41 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-061.juliet.futuresystems.org j-053.juliet.futuresystems.org j-012.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-060.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-055.juliet.futuresystems.org j-057.juliet.futuresystems.org j-062.juliet.futuresystems.org j-058.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/29 19:55:41 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-061.juliet.futuresystems.org j-053.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-060.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-055.juliet.futuresystems.org j-057.juliet.futuresystems.org j-062.juliet.futuresystems.org j-058.juliet.futuresystems.org j-013.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/29 19:55:41 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-061.juliet.futuresystems.org j-053.juliet.futuresystems.org j-012.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-060.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-055.juliet.futuresystems.org j-057.juliet.futuresystems.org j-062.juliet.futuresystems.org j-013.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/29 19:55:41 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-063.juliet.futuresystems.org j-061.juliet.futuresystems.org j-012.juliet.futuresystems.org j-053.juliet.futuresystems.org j-062.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-058.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/29 19:55:41 INFO fileformat.MultiFileInputFormat: Total # of splits: 8
+17/03/29 19:55:41 INFO mapreduce.JobSubmitter: number of splits:8
+17/03/29 19:55:41 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1490816615146_0005
+command: $JAVA_HOME/bin/java -Dlog4j.configuration=container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dyarn.app.container.log.filesize=0 -Dhadoop.root.logger=INFO,CLA  -Xmx1024m org.apache.hadoop.mapreduce.v2.app.MapCollectiveAppMaster 1><LOG_DIR>/stdout 2><LOG_DIR>/stderr 
+17/03/29 19:55:42 INFO impl.YarnClientImpl: Submitted application application_1490816615146_0005
+17/03/29 19:55:42 INFO mapreduce.Job: The url to track the job: http://j-011:8088/proxy/application_1490816615146_0005/
+17/03/29 19:55:42 INFO mapreduce.Job: Running job: job_1490816615146_0005
+17/03/29 19:55:47 INFO mapreduce.Job: Job job_1490816615146_0005 running in uber mode : false
+17/03/29 19:55:47 INFO mapreduce.Job:  map 0% reduce 0%
+17/03/29 19:55:57 INFO mapreduce.Job:  map 13% reduce 0%
+17/03/29 19:55:58 INFO mapreduce.Job:  map 100% reduce 0%
+17/03/29 20:57:32 INFO mapreduce.Job: Job job_1490816615146_0005 completed successfully
+17/03/29 20:57:32 INFO mapreduce.Job: Counters: 30
+	File System Counters
+		FILE: Number of bytes read=0
+		FILE: Number of bytes written=850512
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=8237096047
+		HDFS: Number of bytes written=27
+		HDFS: Number of read operations=64
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=16
+	Job Counters 
+		Launched map tasks=8
+		Other local map tasks=8
+		Total time spent by all maps in occupied slots (ms)=29619454
+		Total time spent by all reduces in occupied slots (ms)=0
+		Total time spent by all map tasks (ms)=29619454
+		Total vcore-seconds taken by all map tasks=29619454
+		Total megabyte-seconds taken by all map tasks=30330320896
+	Map-Reduce Framework
+		Map input records=8
+		Map output records=1
+		Input split bytes=832
+		Spilled Records=0
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=320414
+		CPU time spent (ms)=53474960
+		Physical memory (bytes) snapshot=366975946752
+		Virtual memory (bytes) snapshot=649211195392
+		Total committed heap usage (bytes)=549755813888
+	File Input Format Counters 
+		Bytes Read=0
+	File Output Format Counters 
+		Bytes Written=27
+3712216ms
+17/03/29 20:57:33 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+finalCount	274099545061796
+[The 1 times] Above experiment is: ./runHarpSgcr.sh /N/u/mengli/harp-sahad/experiments/template/u5-1.t sahad-data/nyc/nyc-u-e-8 sahad-output/nyc/nyc-u-e-8/40-threads/1 8 40
+17/03/29 20:57:35 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/03/29 20:57:35 INFO fs.TrashPolicyDefault: Namenode trash configuration: Deletion interval = 0 minutes, Emptier interval = 0 minutes.
+Deleted sahad-output/nyc/nyc-u-e-16/40-threads/1
+use Local MultiThread? true
+set Number of Map Tasks = 16
+set number of threads: 40
+17/03/29 20:57:36 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Get map collective runner
+17/03/29 20:57:37 INFO client.RMProxy: Connecting to ResourceManager at j-011/172.16.0.11:8032
+17/03/29 20:57:37 INFO input.FileInputFormat: Total input paths to process : 16
+17/03/29 20:57:37 INFO fileformat.MultiFileInputFormat: NUMBER OF FILES: 16
+17/03/29 20:57:37 INFO fileformat.MultiFileInputFormat: NUMBER OF MAPS: 16
+17/03/29 20:57:37 INFO fileformat.MultiFileInputFormat: Split on host: j-056.juliet.futuresystems.org j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-063.juliet.futuresystems.org j-055.juliet.futuresystems.org j-053.juliet.futuresystems.org j-062.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-060.juliet.futuresystems.org 
+17/03/29 20:57:37 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-063.juliet.futuresystems.org j-061.juliet.futuresystems.org j-055.juliet.futuresystems.org j-053.juliet.futuresystems.org j-012.juliet.futuresystems.org j-058.juliet.futuresystems.org j-013.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/29 20:57:37 INFO fileformat.MultiFileInputFormat: Split on host: j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-059.juliet.futuresystems.org j-061.juliet.futuresystems.org j-057.juliet.futuresystems.org j-012.juliet.futuresystems.org j-053.juliet.futuresystems.org j-065.juliet.futuresystems.org j-058.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/29 20:57:37 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-063.juliet.futuresystems.org j-055.juliet.futuresystems.org j-057.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-058.juliet.futuresystems.org j-060.juliet.futuresystems.org 
+17/03/29 20:57:37 INFO fileformat.MultiFileInputFormat: Split on host: j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-055.juliet.futuresystems.org j-057.juliet.futuresystems.org j-012.juliet.futuresystems.org j-053.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-058.juliet.futuresystems.org j-060.juliet.futuresystems.org 
+17/03/29 20:57:37 INFO fileformat.MultiFileInputFormat: Split on host: j-056.juliet.futuresystems.org j-066.juliet.futuresystems.org j-063.juliet.futuresystems.org j-061.juliet.futuresystems.org j-055.juliet.futuresystems.org j-053.juliet.futuresystems.org j-012.juliet.futuresystems.org j-062.juliet.futuresystems.org j-058.juliet.futuresystems.org j-060.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/29 20:57:37 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-061.juliet.futuresystems.org j-055.juliet.futuresystems.org j-053.juliet.futuresystems.org j-062.juliet.futuresystems.org j-065.juliet.futuresystems.org j-060.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/29 20:57:37 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-063.juliet.futuresystems.org j-061.juliet.futuresystems.org j-057.juliet.futuresystems.org j-055.juliet.futuresystems.org j-053.juliet.futuresystems.org j-012.juliet.futuresystems.org j-058.juliet.futuresystems.org j-060.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/29 20:57:37 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-061.juliet.futuresystems.org j-053.juliet.futuresystems.org j-062.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-058.juliet.futuresystems.org j-060.juliet.futuresystems.org j-054.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/29 20:57:37 INFO fileformat.MultiFileInputFormat: Split on host: j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-059.juliet.futuresystems.org j-061.juliet.futuresystems.org j-057.juliet.futuresystems.org j-053.juliet.futuresystems.org j-012.juliet.futuresystems.org j-064.juliet.futuresystems.org j-058.juliet.futuresystems.org j-060.juliet.futuresystems.org 
+17/03/29 20:57:37 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-063.juliet.futuresystems.org j-057.juliet.futuresystems.org j-055.juliet.futuresystems.org j-053.juliet.futuresystems.org j-012.juliet.futuresystems.org j-065.juliet.futuresystems.org j-058.juliet.futuresystems.org j-060.juliet.futuresystems.org j-013.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/29 20:57:37 INFO fileformat.MultiFileInputFormat: Split on host: j-056.juliet.futuresystems.org j-066.juliet.futuresystems.org j-063.juliet.futuresystems.org j-061.juliet.futuresystems.org j-057.juliet.futuresystems.org j-053.juliet.futuresystems.org j-062.juliet.futuresystems.org j-065.juliet.futuresystems.org j-060.juliet.futuresystems.org j-013.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/29 20:57:37 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-056.juliet.futuresystems.org j-059.juliet.futuresystems.org j-055.juliet.futuresystems.org j-053.juliet.futuresystems.org j-012.juliet.futuresystems.org j-062.juliet.futuresystems.org j-064.juliet.futuresystems.org j-058.juliet.futuresystems.org j-060.juliet.futuresystems.org j-054.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/29 20:57:37 INFO fileformat.MultiFileInputFormat: Split on host: j-056.juliet.futuresystems.org j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-063.juliet.futuresystems.org j-061.juliet.futuresystems.org j-057.juliet.futuresystems.org j-053.juliet.futuresystems.org j-065.juliet.futuresystems.org j-060.juliet.futuresystems.org j-013.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/29 20:57:37 INFO fileformat.MultiFileInputFormat: Split on host: j-059.juliet.futuresystems.org j-063.juliet.futuresystems.org j-061.juliet.futuresystems.org j-057.juliet.futuresystems.org j-062.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-060.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/29 20:57:37 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-056.juliet.futuresystems.org j-061.juliet.futuresystems.org j-055.juliet.futuresystems.org j-012.juliet.futuresystems.org j-058.juliet.futuresystems.org j-054.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/29 20:57:37 INFO fileformat.MultiFileInputFormat: Total # of splits: 16
+17/03/29 20:57:37 INFO mapreduce.JobSubmitter: number of splits:16
+17/03/29 20:57:38 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1490816615146_0006
+command: $JAVA_HOME/bin/java -Dlog4j.configuration=container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dyarn.app.container.log.filesize=0 -Dhadoop.root.logger=INFO,CLA  -Xmx1024m org.apache.hadoop.mapreduce.v2.app.MapCollectiveAppMaster 1><LOG_DIR>/stdout 2><LOG_DIR>/stderr 
+17/03/29 20:57:38 INFO impl.YarnClientImpl: Submitted application application_1490816615146_0006
+17/03/29 20:57:38 INFO mapreduce.Job: The url to track the job: http://j-011:8088/proxy/application_1490816615146_0006/
+17/03/29 20:57:38 INFO mapreduce.Job: Running job: job_1490816615146_0006
+17/03/29 20:57:43 INFO mapreduce.Job: Job job_1490816615146_0006 running in uber mode : false
+17/03/29 20:57:43 INFO mapreduce.Job:  map 0% reduce 0%
+17/03/29 20:57:53 INFO mapreduce.Job:  map 94% reduce 0%
+17/03/29 20:57:54 INFO mapreduce.Job:  map 100% reduce 0%
+17/03/29 21:34:19 INFO mapreduce.Job: Job job_1490816615146_0006 completed successfully
+17/03/29 21:34:19 INFO mapreduce.Job: Counters: 30
+	File System Counters
+		FILE: Number of bytes read=0
+		FILE: Number of bytes written=1701126
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=8237104215
+		HDFS: Number of bytes written=27
+		HDFS: Number of read operations=128
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=32
+	Job Counters 
+		Launched map tasks=16
+		Other local map tasks=16
+		Total time spent by all maps in occupied slots (ms)=35073945
+		Total time spent by all reduces in occupied slots (ms)=0
+		Total time spent by all map tasks (ms)=35073945
+		Total vcore-seconds taken by all map tasks=35073945
+		Total megabyte-seconds taken by all map tasks=35915719680
+	Map-Reduce Framework
+		Map input records=16
+		Map output records=1
+		Input split bytes=1680
+		Spilled Records=0
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=179637
+		CPU time spent (ms)=52971650
+		Physical memory (bytes) snapshot=509785165824
+		Virtual memory (bytes) snapshot=1298349543424
+		Total committed heap usage (bytes)=1111086858240
+	File Input Format Counters 
+		Bytes Read=0
+	File Output Format Counters 
+		Bytes Written=27
+2203017ms
+17/03/29 21:34:20 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+finalCount	274134209446536
+[The 1 times] Above experiment is: ./runHarpSgcr.sh /N/u/mengli/harp-sahad/experiments/template/u5-1.t sahad-data/nyc/nyc-u-e-16 sahad-output/nyc/nyc-u-e-16/40-threads/1 16 40
+17/03/29 21:34:21 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/03/29 21:34:22 INFO fs.TrashPolicyDefault: Namenode trash configuration: Deletion interval = 0 minutes, Emptier interval = 0 minutes.
+Deleted sahad-output/nyc/nyc-u-e-4/40-threads/1
+use Local MultiThread? true
+set Number of Map Tasks = 4
+set number of threads: 40
+17/03/29 21:34:23 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Get map collective runner
+17/03/29 21:34:24 INFO client.RMProxy: Connecting to ResourceManager at j-011/172.16.0.11:8032
+17/03/29 21:34:24 INFO input.FileInputFormat: Total input paths to process : 4
+17/03/29 21:34:24 INFO fileformat.MultiFileInputFormat: NUMBER OF FILES: 4
+17/03/29 21:34:24 INFO fileformat.MultiFileInputFormat: NUMBER OF MAPS: 4
+17/03/29 21:34:24 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-061.juliet.futuresystems.org j-012.juliet.futuresystems.org j-053.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-060.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-055.juliet.futuresystems.org j-057.juliet.futuresystems.org j-062.juliet.futuresystems.org j-054.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/29 21:34:24 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-012.juliet.futuresystems.org j-053.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-060.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-055.juliet.futuresystems.org j-057.juliet.futuresystems.org j-062.juliet.futuresystems.org j-058.juliet.futuresystems.org j-013.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/29 21:34:24 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-061.juliet.futuresystems.org j-012.juliet.futuresystems.org j-053.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-060.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-057.juliet.futuresystems.org j-055.juliet.futuresystems.org j-062.juliet.futuresystems.org j-058.juliet.futuresystems.org j-013.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/29 21:34:24 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-061.juliet.futuresystems.org j-012.juliet.futuresystems.org j-053.juliet.futuresystems.org j-065.juliet.futuresystems.org j-060.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-055.juliet.futuresystems.org j-057.juliet.futuresystems.org j-062.juliet.futuresystems.org j-058.juliet.futuresystems.org j-013.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/29 21:34:24 INFO fileformat.MultiFileInputFormat: Total # of splits: 4
+17/03/29 21:34:24 INFO mapreduce.JobSubmitter: number of splits:4
+17/03/29 21:34:24 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1490816615146_0007
+command: $JAVA_HOME/bin/java -Dlog4j.configuration=container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dyarn.app.container.log.filesize=0 -Dhadoop.root.logger=INFO,CLA  -Xmx1024m org.apache.hadoop.mapreduce.v2.app.MapCollectiveAppMaster 1><LOG_DIR>/stdout 2><LOG_DIR>/stderr 
+17/03/29 21:34:25 INFO impl.YarnClientImpl: Submitted application application_1490816615146_0007
+17/03/29 21:34:25 INFO mapreduce.Job: The url to track the job: http://j-011:8088/proxy/application_1490816615146_0007/
+17/03/29 21:34:25 INFO mapreduce.Job: Running job: job_1490816615146_0007
+17/03/29 21:34:31 INFO mapreduce.Job: Job job_1490816615146_0007 running in uber mode : false
+17/03/29 21:34:31 INFO mapreduce.Job:  map 0% reduce 0%
+17/03/29 21:34:41 INFO mapreduce.Job:  map 100% reduce 0%
+17/03/29 23:59:18 INFO mapreduce.Job: Job job_1490816615146_0007 completed successfully
+17/03/29 23:59:18 INFO mapreduce.Job: Counters: 30
+	File System Counters
+		FILE: Number of bytes read=0
+		FILE: Number of bytes written=425256
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=8237093843
+		HDFS: Number of bytes written=31
+		HDFS: Number of read operations=32
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=8
+	Job Counters 
+		Launched map tasks=4
+		Other local map tasks=4
+		Total time spent by all maps in occupied slots (ms)=34738200
+		Total time spent by all reduces in occupied slots (ms)=0
+		Total time spent by all map tasks (ms)=34738200
+		Total vcore-seconds taken by all map tasks=34738200
+		Total megabyte-seconds taken by all map tasks=35571916800
+	Map-Reduce Framework
+		Map input records=4
+		Map output records=1
+		Input split bytes=416
+		Spilled Records=0
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=793713
+		CPU time spent (ms)=67553110
+		Physical memory (bytes) snapshot=307942100992
+		Virtual memory (bytes) snapshot=324629155840
+		Total committed heap usage (bytes)=290782183424
+	File Input Format Counters 
+		Bytes Read=0
+	File Output Format Counters 
+		Bytes Written=31
+8695849ms
+17/03/29 23:59:20 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+finalCount	3766380126722993664
+[The 1 times] Above experiment is: ./runHarpSgcr.sh /N/u/mengli/harp-sahad/experiments/template/u7-1.t sahad-data/nyc/nyc-u-e-4 sahad-output/nyc/nyc-u-e-4/40-threads/1 4 40
+17/03/29 23:59:21 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/03/29 23:59:22 INFO fs.TrashPolicyDefault: Namenode trash configuration: Deletion interval = 0 minutes, Emptier interval = 0 minutes.
+Deleted sahad-output/nyc/nyc-u-e-8/40-threads/1
+use Local MultiThread? true
+set Number of Map Tasks = 8
+set number of threads: 40
+17/03/29 23:59:23 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Get map collective runner
+17/03/29 23:59:24 INFO client.RMProxy: Connecting to ResourceManager at j-011/172.16.0.11:8032
+17/03/29 23:59:24 INFO input.FileInputFormat: Total input paths to process : 8
+17/03/29 23:59:24 INFO fileformat.MultiFileInputFormat: NUMBER OF FILES: 8
+17/03/29 23:59:24 INFO fileformat.MultiFileInputFormat: NUMBER OF MAPS: 8
+17/03/29 23:59:24 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-061.juliet.futuresystems.org j-053.juliet.futuresystems.org j-012.juliet.futuresystems.org j-064.juliet.futuresystems.org j-060.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-057.juliet.futuresystems.org j-062.juliet.futuresystems.org j-058.juliet.futuresystems.org j-054.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/29 23:59:24 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-061.juliet.futuresystems.org j-012.juliet.futuresystems.org j-053.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-060.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-057.juliet.futuresystems.org j-062.juliet.futuresystems.org j-058.juliet.futuresystems.org j-054.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/29 23:59:24 INFO fileformat.MultiFileInputFormat: Split on host: j-056.juliet.futuresystems.org j-066.juliet.futuresystems.org j-063.juliet.futuresystems.org j-061.juliet.futuresystems.org j-055.juliet.futuresystems.org j-057.juliet.futuresystems.org j-012.juliet.futuresystems.org j-053.juliet.futuresystems.org j-062.juliet.futuresystems.org j-065.juliet.futuresystems.org j-058.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/29 23:59:24 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-057.juliet.futuresystems.org j-055.juliet.futuresystems.org j-053.juliet.futuresystems.org j-062.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-058.juliet.futuresystems.org j-060.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/29 23:59:24 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-061.juliet.futuresystems.org j-053.juliet.futuresystems.org j-012.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-060.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-055.juliet.futuresystems.org j-057.juliet.futuresystems.org j-062.juliet.futuresystems.org j-058.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/29 23:59:24 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-061.juliet.futuresystems.org j-053.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-060.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-055.juliet.futuresystems.org j-057.juliet.futuresystems.org j-062.juliet.futuresystems.org j-058.juliet.futuresystems.org j-013.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/29 23:59:24 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-061.juliet.futuresystems.org j-053.juliet.futuresystems.org j-012.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-060.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-055.juliet.futuresystems.org j-057.juliet.futuresystems.org j-062.juliet.futuresystems.org j-013.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/29 23:59:24 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-063.juliet.futuresystems.org j-061.juliet.futuresystems.org j-012.juliet.futuresystems.org j-053.juliet.futuresystems.org j-062.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-058.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/29 23:59:24 INFO fileformat.MultiFileInputFormat: Total # of splits: 8
+17/03/29 23:59:24 INFO mapreduce.JobSubmitter: number of splits:8
+17/03/29 23:59:24 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1490816615146_0008
+command: $JAVA_HOME/bin/java -Dlog4j.configuration=container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dyarn.app.container.log.filesize=0 -Dhadoop.root.logger=INFO,CLA  -Xmx1024m org.apache.hadoop.mapreduce.v2.app.MapCollectiveAppMaster 1><LOG_DIR>/stdout 2><LOG_DIR>/stderr 
+17/03/29 23:59:24 INFO impl.YarnClientImpl: Submitted application application_1490816615146_0008
+17/03/29 23:59:25 INFO mapreduce.Job: The url to track the job: http://j-011:8088/proxy/application_1490816615146_0008/
+17/03/29 23:59:25 INFO mapreduce.Job: Running job: job_1490816615146_0008
+17/03/29 23:59:30 INFO mapreduce.Job: Job job_1490816615146_0008 running in uber mode : false
+17/03/29 23:59:30 INFO mapreduce.Job:  map 0% reduce 0%
+17/03/29 23:59:40 INFO mapreduce.Job:  map 50% reduce 0%
+17/03/29 23:59:41 INFO mapreduce.Job:  map 100% reduce 0%
+17/03/30 01:11:25 INFO mapreduce.Job: Job job_1490816615146_0008 completed successfully
+17/03/30 01:11:25 INFO mapreduce.Job: Counters: 30
+	File System Counters
+		FILE: Number of bytes read=0
+		FILE: Number of bytes written=850512
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=8237096047
+		HDFS: Number of bytes written=31
+		HDFS: Number of read operations=64
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=16
+	Job Counters 
+		Launched map tasks=8
+		Other local map tasks=8
+		Total time spent by all maps in occupied slots (ms)=34497356
+		Total time spent by all reduces in occupied slots (ms)=0
+		Total time spent by all map tasks (ms)=34497356
+		Total vcore-seconds taken by all map tasks=34497356
+		Total megabyte-seconds taken by all map tasks=35325292544
+	Map-Reduce Framework
+		Map input records=8
+		Map output records=1
+		Input split bytes=832
+		Spilled Records=0
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=350003
+		CPU time spent (ms)=58523530
+		Physical memory (bytes) snapshot=445621895168
+		Virtual memory (bytes) snapshot=649177960448
+		Total committed heap usage (bytes)=579622928384
+	File Input Format Counters 
+		Bytes Read=0
+	File Output Format Counters 
+		Bytes Written=31
+4322438ms
+17/03/30 01:11:26 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+finalCount	3766479932568785920
+[The 1 times] Above experiment is: ./runHarpSgcr.sh /N/u/mengli/harp-sahad/experiments/template/u7-1.t sahad-data/nyc/nyc-u-e-8 sahad-output/nyc/nyc-u-e-8/40-threads/1 8 40
+17/03/30 01:11:28 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/03/30 01:11:28 INFO fs.TrashPolicyDefault: Namenode trash configuration: Deletion interval = 0 minutes, Emptier interval = 0 minutes.
+Deleted sahad-output/nyc/nyc-u-e-16/40-threads/1
+use Local MultiThread? true
+set Number of Map Tasks = 16
+set number of threads: 40
+17/03/30 01:11:29 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Get map collective runner
+17/03/30 01:11:30 INFO client.RMProxy: Connecting to ResourceManager at j-011/172.16.0.11:8032
+17/03/30 01:11:30 INFO input.FileInputFormat: Total input paths to process : 16
+17/03/30 01:11:30 INFO fileformat.MultiFileInputFormat: NUMBER OF FILES: 16
+17/03/30 01:11:30 INFO fileformat.MultiFileInputFormat: NUMBER OF MAPS: 16
+17/03/30 01:11:30 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-056.juliet.futuresystems.org j-059.juliet.futuresystems.org j-063.juliet.futuresystems.org j-055.juliet.futuresystems.org j-053.juliet.futuresystems.org j-062.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-060.juliet.futuresystems.org 
+17/03/30 01:11:30 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-063.juliet.futuresystems.org j-061.juliet.futuresystems.org j-055.juliet.futuresystems.org j-053.juliet.futuresystems.org j-012.juliet.futuresystems.org j-058.juliet.futuresystems.org j-054.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/30 01:11:30 INFO fileformat.MultiFileInputFormat: Split on host: j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-059.juliet.futuresystems.org j-061.juliet.futuresystems.org j-057.juliet.futuresystems.org j-012.juliet.futuresystems.org j-053.juliet.futuresystems.org j-065.juliet.futuresystems.org j-058.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/30 01:11:30 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-063.juliet.futuresystems.org j-055.juliet.futuresystems.org j-057.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-058.juliet.futuresystems.org j-060.juliet.futuresystems.org 
+17/03/30 01:11:30 INFO fileformat.MultiFileInputFormat: Split on host: j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-055.juliet.futuresystems.org j-057.juliet.futuresystems.org j-012.juliet.futuresystems.org j-053.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-058.juliet.futuresystems.org j-060.juliet.futuresystems.org 
+17/03/30 01:11:30 INFO fileformat.MultiFileInputFormat: Split on host: j-056.juliet.futuresystems.org j-066.juliet.futuresystems.org j-063.juliet.futuresystems.org j-061.juliet.futuresystems.org j-055.juliet.futuresystems.org j-053.juliet.futuresystems.org j-012.juliet.futuresystems.org j-062.juliet.futuresystems.org j-058.juliet.futuresystems.org j-060.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/30 01:11:30 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-061.juliet.futuresystems.org j-055.juliet.futuresystems.org j-053.juliet.futuresystems.org j-062.juliet.futuresystems.org j-065.juliet.futuresystems.org j-060.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/30 01:11:30 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-063.juliet.futuresystems.org j-061.juliet.futuresystems.org j-057.juliet.futuresystems.org j-055.juliet.futuresystems.org j-053.juliet.futuresystems.org j-012.juliet.futuresystems.org j-058.juliet.futuresystems.org j-060.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/30 01:11:30 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-061.juliet.futuresystems.org j-053.juliet.futuresystems.org j-062.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-058.juliet.futuresystems.org j-060.juliet.futuresystems.org j-054.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/30 01:11:30 INFO fileformat.MultiFileInputFormat: Split on host: j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-059.juliet.futuresystems.org j-061.juliet.futuresystems.org j-057.juliet.futuresystems.org j-053.juliet.futuresystems.org j-012.juliet.futuresystems.org j-064.juliet.futuresystems.org j-058.juliet.futuresystems.org j-060.juliet.futuresystems.org 
+17/03/30 01:11:30 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-063.juliet.futuresystems.org j-057.juliet.futuresystems.org j-055.juliet.futuresystems.org j-053.juliet.futuresystems.org j-012.juliet.futuresystems.org j-065.juliet.futuresystems.org j-058.juliet.futuresystems.org j-060.juliet.futuresystems.org j-013.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/30 01:11:30 INFO fileformat.MultiFileInputFormat: Split on host: j-056.juliet.futuresystems.org j-066.juliet.futuresystems.org j-063.juliet.futuresystems.org j-061.juliet.futuresystems.org j-057.juliet.futuresystems.org j-053.juliet.futuresystems.org j-062.juliet.futuresystems.org j-065.juliet.futuresystems.org j-060.juliet.futuresystems.org j-013.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/30 01:11:30 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-056.juliet.futuresystems.org j-059.juliet.futuresystems.org j-055.juliet.futuresystems.org j-053.juliet.futuresystems.org j-012.juliet.futuresystems.org j-062.juliet.futuresystems.org j-064.juliet.futuresystems.org j-058.juliet.futuresystems.org j-060.juliet.futuresystems.org j-054.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/30 01:11:30 INFO fileformat.MultiFileInputFormat: Split on host: j-056.juliet.futuresystems.org j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-063.juliet.futuresystems.org j-061.juliet.futuresystems.org j-057.juliet.futuresystems.org j-053.juliet.futuresystems.org j-065.juliet.futuresystems.org j-060.juliet.futuresystems.org j-013.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/30 01:11:30 INFO fileformat.MultiFileInputFormat: Split on host: j-059.juliet.futuresystems.org j-063.juliet.futuresystems.org j-061.juliet.futuresystems.org j-057.juliet.futuresystems.org j-062.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-060.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/30 01:11:30 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-056.juliet.futuresystems.org j-061.juliet.futuresystems.org j-055.juliet.futuresystems.org j-012.juliet.futuresystems.org j-058.juliet.futuresystems.org j-054.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/30 01:11:30 INFO fileformat.MultiFileInputFormat: Total # of splits: 16
+17/03/30 01:11:31 INFO mapreduce.JobSubmitter: number of splits:16
+17/03/30 01:11:31 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1490816615146_0009
+command: $JAVA_HOME/bin/java -Dlog4j.configuration=container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dyarn.app.container.log.filesize=0 -Dhadoop.root.logger=INFO,CLA  -Xmx1024m org.apache.hadoop.mapreduce.v2.app.MapCollectiveAppMaster 1><LOG_DIR>/stdout 2><LOG_DIR>/stderr 
+17/03/30 01:11:31 INFO impl.YarnClientImpl: Submitted application application_1490816615146_0009
+17/03/30 01:11:31 INFO mapreduce.Job: The url to track the job: http://j-011:8088/proxy/application_1490816615146_0009/
+17/03/30 01:11:31 INFO mapreduce.Job: Running job: job_1490816615146_0009
+17/03/30 01:11:36 INFO mapreduce.Job: Job job_1490816615146_0009 running in uber mode : false
+17/03/30 01:11:36 INFO mapreduce.Job:  map 0% reduce 0%
+17/03/30 01:11:46 INFO mapreduce.Job:  map 75% reduce 0%
+17/03/30 01:11:47 INFO mapreduce.Job:  map 100% reduce 0%
+17/03/30 02:03:51 INFO mapreduce.Job: Job job_1490816615146_0009 completed successfully
+17/03/30 02:03:51 INFO mapreduce.Job: Counters: 30
+	File System Counters
+		FILE: Number of bytes read=0
+		FILE: Number of bytes written=1701126
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=8237104215
+		HDFS: Number of bytes written=31
+		HDFS: Number of read operations=128
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=32
+	Job Counters 
+		Launched map tasks=16
+		Other local map tasks=16
+		Total time spent by all maps in occupied slots (ms)=50110725
+		Total time spent by all reduces in occupied slots (ms)=0
+		Total time spent by all map tasks (ms)=50110725
+		Total vcore-seconds taken by all map tasks=50110725
+		Total megabyte-seconds taken by all map tasks=51313382400
+	Map-Reduce Framework
+		Map input records=16
+		Map output records=1
+		Input split bytes=1680
+		Spilled Records=0
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=387162
+		CPU time spent (ms)=80460940
+		Physical memory (bytes) snapshot=591087009792
+		Virtual memory (bytes) snapshot=1298330484736
+		Total committed heap usage (bytes)=1118656004096
+	File Input Format Counters 
+		Bytes Read=0
+	File Output Format Counters 
+		Bytes Written=31
+3141885ms
+17/03/30 02:03:52 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+finalCount	3765108890423034368
+[The 1 times] Above experiment is: ./runHarpSgcr.sh /N/u/mengli/harp-sahad/experiments/template/u7-1.t sahad-data/nyc/nyc-u-e-16 sahad-output/nyc/nyc-u-e-16/40-threads/1 16 40
+17/03/30 02:03:53 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+rm: `sahad-output/nyc/nyc-u-e-4/40-threads/2': No such file or directory
+use Local MultiThread? true
+set Number of Map Tasks = 4
+set number of threads: 40
+17/03/30 02:03:55 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Get map collective runner
+17/03/30 02:03:56 INFO client.RMProxy: Connecting to ResourceManager at j-011/172.16.0.11:8032
+17/03/30 02:03:56 INFO input.FileInputFormat: Total input paths to process : 4
+17/03/30 02:03:56 INFO fileformat.MultiFileInputFormat: NUMBER OF FILES: 4
+17/03/30 02:03:56 INFO fileformat.MultiFileInputFormat: NUMBER OF MAPS: 4
+17/03/30 02:03:56 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-061.juliet.futuresystems.org j-012.juliet.futuresystems.org j-053.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-060.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-055.juliet.futuresystems.org j-057.juliet.futuresystems.org j-062.juliet.futuresystems.org j-054.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/30 02:03:56 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-012.juliet.futuresystems.org j-053.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-060.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-055.juliet.futuresystems.org j-057.juliet.futuresystems.org j-062.juliet.futuresystems.org j-058.juliet.futuresystems.org j-054.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/30 02:03:56 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-061.juliet.futuresystems.org j-012.juliet.futuresystems.org j-053.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-060.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-057.juliet.futuresystems.org j-055.juliet.futuresystems.org j-062.juliet.futuresystems.org j-058.juliet.futuresystems.org j-013.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/30 02:03:56 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-061.juliet.futuresystems.org j-012.juliet.futuresystems.org j-053.juliet.futuresystems.org j-065.juliet.futuresystems.org j-060.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-055.juliet.futuresystems.org j-057.juliet.futuresystems.org j-062.juliet.futuresystems.org j-058.juliet.futuresystems.org j-013.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/30 02:03:56 INFO fileformat.MultiFileInputFormat: Total # of splits: 4
+17/03/30 02:03:56 INFO mapreduce.JobSubmitter: number of splits:4
+17/03/30 02:03:56 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1490816615146_0010
+command: $JAVA_HOME/bin/java -Dlog4j.configuration=container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dyarn.app.container.log.filesize=0 -Dhadoop.root.logger=INFO,CLA  -Xmx1024m org.apache.hadoop.mapreduce.v2.app.MapCollectiveAppMaster 1><LOG_DIR>/stdout 2><LOG_DIR>/stderr 
+17/03/30 02:03:57 INFO impl.YarnClientImpl: Submitted application application_1490816615146_0010
+17/03/30 02:03:57 INFO mapreduce.Job: The url to track the job: http://j-011:8088/proxy/application_1490816615146_0010/
+17/03/30 02:03:57 INFO mapreduce.Job: Running job: job_1490816615146_0010
+17/03/30 02:04:02 INFO mapreduce.Job: Job job_1490816615146_0010 running in uber mode : false
+17/03/30 02:04:02 INFO mapreduce.Job:  map 0% reduce 0%
+17/03/30 02:04:12 INFO mapreduce.Job:  map 75% reduce 0%
+17/03/30 02:04:13 INFO mapreduce.Job:  map 100% reduce 0%
+17/03/30 03:22:41 INFO mapreduce.Job: Job job_1490816615146_0010 completed successfully
+17/03/30 03:22:41 INFO mapreduce.Job: Counters: 30
+	File System Counters
+		FILE: Number of bytes read=0
+		FILE: Number of bytes written=425256
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=8237093843
+		HDFS: Number of bytes written=23
+		HDFS: Number of read operations=32
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=8
+	Job Counters 
+		Launched map tasks=4
+		Other local map tasks=4
+		Total time spent by all maps in occupied slots (ms)=18867171
+		Total time spent by all reduces in occupied slots (ms)=0
+		Total time spent by all map tasks (ms)=18867171
+		Total vcore-seconds taken by all map tasks=18867171
+		Total megabyte-seconds taken by all map tasks=19319983104
+	Map-Reduce Framework
+		Map input records=4
+		Map output records=1
+		Input split bytes=416
+		Spilled Records=0
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=146465
+		CPU time spent (ms)=25961280
+		Physical memory (bytes) snapshot=222892290048
+		Virtual memory (bytes) snapshot=324633530368
+		Total committed heap usage (bytes)=274877906944
+	File Input Format Counters 
+		Bytes Read=0
+	File Output Format Counters 
+		Bytes Written=23
+4726321ms
+17/03/30 03:22:42 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+finalCount	37653394086
+[The 2 times] Above experiment is: ./runHarpSgcr.sh /N/u/mengli/harp-sahad/experiments/template/u3-1.t sahad-data/nyc/nyc-u-e-4 sahad-output/nyc/nyc-u-e-4/40-threads/2 4 40
+17/03/30 03:22:44 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+rm: `sahad-output/nyc/nyc-u-e-8/40-threads/2': No such file or directory
+use Local MultiThread? true
+set Number of Map Tasks = 8
+set number of threads: 40
+17/03/30 03:22:45 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Get map collective runner
+17/03/30 03:22:46 INFO client.RMProxy: Connecting to ResourceManager at j-011/172.16.0.11:8032
+17/03/30 03:22:46 INFO input.FileInputFormat: Total input paths to process : 8
+17/03/30 03:22:46 INFO fileformat.MultiFileInputFormat: NUMBER OF FILES: 8
+17/03/30 03:22:46 INFO fileformat.MultiFileInputFormat: NUMBER OF MAPS: 8
+17/03/30 03:22:46 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-061.juliet.futuresystems.org j-053.juliet.futuresystems.org j-012.juliet.futuresystems.org j-064.juliet.futuresystems.org j-060.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-057.juliet.futuresystems.org j-062.juliet.futuresystems.org j-058.juliet.futuresystems.org j-054.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/30 03:22:46 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-061.juliet.futuresystems.org j-012.juliet.futuresystems.org j-053.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-060.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-057.juliet.futuresystems.org j-062.juliet.futuresystems.org j-058.juliet.futuresystems.org j-054.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/30 03:22:46 INFO fileformat.MultiFileInputFormat: Split on host: j-056.juliet.futuresystems.org j-066.juliet.futuresystems.org j-063.juliet.futuresystems.org j-061.juliet.futuresystems.org j-055.juliet.futuresystems.org j-057.juliet.futuresystems.org j-012.juliet.futuresystems.org j-053.juliet.futuresystems.org j-062.juliet.futuresystems.org j-065.juliet.futuresystems.org j-058.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/30 03:22:46 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-057.juliet.futuresystems.org j-055.juliet.futuresystems.org j-053.juliet.futuresystems.org j-062.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-058.juliet.futuresystems.org j-060.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/30 03:22:46 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-061.juliet.futuresystems.org j-053.juliet.futuresystems.org j-012.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-060.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-055.juliet.futuresystems.org j-057.juliet.futuresystems.org j-062.juliet.futuresystems.org j-058.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/30 03:22:46 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-061.juliet.futuresystems.org j-053.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-060.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-055.juliet.futuresystems.org j-057.juliet.futuresystems.org j-062.juliet.futuresystems.org j-058.juliet.futuresystems.org j-013.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/30 03:22:46 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-061.juliet.futuresystems.org j-053.juliet.futuresystems.org j-012.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-060.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-055.juliet.futuresystems.org j-057.juliet.futuresystems.org j-062.juliet.futuresystems.org j-013.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/30 03:22:46 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-063.juliet.futuresystems.org j-061.juliet.futuresystems.org j-012.juliet.futuresystems.org j-053.juliet.futuresystems.org j-062.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-058.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/30 03:22:46 INFO fileformat.MultiFileInputFormat: Total # of splits: 8
+17/03/30 03:22:46 INFO mapreduce.JobSubmitter: number of splits:8
+17/03/30 03:22:46 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1490816615146_0011
+command: $JAVA_HOME/bin/java -Dlog4j.configuration=container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dyarn.app.container.log.filesize=0 -Dhadoop.root.logger=INFO,CLA  -Xmx1024m org.apache.hadoop.mapreduce.v2.app.MapCollectiveAppMaster 1><LOG_DIR>/stdout 2><LOG_DIR>/stderr 
+17/03/30 03:22:47 INFO impl.YarnClientImpl: Submitted application application_1490816615146_0011
+17/03/30 03:22:47 INFO mapreduce.Job: The url to track the job: http://j-011:8088/proxy/application_1490816615146_0011/
+17/03/30 03:22:47 INFO mapreduce.Job: Running job: job_1490816615146_0011
+17/03/30 03:22:52 INFO mapreduce.Job: Job job_1490816615146_0011 running in uber mode : false
+17/03/30 03:22:52 INFO mapreduce.Job:  map 0% reduce 0%
+17/03/30 03:23:02 INFO mapreduce.Job:  map 38% reduce 0%
+17/03/30 03:23:03 INFO mapreduce.Job:  map 100% reduce 0%
+17/03/30 04:01:32 INFO mapreduce.Job: Job job_1490816615146_0011 completed successfully
+17/03/30 04:01:32 INFO mapreduce.Job: Counters: 30
+	File System Counters
+		FILE: Number of bytes read=0
+		FILE: Number of bytes written=850512
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=8237096047
+		HDFS: Number of bytes written=23
+		HDFS: Number of read operations=64
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=16
+	Job Counters 
+		Launched map tasks=8
+		Other local map tasks=8
+		Total time spent by all maps in occupied slots (ms)=18538559
+		Total time spent by all reduces in occupied slots (ms)=0
+		Total time spent by all map tasks (ms)=18538559
+		Total vcore-seconds taken by all map tasks=18538559
+		Total megabyte-seconds taken by all map tasks=18983484416
+	Map-Reduce Framework
+		Map input records=8
+		Map output records=1
+		Input split bytes=832
+		Spilled Records=0
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=86683
+		CPU time spent (ms)=25156020
+		Physical memory (bytes) snapshot=310255120384
+		Virtual memory (bytes) snapshot=649210736640
+		Total committed heap usage (bytes)=547350380544
+	File Input Format Counters 
+		Bytes Read=0
+	File Output Format Counters 
+		Bytes Written=23
+2327657ms
+17/03/30 04:01:33 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+finalCount	37651440658
+[The 2 times] Above experiment is: ./runHarpSgcr.sh /N/u/mengli/harp-sahad/experiments/template/u3-1.t sahad-data/nyc/nyc-u-e-8 sahad-output/nyc/nyc-u-e-8/40-threads/2 8 40
+17/03/30 04:01:35 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+rm: `sahad-output/nyc/nyc-u-e-16/40-threads/2': No such file or directory
+use Local MultiThread? true
+set Number of Map Tasks = 16
+set number of threads: 40
+17/03/30 04:01:37 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Get map collective runner
+17/03/30 04:01:37 INFO client.RMProxy: Connecting to ResourceManager at j-011/172.16.0.11:8032
+17/03/30 04:01:38 INFO input.FileInputFormat: Total input paths to process : 16
+17/03/30 04:01:38 INFO fileformat.MultiFileInputFormat: NUMBER OF FILES: 16
+17/03/30 04:01:38 INFO fileformat.MultiFileInputFormat: NUMBER OF MAPS: 16
+17/03/30 04:01:38 INFO fileformat.MultiFileInputFormat: Split on host: j-056.juliet.futuresystems.org j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-063.juliet.futuresystems.org j-055.juliet.futuresystems.org j-053.juliet.futuresystems.org j-062.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-060.juliet.futuresystems.org 
+17/03/30 04:01:38 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-063.juliet.futuresystems.org j-061.juliet.futuresystems.org j-055.juliet.futuresystems.org j-053.juliet.futuresystems.org j-012.juliet.futuresystems.org j-058.juliet.futuresystems.org j-054.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/30 04:01:38 INFO fileformat.MultiFileInputFormat: Split on host: j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-059.juliet.futuresystems.org j-061.juliet.futuresystems.org j-057.juliet.futuresystems.org j-012.juliet.futuresystems.org j-053.juliet.futuresystems.org j-065.juliet.futuresystems.org j-058.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/30 04:01:38 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-063.juliet.futuresystems.org j-055.juliet.futuresystems.org j-057.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-058.juliet.futuresystems.org j-060.juliet.futuresystems.org 
+17/03/30 04:01:38 INFO fileformat.MultiFileInputFormat: Split on host: j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-055.juliet.futuresystems.org j-057.juliet.futuresystems.org j-012.juliet.futuresystems.org j-053.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-058.juliet.futuresystems.org j-060.juliet.futuresystems.org 
+17/03/30 04:01:38 INFO fileformat.MultiFileInputFormat: Split on host: j-056.juliet.futuresystems.org j-066.juliet.futuresystems.org j-063.juliet.futuresystems.org j-061.juliet.futuresystems.org j-055.juliet.futuresystems.org j-053.juliet.futuresystems.org j-012.juliet.futuresystems.org j-062.juliet.futuresystems.org j-058.juliet.futuresystems.org j-060.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/30 04:01:38 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-061.juliet.futuresystems.org j-055.juliet.futuresystems.org j-053.juliet.futuresystems.org j-062.juliet.futuresystems.org j-065.juliet.futuresystems.org j-060.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/30 04:01:38 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-063.juliet.futuresystems.org j-061.juliet.futuresystems.org j-057.juliet.futuresystems.org j-055.juliet.futuresystems.org j-053.juliet.futuresystems.org j-012.juliet.futuresystems.org j-058.juliet.futuresystems.org j-060.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/30 04:01:38 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-061.juliet.futuresystems.org j-053.juliet.futuresystems.org j-062.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-058.juliet.futuresystems.org j-060.juliet.futuresystems.org j-054.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/30 04:01:38 INFO fileformat.MultiFileInputFormat: Split on host: j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-059.juliet.futuresystems.org j-061.juliet.futuresystems.org j-057.juliet.futuresystems.org j-053.juliet.futuresystems.org j-012.juliet.futuresystems.org j-064.juliet.futuresystems.org j-058.juliet.futuresystems.org j-060.juliet.futuresystems.org 
+17/03/30 04:01:38 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-063.juliet.futuresystems.org j-057.juliet.futuresystems.org j-055.juliet.futuresystems.org j-012.juliet.futuresystems.org j-053.juliet.futuresystems.org j-065.juliet.futuresystems.org j-058.juliet.futuresystems.org j-060.juliet.futuresystems.org j-013.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/30 04:01:38 INFO fileformat.MultiFileInputFormat: Split on host: j-056.juliet.futuresystems.org j-066.juliet.futuresystems.org j-063.juliet.futuresystems.org j-061.juliet.futuresystems.org j-057.juliet.futuresystems.org j-053.juliet.futuresystems.org j-062.juliet.futuresystems.org j-065.juliet.futuresystems.org j-060.juliet.futuresystems.org j-013.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/30 04:01:38 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-056.juliet.futuresystems.org j-059.juliet.futuresystems.org j-055.juliet.futuresystems.org j-053.juliet.futuresystems.org j-012.juliet.futuresystems.org j-062.juliet.futuresystems.org j-064.juliet.futuresystems.org j-058.juliet.futuresystems.org j-060.juliet.futuresystems.org j-054.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/30 04:01:38 INFO fileformat.MultiFileInputFormat: Split on host: j-056.juliet.futuresystems.org j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-063.juliet.futuresystems.org j-061.juliet.futuresystems.org j-057.juliet.futuresystems.org j-053.juliet.futuresystems.org j-065.juliet.futuresystems.org j-060.juliet.futuresystems.org j-013.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/30 04:01:38 INFO fileformat.MultiFileInputFormat: Split on host: j-059.juliet.futuresystems.org j-063.juliet.futuresystems.org j-061.juliet.futuresystems.org j-057.juliet.futuresystems.org j-062.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-060.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/30 04:01:38 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-056.juliet.futuresystems.org j-061.juliet.futuresystems.org j-055.juliet.futuresystems.org j-012.juliet.futuresystems.org j-058.juliet.futuresystems.org j-054.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/30 04:01:38 INFO fileformat.MultiFileInputFormat: Total # of splits: 16
+17/03/30 04:01:38 INFO mapreduce.JobSubmitter: number of splits:16
+17/03/30 04:01:38 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1490816615146_0012
+command: $JAVA_HOME/bin/java -Dlog4j.configuration=container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dyarn.app.container.log.filesize=0 -Dhadoop.root.logger=INFO,CLA  -Xmx1024m org.apache.hadoop.mapreduce.v2.app.MapCollectiveAppMaster 1><LOG_DIR>/stdout 2><LOG_DIR>/stderr 
+17/03/30 04:01:38 INFO impl.YarnClientImpl: Submitted application application_1490816615146_0012
+17/03/30 04:01:38 INFO mapreduce.Job: The url to track the job: http://j-011:8088/proxy/application_1490816615146_0012/
+17/03/30 04:01:38 INFO mapreduce.Job: Running job: job_1490816615146_0012
+17/03/30 04:01:43 INFO mapreduce.Job: Job job_1490816615146_0012 running in uber mode : false
+17/03/30 04:01:43 INFO mapreduce.Job:  map 0% reduce 0%
+17/03/30 04:01:54 INFO mapreduce.Job:  map 100% reduce 0%
+17/03/30 04:26:09 INFO mapreduce.Job: Job job_1490816615146_0012 completed successfully
+17/03/30 04:26:09 INFO mapreduce.Job: Counters: 30
+	File System Counters
+		FILE: Number of bytes read=0
+		FILE: Number of bytes written=1701126
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=8237104215
+		HDFS: Number of bytes written=23
+		HDFS: Number of read operations=128
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=32
+	Job Counters 
+		Launched map tasks=16
+		Other local map tasks=16
+		Total time spent by all maps in occupied slots (ms)=23401198
+		Total time spent by all reduces in occupied slots (ms)=0
+		Total time spent by all map tasks (ms)=23401198
+		Total vcore-seconds taken by all map tasks=23401198
+		Total megabyte-seconds taken by all map tasks=23962826752
+	Map-Reduce Framework
+		Map input records=16
+		Map output records=1
+		Input split bytes=1680
+		Spilled Records=0
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=109932
+		CPU time spent (ms)=33975020
+		Physical memory (bytes) snapshot=479530463232
+		Virtual memory (bytes) snapshot=1298358104064
+		Total committed heap usage (bytes)=1100595855360
+	File Input Format Counters 
+		Bytes Read=0
+	File Output Format Counters 
+		Bytes Written=23
+1473194ms
+17/03/30 04:26:10 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+finalCount	37656759294
+[The 2 times] Above experiment is: ./runHarpSgcr.sh /N/u/mengli/harp-sahad/experiments/template/u3-1.t sahad-data/nyc/nyc-u-e-16 sahad-output/nyc/nyc-u-e-16/40-threads/2 16 40
+17/03/30 04:26:12 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/03/30 04:26:13 INFO fs.TrashPolicyDefault: Namenode trash configuration: Deletion interval = 0 minutes, Emptier interval = 0 minutes.
+Deleted sahad-output/nyc/nyc-u-e-4/40-threads/2
+use Local MultiThread? true
+set Number of Map Tasks = 4
+set number of threads: 40
+17/03/30 04:26:14 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Get map collective runner
+17/03/30 04:26:14 INFO client.RMProxy: Connecting to ResourceManager at j-011/172.16.0.11:8032
+17/03/30 04:26:15 INFO input.FileInputFormat: Total input paths to process : 4
+17/03/30 04:26:15 INFO fileformat.MultiFileInputFormat: NUMBER OF FILES: 4
+17/03/30 04:26:15 INFO fileformat.MultiFileInputFormat: NUMBER OF MAPS: 4
+17/03/30 04:26:15 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-061.juliet.futuresystems.org j-012.juliet.futuresystems.org j-053.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-060.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-055.juliet.futuresystems.org j-057.juliet.futuresystems.org j-062.juliet.futuresystems.org j-054.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/30 04:26:15 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-012.juliet.futuresystems.org j-053.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-060.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-055.juliet.futuresystems.org j-057.juliet.futuresystems.org j-062.juliet.futuresystems.org j-058.juliet.futuresystems.org j-013.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/30 04:26:15 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-061.juliet.futuresystems.org j-012.juliet.futuresystems.org j-053.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-060.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-057.juliet.futuresystems.org j-055.juliet.futuresystems.org j-062.juliet.futuresystems.org j-058.juliet.futuresystems.org j-013.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/30 04:26:15 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-061.juliet.futuresystems.org j-012.juliet.futuresystems.org j-053.juliet.futuresystems.org j-065.juliet.futuresystems.org j-060.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-055.juliet.futuresystems.org j-057.juliet.futuresystems.org j-062.juliet.futuresystems.org j-058.juliet.futuresystems.org j-013.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/30 04:26:15 INFO fileformat.MultiFileInputFormat: Total # of splits: 4
+17/03/30 04:26:15 INFO mapreduce.JobSubmitter: number of splits:4
+17/03/30 04:26:15 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1490816615146_0013
+command: $JAVA_HOME/bin/java -Dlog4j.configuration=container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dyarn.app.container.log.filesize=0 -Dhadoop.root.logger=INFO,CLA  -Xmx1024m org.apache.hadoop.mapreduce.v2.app.MapCollectiveAppMaster 1><LOG_DIR>/stdout 2><LOG_DIR>/stderr 
+17/03/30 04:26:15 INFO impl.YarnClientImpl: Submitted application application_1490816615146_0013
+17/03/30 04:26:15 INFO mapreduce.Job: The url to track the job: http://j-011:8088/proxy/application_1490816615146_0013/
+17/03/30 04:26:15 INFO mapreduce.Job: Running job: job_1490816615146_0013
+17/03/30 04:26:20 INFO mapreduce.Job: Job job_1490816615146_0013 running in uber mode : false
+17/03/30 04:26:20 INFO mapreduce.Job:  map 0% reduce 0%
+17/03/30 04:26:32 INFO mapreduce.Job:  map 100% reduce 0%
+17/03/30 06:16:12 INFO mapreduce.Job: Job job_1490816615146_0013 completed successfully
+17/03/30 06:16:12 INFO mapreduce.Job: Counters: 30
+	File System Counters
+		FILE: Number of bytes read=0
+		FILE: Number of bytes written=425256
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=8237093843
+		HDFS: Number of bytes written=27
+		HDFS: Number of read operations=32
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=8
+	Job Counters 
+		Launched map tasks=4
+		Other local map tasks=4
+		Total time spent by all maps in occupied slots (ms)=26356886
+		Total time spent by all reduces in occupied slots (ms)=0
+		Total time spent by all map tasks (ms)=26356886
+		Total vcore-seconds taken by all map tasks=26356886
+		Total megabyte-seconds taken by all map tasks=26989451264
+	Map-Reduce Framework
+		Map input records=4
+		Map output records=1
+		Input split bytes=416
+		Spilled Records=0
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=286251
+		CPU time spent (ms)=40151790
+		Physical memory (bytes) snapshot=282973700096
+		Virtual memory (bytes) snapshot=324620165120
+		Total committed heap usage (bytes)=275907608576
+	File Input Format Counters 
+		Bytes Read=0
+	File Output Format Counters 
+		Bytes Written=27
+6599313ms
+17/03/30 06:16:14 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+finalCount	274109744823098
+[The 2 times] Above experiment is: ./runHarpSgcr.sh /N/u/mengli/harp-sahad/experiments/template/u5-1.t sahad-data/nyc/nyc-u-e-4 sahad-output/nyc/nyc-u-e-4/40-threads/2 4 40
+17/03/30 06:16:15 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/03/30 06:16:16 INFO fs.TrashPolicyDefault: Namenode trash configuration: Deletion interval = 0 minutes, Emptier interval = 0 minutes.
+Deleted sahad-output/nyc/nyc-u-e-8/40-threads/2
+use Local MultiThread? true
+set Number of Map Tasks = 8
+set number of threads: 40
+17/03/30 06:16:17 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Get map collective runner
+17/03/30 06:16:17 INFO client.RMProxy: Connecting to ResourceManager at j-011/172.16.0.11:8032
+17/03/30 06:16:18 INFO input.FileInputFormat: Total input paths to process : 8
+17/03/30 06:16:18 INFO fileformat.MultiFileInputFormat: NUMBER OF FILES: 8
+17/03/30 06:16:18 INFO fileformat.MultiFileInputFormat: NUMBER OF MAPS: 8
+17/03/30 06:16:18 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-061.juliet.futuresystems.org j-053.juliet.futuresystems.org j-012.juliet.futuresystems.org j-064.juliet.futuresystems.org j-060.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-057.juliet.futuresystems.org j-062.juliet.futuresystems.org j-058.juliet.futuresystems.org j-054.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/30 06:16:18 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-061.juliet.futuresystems.org j-012.juliet.futuresystems.org j-053.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-060.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-057.juliet.futuresystems.org j-062.juliet.futuresystems.org j-058.juliet.futuresystems.org j-054.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/30 06:16:18 INFO fileformat.MultiFileInputFormat: Split on host: j-056.juliet.futuresystems.org j-066.juliet.futuresystems.org j-063.juliet.futuresystems.org j-061.juliet.futuresystems.org j-055.juliet.futuresystems.org j-057.juliet.futuresystems.org j-012.juliet.futuresystems.org j-053.juliet.futuresystems.org j-062.juliet.futuresystems.org j-065.juliet.futuresystems.org j-058.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/30 06:16:18 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-057.juliet.futuresystems.org j-055.juliet.futuresystems.org j-053.juliet.futuresystems.org j-062.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-058.juliet.futuresystems.org j-060.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/30 06:16:18 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-061.juliet.futuresystems.org j-053.juliet.futuresystems.org j-012.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-060.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-055.juliet.futuresystems.org j-057.juliet.futuresystems.org j-062.juliet.futuresystems.org j-058.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/30 06:16:18 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-061.juliet.futuresystems.org j-053.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-060.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-055.juliet.futuresystems.org j-057.juliet.futuresystems.org j-062.juliet.futuresystems.org j-058.juliet.futuresystems.org j-013.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/30 06:16:18 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-061.juliet.futuresystems.org j-053.juliet.futuresystems.org j-012.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-060.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-055.juliet.futuresystems.org j-057.juliet.futuresystems.org j-062.juliet.futuresystems.org j-013.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/30 06:16:18 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-063.juliet.futuresystems.org j-061.juliet.futuresystems.org j-012.juliet.futuresystems.org j-053.juliet.futuresystems.org j-062.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-058.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/30 06:16:18 INFO fileformat.MultiFileInputFormat: Total # of splits: 8
+17/03/30 06:16:18 INFO mapreduce.JobSubmitter: number of splits:8
+17/03/30 06:16:18 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1490816615146_0014
+command: $JAVA_HOME/bin/java -Dlog4j.configuration=container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dyarn.app.container.log.filesize=0 -Dhadoop.root.logger=INFO,CLA  -Xmx1024m org.apache.hadoop.mapreduce.v2.app.MapCollectiveAppMaster 1><LOG_DIR>/stdout 2><LOG_DIR>/stderr 
+17/03/30 06:16:18 INFO impl.YarnClientImpl: Submitted application application_1490816615146_0014
+17/03/30 06:16:18 INFO mapreduce.Job: The url to track the job: http://j-011:8088/proxy/application_1490816615146_0014/
+17/03/30 06:16:18 INFO mapreduce.Job: Running job: job_1490816615146_0014
+17/03/30 06:16:24 INFO mapreduce.Job: Job job_1490816615146_0014 running in uber mode : false
+17/03/30 06:16:24 INFO mapreduce.Job:  map 0% reduce 0%
+17/03/30 06:16:34 INFO mapreduce.Job:  map 88% reduce 0%
+17/03/30 06:16:35 INFO mapreduce.Job:  map 100% reduce 0%
+17/03/30 07:11:10 INFO mapreduce.Job: Job job_1490816615146_0014 completed successfully
+17/03/30 07:11:10 INFO mapreduce.Job: Counters: 30
+	File System Counters
+		FILE: Number of bytes read=0
+		FILE: Number of bytes written=850512
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=8237096047
+		HDFS: Number of bytes written=27
+		HDFS: Number of read operations=64
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=16
+	Job Counters 
+		Launched map tasks=8
+		Other local map tasks=8
+		Total time spent by all maps in occupied slots (ms)=26275306
+		Total time spent by all reduces in occupied slots (ms)=0
+		Total time spent by all map tasks (ms)=26275306
+		Total vcore-seconds taken by all map tasks=26275306
+		Total megabyte-seconds taken by all map tasks=26905913344
+	Map-Reduce Framework
+		Map input records=8
+		Map output records=1
+		Input split bytes=832
+		Spilled Records=0
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=164421
+		CPU time spent (ms)=37669590
+		Physical memory (bytes) snapshot=368442122240
+		Virtual memory (bytes) snapshot=649170493440
+		Total committed heap usage (bytes)=550923927552
+	File Input Format Counters 
+		Bytes Read=0
+	File Output Format Counters 
+		Bytes Written=27
+3293975ms
+17/03/30 07:11:11 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+finalCount	274118742728515
+[The 2 times] Above experiment is: ./runHarpSgcr.sh /N/u/mengli/harp-sahad/experiments/template/u5-1.t sahad-data/nyc/nyc-u-e-8 sahad-output/nyc/nyc-u-e-8/40-threads/2 8 40
+17/03/30 07:11:13 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/03/30 07:11:14 INFO fs.TrashPolicyDefault: Namenode trash configuration: Deletion interval = 0 minutes, Emptier interval = 0 minutes.
+Deleted sahad-output/nyc/nyc-u-e-16/40-threads/2
+use Local MultiThread? true
+set Number of Map Tasks = 16
+set number of threads: 40
+17/03/30 07:11:15 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Get map collective runner
+17/03/30 07:11:15 INFO client.RMProxy: Connecting to ResourceManager at j-011/172.16.0.11:8032
+17/03/30 07:11:16 INFO input.FileInputFormat: Total input paths to process : 16
+17/03/30 07:11:16 INFO fileformat.MultiFileInputFormat: NUMBER OF FILES: 16
+17/03/30 07:11:16 INFO fileformat.MultiFileInputFormat: NUMBER OF MAPS: 16
+17/03/30 07:11:16 INFO fileformat.MultiFileInputFormat: Split on host: j-056.juliet.futuresystems.org j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-063.juliet.futuresystems.org j-055.juliet.futuresystems.org j-053.juliet.futuresystems.org j-062.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-060.juliet.futuresystems.org 
+17/03/30 07:11:16 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-063.juliet.futuresystems.org j-061.juliet.futuresystems.org j-055.juliet.futuresystems.org j-053.juliet.futuresystems.org j-012.juliet.futuresystems.org j-058.juliet.futuresystems.org j-054.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/30 07:11:16 INFO fileformat.MultiFileInputFormat: Split on host: j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-059.juliet.futuresystems.org j-061.juliet.futuresystems.org j-057.juliet.futuresystems.org j-012.juliet.futuresystems.org j-053.juliet.futuresystems.org j-065.juliet.futuresystems.org j-058.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/30 07:11:16 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-063.juliet.futuresystems.org j-055.juliet.futuresystems.org j-057.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-058.juliet.futuresystems.org j-060.juliet.futuresystems.org 
+17/03/30 07:11:16 INFO fileformat.MultiFileInputFormat: Split on host: j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-055.juliet.futuresystems.org j-057.juliet.futuresystems.org j-012.juliet.futuresystems.org j-053.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-058.juliet.futuresystems.org j-060.juliet.futuresystems.org 
+17/03/30 07:11:16 INFO fileformat.MultiFileInputFormat: Split on host: j-056.juliet.futuresystems.org j-066.juliet.futuresystems.org j-063.juliet.futuresystems.org j-061.juliet.futuresystems.org j-055.juliet.futuresystems.org j-053.juliet.futuresystems.org j-012.juliet.futuresystems.org j-062.juliet.futuresystems.org j-058.juliet.futuresystems.org j-060.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/30 07:11:16 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-061.juliet.futuresystems.org j-055.juliet.futuresystems.org j-053.juliet.futuresystems.org j-062.juliet.futuresystems.org j-065.juliet.futuresystems.org j-060.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/30 07:11:16 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-063.juliet.futuresystems.org j-061.juliet.futuresystems.org j-057.juliet.futuresystems.org j-055.juliet.futuresystems.org j-053.juliet.futuresystems.org j-012.juliet.futuresystems.org j-058.juliet.futuresystems.org j-060.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/30 07:11:16 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-061.juliet.futuresystems.org j-053.juliet.futuresystems.org j-062.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-058.juliet.futuresystems.org j-060.juliet.futuresystems.org j-054.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/30 07:11:16 INFO fileformat.MultiFileInputFormat: Split on host: j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-059.juliet.futuresystems.org j-061.juliet.futuresystems.org j-057.juliet.futuresystems.org j-053.juliet.futuresystems.org j-012.juliet.futuresystems.org j-064.juliet.futuresystems.org j-058.juliet.futuresystems.org j-060.juliet.futuresystems.org 
+17/03/30 07:11:16 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-063.juliet.futuresystems.org j-057.juliet.futuresystems.org j-055.juliet.futuresystems.org j-053.juliet.futuresystems.org j-012.juliet.futuresystems.org j-065.juliet.futuresystems.org j-058.juliet.futuresystems.org j-060.juliet.futuresystems.org j-013.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/30 07:11:16 INFO fileformat.MultiFileInputFormat: Split on host: j-056.juliet.futuresystems.org j-066.juliet.futuresystems.org j-063.juliet.futuresystems.org j-061.juliet.futuresystems.org j-057.juliet.futuresystems.org j-053.juliet.futuresystems.org j-062.juliet.futuresystems.org j-065.juliet.futuresystems.org j-060.juliet.futuresystems.org j-013.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/30 07:11:16 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-056.juliet.futuresystems.org j-059.juliet.futuresystems.org j-055.juliet.futuresystems.org j-053.juliet.futuresystems.org j-012.juliet.futuresystems.org j-062.juliet.futuresystems.org j-064.juliet.futuresystems.org j-058.juliet.futuresystems.org j-060.juliet.futuresystems.org j-054.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/30 07:11:16 INFO fileformat.MultiFileInputFormat: Split on host: j-056.juliet.futuresystems.org j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-063.juliet.futuresystems.org j-061.juliet.futuresystems.org j-057.juliet.futuresystems.org j-053.juliet.futuresystems.org j-065.juliet.futuresystems.org j-060.juliet.futuresystems.org j-013.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/30 07:11:16 INFO fileformat.MultiFileInputFormat: Split on host: j-059.juliet.futuresystems.org j-063.juliet.futuresystems.org j-061.juliet.futuresystems.org j-057.juliet.futuresystems.org j-062.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-060.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/30 07:11:16 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-056.juliet.futuresystems.org j-061.juliet.futuresystems.org j-055.juliet.futuresystems.org j-012.juliet.futuresystems.org j-058.juliet.futuresystems.org j-054.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/30 07:11:16 INFO fileformat.MultiFileInputFormat: Total # of splits: 16
+17/03/30 07:11:16 INFO mapreduce.JobSubmitter: number of splits:16
+17/03/30 07:11:16 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1490816615146_0015
+command: $JAVA_HOME/bin/java -Dlog4j.configuration=container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dyarn.app.container.log.filesize=0 -Dhadoop.root.logger=INFO,CLA  -Xmx1024m org.apache.hadoop.mapreduce.v2.app.MapCollectiveAppMaster 1><LOG_DIR>/stdout 2><LOG_DIR>/stderr 
+17/03/30 07:11:16 INFO impl.YarnClientImpl: Submitted application application_1490816615146_0015
+17/03/30 07:11:16 INFO mapreduce.Job: The url to track the job: http://j-011:8088/proxy/application_1490816615146_0015/
+17/03/30 07:11:16 INFO mapreduce.Job: Running job: job_1490816615146_0015
+17/03/30 07:11:21 INFO mapreduce.Job: Job job_1490816615146_0015 running in uber mode : false
+17/03/30 07:11:21 INFO mapreduce.Job:  map 0% reduce 0%
+17/03/30 07:11:33 INFO mapreduce.Job:  map 100% reduce 0%
+17/03/30 07:47:51 INFO mapreduce.Job: Job job_1490816615146_0015 completed successfully
+17/03/30 07:47:51 INFO mapreduce.Job: Counters: 30
+	File System Counters
+		FILE: Number of bytes read=0
+		FILE: Number of bytes written=1701126
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=8237104215
+		HDFS: Number of bytes written=27
+		HDFS: Number of read operations=128
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=32
+	Job Counters 
+		Launched map tasks=16
+		Other local map tasks=16
+		Total time spent by all maps in occupied slots (ms)=34976053
+		Total time spent by all reduces in occupied slots (ms)=0
+		Total time spent by all map tasks (ms)=34976053
+		Total vcore-seconds taken by all map tasks=34976053
+		Total megabyte-seconds taken by all map tasks=35815478272
+	Map-Reduce Framework
+		Map input records=16
+		Map output records=1
+		Input split bytes=1680
+		Spilled Records=0
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=209658
+		CPU time spent (ms)=52748640
+		Physical memory (bytes) snapshot=514796339200
+		Virtual memory (bytes) snapshot=1298345541632
+		Total committed heap usage (bytes)=1115995766784
+	File Input Format Counters 
+		Bytes Read=0
+	File Output Format Counters 
+		Bytes Written=27
+2196885ms
+17/03/30 07:47:52 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+finalCount	274117575537421
+[The 2 times] Above experiment is: ./runHarpSgcr.sh /N/u/mengli/harp-sahad/experiments/template/u5-1.t sahad-data/nyc/nyc-u-e-16 sahad-output/nyc/nyc-u-e-16/40-threads/2 16 40
+17/03/30 07:47:54 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/03/30 07:47:54 INFO fs.TrashPolicyDefault: Namenode trash configuration: Deletion interval = 0 minutes, Emptier interval = 0 minutes.
+Deleted sahad-output/nyc/nyc-u-e-4/40-threads/2
+use Local MultiThread? true
+set Number of Map Tasks = 4
+set number of threads: 40
+17/03/30 07:47:55 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Get map collective runner
+17/03/30 07:47:56 INFO client.RMProxy: Connecting to ResourceManager at j-011/172.16.0.11:8032
+17/03/30 07:47:57 INFO input.FileInputFormat: Total input paths to process : 4
+17/03/30 07:47:57 INFO fileformat.MultiFileInputFormat: NUMBER OF FILES: 4
+17/03/30 07:47:57 INFO fileformat.MultiFileInputFormat: NUMBER OF MAPS: 4
+17/03/30 07:47:57 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-061.juliet.futuresystems.org j-012.juliet.futuresystems.org j-053.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-060.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-055.juliet.futuresystems.org j-057.juliet.futuresystems.org j-062.juliet.futuresystems.org j-054.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/30 07:47:57 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-012.juliet.futuresystems.org j-053.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-060.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-055.juliet.futuresystems.org j-057.juliet.futuresystems.org j-062.juliet.futuresystems.org j-058.juliet.futuresystems.org j-013.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/30 07:47:57 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-061.juliet.futuresystems.org j-012.juliet.futuresystems.org j-053.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-060.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-057.juliet.futuresystems.org j-055.juliet.futuresystems.org j-062.juliet.futuresystems.org j-058.juliet.futuresystems.org j-013.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/30 07:47:57 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-061.juliet.futuresystems.org j-012.juliet.futuresystems.org j-053.juliet.futuresystems.org j-065.juliet.futuresystems.org j-060.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-055.juliet.futuresystems.org j-057.juliet.futuresystems.org j-062.juliet.futuresystems.org j-058.juliet.futuresystems.org j-013.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/30 07:47:57 INFO fileformat.MultiFileInputFormat: Total # of splits: 4
+17/03/30 07:47:57 INFO mapreduce.JobSubmitter: number of splits:4
+17/03/30 07:47:57 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1490816615146_0016
+command: $JAVA_HOME/bin/java -Dlog4j.configuration=container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dyarn.app.container.log.filesize=0 -Dhadoop.root.logger=INFO,CLA  -Xmx1024m org.apache.hadoop.mapreduce.v2.app.MapCollectiveAppMaster 1><LOG_DIR>/stdout 2><LOG_DIR>/stderr 
+17/03/30 07:47:57 INFO impl.YarnClientImpl: Submitted application application_1490816615146_0016
+17/03/30 07:47:57 INFO mapreduce.Job: The url to track the job: http://j-011:8088/proxy/application_1490816615146_0016/
+17/03/30 07:47:57 INFO mapreduce.Job: Running job: job_1490816615146_0016
+17/03/30 07:48:02 INFO mapreduce.Job: Job job_1490816615146_0016 running in uber mode : false
+17/03/30 07:48:02 INFO mapreduce.Job:  map 0% reduce 0%
+17/03/30 07:48:12 INFO mapreduce.Job:  map 25% reduce 0%
+17/03/30 07:48:13 INFO mapreduce.Job:  map 100% reduce 0%
+17/03/30 10:14:41 INFO mapreduce.Job: Job job_1490816615146_0016 completed successfully
+17/03/30 10:14:41 INFO mapreduce.Job: Counters: 30
+	File System Counters
+		FILE: Number of bytes read=0
+		FILE: Number of bytes written=425256
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=8237093843
+		HDFS: Number of bytes written=31
+		HDFS: Number of read operations=32
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=8
+	Job Counters 
+		Launched map tasks=4
+		Other local map tasks=4
+		Total time spent by all maps in occupied slots (ms)=35182466
+		Total time spent by all reduces in occupied slots (ms)=0
+		Total time spent by all map tasks (ms)=35182466
+		Total vcore-seconds taken by all map tasks=35182466
+		Total megabyte-seconds taken by all map tasks=36026845184
+	Map-Reduce Framework
+		Map input records=4
+		Map output records=1
+		Input split bytes=416
+		Spilled Records=0
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=776527
+		CPU time spent (ms)=66450400
+		Physical memory (bytes) snapshot=315315097600
+		Virtual memory (bytes) snapshot=324584861696
+		Total committed heap usage (bytes)=289492434944
+	File Input Format Counters 
+		Bytes Read=0
+	File Output Format Counters 
+		Bytes Written=31
+8806031ms
+17/03/30 10:14:42 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+finalCount	3764886751840604160
+[The 2 times] Above experiment is: ./runHarpSgcr.sh /N/u/mengli/harp-sahad/experiments/template/u7-1.t sahad-data/nyc/nyc-u-e-4 sahad-output/nyc/nyc-u-e-4/40-threads/2 4 40
+17/03/30 10:14:44 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/03/30 10:14:44 INFO fs.TrashPolicyDefault: Namenode trash configuration: Deletion interval = 0 minutes, Emptier interval = 0 minutes.
+Deleted sahad-output/nyc/nyc-u-e-8/40-threads/2
+use Local MultiThread? true
+set Number of Map Tasks = 8
+set number of threads: 40
+17/03/30 10:14:45 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Get map collective runner
+17/03/30 10:14:46 INFO client.RMProxy: Connecting to ResourceManager at j-011/172.16.0.11:8032
+17/03/30 10:14:46 INFO input.FileInputFormat: Total input paths to process : 8
+17/03/30 10:14:46 INFO fileformat.MultiFileInputFormat: NUMBER OF FILES: 8
+17/03/30 10:14:46 INFO fileformat.MultiFileInputFormat: NUMBER OF MAPS: 8
+17/03/30 10:14:46 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-061.juliet.futuresystems.org j-053.juliet.futuresystems.org j-012.juliet.futuresystems.org j-064.juliet.futuresystems.org j-060.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-057.juliet.futuresystems.org j-062.juliet.futuresystems.org j-058.juliet.futuresystems.org j-054.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/30 10:14:46 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-061.juliet.futuresystems.org j-012.juliet.futuresystems.org j-053.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-060.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-057.juliet.futuresystems.org j-062.juliet.futuresystems.org j-058.juliet.futuresystems.org j-054.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/30 10:14:46 INFO fileformat.MultiFileInputFormat: Split on host: j-056.juliet.futuresystems.org j-066.juliet.futuresystems.org j-063.juliet.futuresystems.org j-061.juliet.futuresystems.org j-055.juliet.futuresystems.org j-057.juliet.futuresystems.org j-012.juliet.futuresystems.org j-053.juliet.futuresystems.org j-062.juliet.futuresystems.org j-065.juliet.futuresystems.org j-058.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/30 10:14:46 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-057.juliet.futuresystems.org j-055.juliet.futuresystems.org j-053.juliet.futuresystems.org j-062.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-058.juliet.futuresystems.org j-060.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/30 10:14:46 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-061.juliet.futuresystems.org j-053.juliet.futuresystems.org j-012.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-060.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-055.juliet.futuresystems.org j-057.juliet.futuresystems.org j-062.juliet.futuresystems.org j-058.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/30 10:14:46 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-061.juliet.futuresystems.org j-053.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-060.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-055.juliet.futuresystems.org j-057.juliet.futuresystems.org j-062.juliet.futuresystems.org j-058.juliet.futuresystems.org j-013.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/30 10:14:46 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-061.juliet.futuresystems.org j-053.juliet.futuresystems.org j-012.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-060.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-057.juliet.futuresystems.org j-055.juliet.futuresystems.org j-062.juliet.futuresystems.org j-013.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/30 10:14:46 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-063.juliet.futuresystems.org j-061.juliet.futuresystems.org j-012.juliet.futuresystems.org j-053.juliet.futuresystems.org j-062.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-058.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/30 10:14:46 INFO fileformat.MultiFileInputFormat: Total # of splits: 8
+17/03/30 10:14:46 INFO mapreduce.JobSubmitter: number of splits:8
+17/03/30 10:14:47 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1490816615146_0017
+command: $JAVA_HOME/bin/java -Dlog4j.configuration=container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dyarn.app.container.log.filesize=0 -Dhadoop.root.logger=INFO,CLA  -Xmx1024m org.apache.hadoop.mapreduce.v2.app.MapCollectiveAppMaster 1><LOG_DIR>/stdout 2><LOG_DIR>/stderr 
+17/03/30 10:14:47 INFO impl.YarnClientImpl: Submitted application application_1490816615146_0017
+17/03/30 10:14:47 INFO mapreduce.Job: The url to track the job: http://j-011:8088/proxy/application_1490816615146_0017/
+17/03/30 10:14:47 INFO mapreduce.Job: Running job: job_1490816615146_0017
+17/03/30 10:14:52 INFO mapreduce.Job: Job job_1490816615146_0017 running in uber mode : false
+17/03/30 10:14:52 INFO mapreduce.Job:  map 0% reduce 0%
+17/03/30 10:15:02 INFO mapreduce.Job:  map 100% reduce 0%
+17/03/30 11:26:30 INFO mapreduce.Job: Job job_1490816615146_0017 completed successfully
+17/03/30 11:26:30 INFO mapreduce.Job: Counters: 30
+	File System Counters
+		FILE: Number of bytes read=0
+		FILE: Number of bytes written=850512
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=8237096047
+		HDFS: Number of bytes written=31
+		HDFS: Number of read operations=64
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=16
+	Job Counters 
+		Launched map tasks=8
+		Other local map tasks=8
+		Total time spent by all maps in occupied slots (ms)=34367377
+		Total time spent by all reduces in occupied slots (ms)=0
+		Total time spent by all map tasks (ms)=34367377
+		Total vcore-seconds taken by all map tasks=34367377
+		Total megabyte-seconds taken by all map tasks=35192194048
+	Map-Reduce Framework
+		Map input records=8
+		Map output records=1
+		Input split bytes=832
+		Spilled Records=0
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=358313
+		CPU time spent (ms)=58793170
+		Physical memory (bytes) snapshot=436418666496
+		Virtual memory (bytes) snapshot=649175470080
+		Total committed heap usage (bytes)=579890315264
+	File Input Format Counters 
+		Bytes Read=0
+	File Output Format Counters 
+		Bytes Written=31
+4305820ms
+17/03/30 11:26:31 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+finalCount	3766045001808202752
+[The 2 times] Above experiment is: ./runHarpSgcr.sh /N/u/mengli/harp-sahad/experiments/template/u7-1.t sahad-data/nyc/nyc-u-e-8 sahad-output/nyc/nyc-u-e-8/40-threads/2 8 40
+17/03/30 11:26:33 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/03/30 11:26:34 INFO fs.TrashPolicyDefault: Namenode trash configuration: Deletion interval = 0 minutes, Emptier interval = 0 minutes.
+Deleted sahad-output/nyc/nyc-u-e-16/40-threads/2
+use Local MultiThread? true
+set Number of Map Tasks = 16
+set number of threads: 40
+17/03/30 11:26:35 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Get map collective runner
+17/03/30 11:26:35 INFO client.RMProxy: Connecting to ResourceManager at j-011/172.16.0.11:8032
+17/03/30 11:26:36 INFO input.FileInputFormat: Total input paths to process : 16
+17/03/30 11:26:36 INFO fileformat.MultiFileInputFormat: NUMBER OF FILES: 16
+17/03/30 11:26:36 INFO fileformat.MultiFileInputFormat: NUMBER OF MAPS: 16
+17/03/30 11:26:36 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-056.juliet.futuresystems.org j-059.juliet.futuresystems.org j-063.juliet.futuresystems.org j-055.juliet.futuresystems.org j-053.juliet.futuresystems.org j-062.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-060.juliet.futuresystems.org 
+17/03/30 11:26:36 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-063.juliet.futuresystems.org j-061.juliet.futuresystems.org j-055.juliet.futuresystems.org j-053.juliet.futuresystems.org j-012.juliet.futuresystems.org j-058.juliet.futuresystems.org j-054.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/30 11:26:36 INFO fileformat.MultiFileInputFormat: Split on host: j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-059.juliet.futuresystems.org j-061.juliet.futuresystems.org j-057.juliet.futuresystems.org j-012.juliet.futuresystems.org j-053.juliet.futuresystems.org j-065.juliet.futuresystems.org j-058.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/30 11:26:36 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-063.juliet.futuresystems.org j-055.juliet.futuresystems.org j-057.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-058.juliet.futuresystems.org j-060.juliet.futuresystems.org 
+17/03/30 11:26:36 INFO fileformat.MultiFileInputFormat: Split on host: j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-055.juliet.futuresystems.org j-057.juliet.futuresystems.org j-012.juliet.futuresystems.org j-053.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-058.juliet.futuresystems.org j-060.juliet.futuresystems.org 
+17/03/30 11:26:36 INFO fileformat.MultiFileInputFormat: Split on host: j-056.juliet.futuresystems.org j-066.juliet.futuresystems.org j-063.juliet.futuresystems.org j-061.juliet.futuresystems.org j-055.juliet.futuresystems.org j-053.juliet.futuresystems.org j-012.juliet.futuresystems.org j-062.juliet.futuresystems.org j-058.juliet.futuresystems.org j-060.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/30 11:26:36 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-061.juliet.futuresystems.org j-055.juliet.futuresystems.org j-053.juliet.futuresystems.org j-062.juliet.futuresystems.org j-065.juliet.futuresystems.org j-060.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/30 11:26:36 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-063.juliet.futuresystems.org j-061.juliet.futuresystems.org j-057.juliet.futuresystems.org j-055.juliet.futuresystems.org j-053.juliet.futuresystems.org j-012.juliet.futuresystems.org j-058.juliet.futuresystems.org j-060.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/30 11:26:36 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-061.juliet.futuresystems.org j-053.juliet.futuresystems.org j-062.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-058.juliet.futuresystems.org j-060.juliet.futuresystems.org j-054.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/30 11:26:36 INFO fileformat.MultiFileInputFormat: Split on host: j-056.juliet.futuresystems.org j-063.juliet.futuresystems.org j-059.juliet.futuresystems.org j-061.juliet.futuresystems.org j-057.juliet.futuresystems.org j-053.juliet.futuresystems.org j-012.juliet.futuresystems.org j-064.juliet.futuresystems.org j-058.juliet.futuresystems.org j-060.juliet.futuresystems.org 
+17/03/30 11:26:36 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-063.juliet.futuresystems.org j-057.juliet.futuresystems.org j-055.juliet.futuresystems.org j-053.juliet.futuresystems.org j-012.juliet.futuresystems.org j-065.juliet.futuresystems.org j-058.juliet.futuresystems.org j-060.juliet.futuresystems.org j-013.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/30 11:26:36 INFO fileformat.MultiFileInputFormat: Split on host: j-056.juliet.futuresystems.org j-066.juliet.futuresystems.org j-063.juliet.futuresystems.org j-061.juliet.futuresystems.org j-057.juliet.futuresystems.org j-053.juliet.futuresystems.org j-062.juliet.futuresystems.org j-065.juliet.futuresystems.org j-060.juliet.futuresystems.org j-013.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/30 11:26:36 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-056.juliet.futuresystems.org j-059.juliet.futuresystems.org j-055.juliet.futuresystems.org j-053.juliet.futuresystems.org j-012.juliet.futuresystems.org j-062.juliet.futuresystems.org j-064.juliet.futuresystems.org j-058.juliet.futuresystems.org j-060.juliet.futuresystems.org j-054.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/30 11:26:36 INFO fileformat.MultiFileInputFormat: Split on host: j-056.juliet.futuresystems.org j-066.juliet.futuresystems.org j-059.juliet.futuresystems.org j-063.juliet.futuresystems.org j-061.juliet.futuresystems.org j-057.juliet.futuresystems.org j-053.juliet.futuresystems.org j-065.juliet.futuresystems.org j-060.juliet.futuresystems.org j-013.juliet.futuresystems.org j-054.juliet.futuresystems.org 
+17/03/30 11:26:36 INFO fileformat.MultiFileInputFormat: Split on host: j-059.juliet.futuresystems.org j-063.juliet.futuresystems.org j-061.juliet.futuresystems.org j-057.juliet.futuresystems.org j-062.juliet.futuresystems.org j-065.juliet.futuresystems.org j-064.juliet.futuresystems.org j-060.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/30 11:26:36 INFO fileformat.MultiFileInputFormat: Split on host: j-066.juliet.futuresystems.org j-056.juliet.futuresystems.org j-061.juliet.futuresystems.org j-055.juliet.futuresystems.org j-012.juliet.futuresystems.org j-058.juliet.futuresystems.org j-054.juliet.futuresystems.org j-013.juliet.futuresystems.org 
+17/03/30 11:26:36 INFO fileformat.MultiFileInputFormat: Total # of splits: 16
+17/03/30 11:26:36 INFO mapreduce.JobSubmitter: number of splits:16
+17/03/30 11:26:36 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1490816615146_0018
+command: $JAVA_HOME/bin/java -Dlog4j.configuration=container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dyarn.app.container.log.filesize=0 -Dhadoop.root.logger=INFO,CLA  -Xmx1024m org.apache.hadoop.mapreduce.v2.app.MapCollectiveAppMaster 1><LOG_DIR>/stdout 2><LOG_DIR>/stderr 
+17/03/30 11:26:36 INFO impl.YarnClientImpl: Submitted application application_1490816615146_0018
+17/03/30 11:26:36 INFO mapreduce.Job: The url to track the job: http://j-011:8088/proxy/application_1490816615146_0018/
+17/03/30 11:26:36 INFO mapreduce.Job: Running job: job_1490816615146_0018
+17/03/30 11:26:41 INFO mapreduce.Job: Job job_1490816615146_0018 running in uber mode : false
+17/03/30 11:26:41 INFO mapreduce.Job:  map 0% reduce 0%
+17/03/30 11:26:52 INFO mapreduce.Job:  map 100% reduce 0%
+17/03/30 12:15:39 INFO mapreduce.Job: Job job_1490816615146_0018 completed successfully
+17/03/30 12:15:39 INFO mapreduce.Job: Counters: 30
+	File System Counters
+		FILE: Number of bytes read=0
+		FILE: Number of bytes written=1701126
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=8237104215
+		HDFS: Number of bytes written=31
+		HDFS: Number of read operations=128
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=32
+	Job Counters 
+		Launched map tasks=16
+		Other local map tasks=16
+		Total time spent by all maps in occupied slots (ms)=46966454
+		Total time spent by all reduces in occupied slots (ms)=0
+		Total time spent by all map tasks (ms)=46966454
+		Total vcore-seconds taken by all map tasks=46966454
+		Total megabyte-seconds taken by all map tasks=48093648896
+	Map-Reduce Framework
+		Map input records=16
+		Map output records=1
+		Input split bytes=1680
+		Spilled Records=0
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=368223
+		CPU time spent (ms)=80449340
+		Physical memory (bytes) snapshot=596040654848
+		Virtual memory (bytes) snapshot=1298321448960
+		Total committed heap usage (bytes)=1128874901504
+	File Input Format Counters 
+		Bytes Read=0
+	File Output Format Counters 
+		Bytes Written=31
+2945251ms
+17/03/30 12:15:40 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+finalCount	3767746560926767104
+[The 2 times] Above experiment is: ./runHarpSgcr.sh /N/u/mengli/harp-sahad/experiments/template/u7-1.t sahad-data/nyc/nyc-u-e-16 sahad-output/nyc/nyc-u-e-16/40-threads/2 16 40
