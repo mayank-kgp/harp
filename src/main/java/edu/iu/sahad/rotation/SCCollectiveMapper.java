@@ -196,6 +196,7 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 				 dataModelMap.put("i", coloredModel);
 				 
 				 LOG.info("Done coloring the graph: size="+coloredModel.getNumPartitions());
+				 LOG.info( "Num Bytes = " + getNumBytes(coloredModel));
 				 this.logMemUsage();
 				 LOG.info("Memory Used: "+ (Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory()));
 				 
@@ -225,7 +226,7 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 				 
 				 long subjobendtime = System.currentTimeMillis();
 				 LOG.info(subjobname+" is done."+"takes: "+ (subjobendtime- subjobbegintime ) +"ms"+"; size="+subMatchingTable.getNumPartitions());
-				 
+				 LOG.info("Num Bytes = " + getNumBytes(subMatchingTable));
 				 for(SCSubJob ssj: subjoblist){
 					 if(ssj.getSubJobID().equals(subjob.getActiveChild())){
 						 ssj.referedNum--;
@@ -334,7 +335,14 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 		}
 		LOG.info("[END] clone table");
 	}
-		
+	private long getNumBytes(ColorCountPairsKVTable table) {
+		long totalBytes = 0;
+		for (Partition<ColorCountPairsKVPartition> par: table.getPartitions()){
+			totalBytes += par.getNumEnocdeBytes();
+		}
+		return totalBytes;
+	}
+
 	//subtemplate matching
 	//using rotation model
 	private ColorCountPairsKVTable matchSubTemplate(Table<IntArray> graphData, Map<String, ColorCountPairsKVTable> dataModelMap, SCSubJob subjob){
@@ -477,6 +485,7 @@ public class SCCollectiveMapper  extends CollectiveMapper<String, String, Object
 			LOG.info("[END] SCCollectiveMapper.matchSubTemplateMultiThread. Computation " +rotationNo+"; it takes: "+(computationendtime - computationbegintime)+"ms");
 			long rotationbegintime = System.currentTimeMillis();
 			LOG.info("[BEGIN] SCCollectiveMapper.matchSubTemplateMultiThread. Rotation " +rotationNo);
+			LOG.info( "Num Bytes = " + getNumBytes(passiveChild));
 			rotate(subjob.getSubJobID(),"rotation"+rotationNo, passiveChild, null);
 			long rotationendtime = System.currentTimeMillis();
 			LOG.info(subjob.getSubJobID() +": rotation_"+rotationNo+"takes: "+(rotationendtime - rotationbegintime  )+"ms");
