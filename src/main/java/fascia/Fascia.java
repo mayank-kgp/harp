@@ -4,6 +4,8 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Java version of fascia shared-memory mode http://fascia-psu.sourceforge.net
@@ -12,9 +14,7 @@ import java.nio.file.Paths;
  */
 public class Fascia {
 
-
-    private void read_in_graph(Graph g, String graph_file, boolean labeled,
-                              int[] srcs_g, int[] dsts_g, int[] labels_g){
+    private void read_in_graph(Graph g, String graph_file, boolean labeled){
 
         try{
             Path graph_path = Paths.get(graph_file);
@@ -26,9 +26,9 @@ public class Fascia {
             n_g = Integer.parseInt( reader.readLine() );
             m_g = Integer.parseInt( reader.readLine() );
 
-            srcs_g = new int[m_g];
-            dsts_g = new int[n_g];
-
+            int[] srcs_g = new int[m_g];
+            int[] dsts_g = new int[n_g];
+            int[] labels_g;
             if( labeled){
                 labels_g = new int[n_g];
                 for(int i = 0; i < n_g; ++i){
@@ -39,13 +39,16 @@ public class Fascia {
             }
 
             for(int i = 0; i < m_g; ++i){
-                srcs_g[i] =  Integer.parseInt( reader.readLine() );
+                srcs_g[i] = Integer.parseInt( reader.readLine() );
                 dsts_g[i] = Integer.parseInt( reader.readLine() );
             }
 
             in.close();
 
-            g.init(n_g, m_g, srcs_g, dsts_g);
+            g.init(n_g, m_g, srcs_g, dsts_g, labels_g, labeled);
+
+            srcs_g = null;
+            dsts_g = null;
 
         } catch (IOException x) {
             System.err.println(x);
@@ -70,21 +73,64 @@ public class Fascia {
         boolean timing = foption.timing;
 
         if(motif != 0){
-            System.err.println("run_motif not implemented yet");
+            System.err.println("run_motif skipped");
         }else if( template_file != null){
             run_single(graph_file, template_file, labeled, do_vert, do_gdd, iterations,
-                    do_outerloop, calculate_automorphism, verbose);
+                    do_outerloop, calculate_automorphism, verbose, timing);
         }else if (batch_file != null){
-            System.err.println("run_batch not implemented yet");
+            System.err.println("run_batch skipped");
         }
-
     }
 
     private void run_single(String graph_file, String template_file, boolean labeled, boolean do_vert, boolean do_gdd,
-                            int iterations, boolean do_outerloop, boolean calculate_automorphism, boolean verbose) {
+                            int iterations, boolean do_outerloop, boolean calculate_automorphism, boolean verbose, boolean timing) {
 
+        Graph g = new Graph();
+        Graph t = new Graph();
+
+        String vert_file;
+        String gdd_file;
+
+        if( do_vert){
+            vert_file = template_file + ".vert";
+            System.err.println("do_vert skipped");
+        }
+        if(do_gdd ){
+            gdd_file = template_file + ".gdd";
+            System.err.println("do_gdd skipped");
+        }
+
+        read_in_graph(g, graph_file, labeled);
+        read_in_graph(t, template_file, labeled);
+
+        long elt = 0;
+        if( timing || verbose){
+            elt = System.currentTimeMillis();
+        }
+
+        double full_count = 0.0;
+
+        if( do_outerloop){
+            System.err.println("outerloop mode skipped");
+        }else{
+
+            colorcount graph_count = new colorcount();
+            graph_count.init(g, calculate_automorphism, do_gdd, do_vert, verbose);
+            full_count += graph_count.do_full_count(t, iterations);
+
+            if( do_gdd || do_vert){
+                //do_gdd or do_vert skipped
+            }
+
+        }
+
+        System.out.println("Count: " + full_count);
+
+        if( timing || verbose){
+            elt = System.currentTimeMillis() - elt;
+            System.out.println("Total time (exclude data loading time):" + elt + "ms" );
+        }
     }
-
 
     public static void main(String[] args){
 

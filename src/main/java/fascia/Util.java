@@ -1,6 +1,7 @@
 package fascia;
 
 
+import java.util.List;
 
 public class Util {
 
@@ -21,4 +22,18 @@ public class Util {
         }
     }
 
+    public static int get_max(List<Integer> arr1, List<Integer> arr2){
+        int maximum = 0;
+        int size = arr1.size();
+
+        for(int i =0;  i < size; i++){
+            if( maximum < arr1.get(i)){
+                maximum = arr1.get(i);
+            }
+            if( maximum < arr2.get(i)){
+                maximum = arr2.get(i);
+            }
+        }
+        return maximum;
+    }
 }

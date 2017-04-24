@@ -8,9 +8,14 @@ public class Graph {
     private int max_deg;
     int[] adjacency_array;
     int[] degree_list;
+    int[] labels;
+    boolean labeled;
 
 
-    void init(int n, int m, int[] srcs, int[] dsts){
+    void init(int n, int m, int[] srcs, int[] dsts, int[] labels, boolean labeled){
+        this.labels = labels;
+        this.labeled = labeled;
+
         num_verts = n;
         num_edges = 2 * m;
         max_deg = 0;
