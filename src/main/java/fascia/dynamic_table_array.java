@@ -148,7 +148,7 @@ public class dynamic_table_array extends dynamic_table{
 
     public void set(int vertex, int comb_num_index, float count){
         if( cur_table[vertex] == null){
-            cur_table[vertex] = new float[ num_colorsets[cur_table] ];
+            cur_table[vertex] = new float[ num_colorsets[cur_sub] ];
 
             assert(cur_table[vertex] != null );
 
@@ -167,18 +167,18 @@ public class dynamic_table_array extends dynamic_table{
 
     @Override
     public boolean is_sub_init(int subtemplate) {
-        return this.is_sub_init[subtemplate];
+        return this.is_sub_inited[subtemplate];
     }
 
     public boolean is_vertex_init_active(int vertex){
-        if( cur_table_active[vertex])
+        if( cur_table_active[vertex] != null)
             return true;
         else
             return false;
     }
 
     public boolean is_vertex_init_passive(int vertex){
-        if(cur_table_passive[vertex])
+        if(cur_table_passive[vertex] != null)
             return true;
         else
             return false;
