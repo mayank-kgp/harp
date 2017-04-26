@@ -148,7 +148,7 @@ public class colorcount {
         colors_g = new int[num_verts];
 
         for(int v = 0; v < num_verts; ++v){
-            colors_g[v] = rand.nextInt(num_verts) % num_colors;
+            colors_g[v] = rand.nextInt(num_colors+1) ;
         }
 
         //start doing the counting, starting at bottom of partition tree
