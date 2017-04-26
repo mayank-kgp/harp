@@ -27,7 +27,7 @@ public class Fascia {
             m_g = Integer.parseInt( reader.readLine() );
 
             int[] srcs_g = new int[m_g];
-            int[] dsts_g = new int[n_g];
+            int[] dsts_g = new int[m_g];
             int[] labels_g;
             if( labeled){
                 labels_g = new int[n_g];
@@ -39,8 +39,9 @@ public class Fascia {
             }
 
             for(int i = 0; i < m_g; ++i){
-                srcs_g[i] = Integer.parseInt( reader.readLine() );
-                dsts_g[i] = Integer.parseInt( reader.readLine() );
+                String[] src_dst = reader.readLine().split("\\s+");
+                srcs_g[i] = Integer.parseInt(src_dst[0]  );
+                dsts_g[i] = Integer.parseInt( src_dst[1] );
             }
 
             in.close();
@@ -121,7 +122,6 @@ public class Fascia {
             if( do_gdd || do_vert){
                 //do_gdd or do_vert skipped
             }
-
         }
 
         System.out.println("Count: " + full_count);

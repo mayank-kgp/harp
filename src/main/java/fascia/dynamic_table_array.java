@@ -119,6 +119,10 @@ public class dynamic_table_array extends dynamic_table{
         }
     }
 
+    public float[] get_active(int vertex){
+        return cur_table_active[vertex];
+    }
+
     public float get_passive(int vertex, int comb_num_index){
         if( cur_table_passive[vertex] != null){
             return cur_table_passive[vertex][comb_num_index];

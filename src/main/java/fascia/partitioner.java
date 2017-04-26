@@ -264,10 +264,7 @@ public class partitioner {
         if(labeled)
             label_maps.add(labels);
 
-        dsts_array = null;
-        srcs_array = null;
-        srcs = null;
-        dsts = null;
+
 
         return srcs.get(0);
 
@@ -276,6 +273,8 @@ public class partitioner {
     // Initialize dynamic arrays and graph aray
     private void init_arrays(){
         subtemplates_create = new Graph[Constants.CREATE_SIZE];
+        for(int i = 0; i < subtemplates_create.length; ++i)
+            subtemplates_create[i] = new Graph();
 
         parents = new ArrayList<Integer>();
         active_children = new ArrayList<Integer>();
@@ -290,7 +289,6 @@ public class partitioner {
 
         for(int i = 0; i < subtemplate_count; ++i){
             subtemplates[i] = subtemplates_create[i];
-            subtemplates_create[i].clear();
         }
 
         subtemplates_create = null;
