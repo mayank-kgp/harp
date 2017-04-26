@@ -337,7 +337,7 @@ public class colorcount {
             }
         }
         elt = System.currentTimeMillis() - elt;
-        System.out.println("time: "+ elt +"ms");
+        //System.out.println("time: "+ elt +"ms");
         valid_nbrs = null;
         set_count = set_count_loop;
         total_count = total_count_loop;

@@ -134,7 +134,9 @@ public class Fascia {
 
     public static void main(String[] args){
 
+        long begin = System.currentTimeMillis();
         Fascia fascia = new Fascia(args);
+        System.out.println("Total time (from beginning to end): " + (System.currentTimeMillis()-begin) + "ms");
 
     }
 }
