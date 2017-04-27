@@ -100,9 +100,10 @@ public class Fascia {
             gdd_file = template_file + ".gdd";
             System.err.println("do_gdd skipped");
         }
-
+        long readbegin = System.currentTimeMillis();
         read_in_graph(g, graph_file, labeled);
         read_in_graph(t, template_file, labeled);
+	System.out.println("Loading graph takes: " + (System.currentTimeMillis()-readbegin) + "ms");	
 
         long elt = 0;
         if( timing || verbose){
