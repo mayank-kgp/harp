@@ -104,12 +104,10 @@ public class Fascia {
         long readbegin = System.currentTimeMillis();
         read_in_graph(g, graph_file, labeled);
         read_in_graph(t, template_file, labeled);
-	System.out.println("Loading graph takes: " + (System.currentTimeMillis()-readbegin) + "ms");	
+	    System.out.println("Loading graph takes: " + (System.currentTimeMillis()-readbegin) + "ms");
 
-        long elt = 0;
-        if( timing || verbose){
-            elt = System.currentTimeMillis();
-        }
+        long elt = System.currentTimeMillis();
+
 
         double full_count = 0.0;
 
@@ -127,11 +125,9 @@ public class Fascia {
         }
 
         System.out.println("Count: " + full_count);
+        elt = System.currentTimeMillis() - elt;
+        System.out.println("Total time (real computation):" + elt + "ms" );
 
-        if( timing || verbose){
-            elt = System.currentTimeMillis() - elt;
-            System.out.println("Total time (exclude data loading time):" + elt + "ms" );
-        }
     }
 
     public static void main(String[] args){
