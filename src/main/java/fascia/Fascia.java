@@ -72,6 +72,7 @@ public class Fascia {
         boolean verbose = foption.verbose;
         int motif = foption.motif;
         boolean timing = foption.timing;
+        Constants.THREAD_NUM = foption.thread_num;
 
         if(motif != 0){
             System.err.println("run_motif skipped");

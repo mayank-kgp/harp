@@ -20,6 +20,7 @@ public class FasciaOptions {
         public static final String VERBOSE_OPTION_OPTION = "v";
         public static final String TIMING_OPTION="r";
         public static final String QUESTION_OPTION="?";
+        public static final String THREAD_NUM_OPTION="thread";
     }
 
 
@@ -35,6 +36,7 @@ public class FasciaOptions {
     boolean verbose = false;
     int motif = 0;
     boolean timing;
+    int thread_num = 1;
 
     public void print_info_short(){
         System.out.println("\nTo run: fascia [-g graphfile] [-t template || -b batchfile] [options]");
@@ -108,6 +110,7 @@ public class FasciaOptions {
         options.addOption(OPTS.VERBOSE_OPTION_OPTION, false, "verbose");
         options.addOption(OPTS.TIMING_OPTION, false, "timing");
         options.addOption(OPTS.QUESTION_OPTION, false, "questions?");
+        options.addOption(OPTS.THREAD_NUM_OPTION, true, "number of threads");
 
         CommandLineParser parser = new GnuParser();
         HelpFormatter formatter = new HelpFormatter();
@@ -193,6 +196,9 @@ public class FasciaOptions {
                 timing = true;
             }
 
+            if(line.hasOption(OPTS.THREAD_NUM_OPTION)){
+                thread_num = Integer.parseInt(line.getOptionValue(OPTS.THREAD_NUM_OPTION));
+            }
 
         }catch(Exception e){
             e.printStackTrace();

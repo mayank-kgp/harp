@@ -133,6 +133,19 @@ public class colorcount {
         return final_count;
     }
 
+    int[] divide_chunks(int total, int partition){
+        int chunks[] = new int[partition+1];
+        chunks[0] = 0;
+        int remainder = total % partition;
+        int basic_size = total / partition;
+        for(int i = 1; i <= partition; ++i) {
+            chunks[i] = chunks[i - 1] + basic_size + (remainder > 0 ? 1 : 0);
+            --remainder;
+        }
+
+        return chunks;
+    }
+
     double[] get_vert_counts(){
         return final_vert_counts;
     }
@@ -147,9 +160,44 @@ public class colorcount {
         int num_verts = g.num_vertices();
         colors_g = new int[num_verts];
 
+
+        //coloring the graph. (replaced by multi-threading code below)
+        /*
         for(int v = 0; v < num_verts; ++v){
             colors_g[v] = rand.nextInt(num_colors) ;
         }
+        */
+
+        //multi-threading
+
+        //recording the start and end index
+        int[] chunks = divide_chunks(num_verts, Constants.THREAD_NUM);
+        for(int i =0; i < chunks.length; i++)
+            System.out.println(chunks[i]);;
+        System.out.println("++====++");
+
+
+        Thread[] threads = new Thread[Constants.THREAD_NUM];
+        for(int t = 0; t < Constants.THREAD_NUM; ++t){
+            final int index = t;
+            threads[t] = new Thread(){
+                public void run(){
+                    for (int v = chunks[index]; v < chunks[index+1]; ++v){
+                        colors_g[v] = rand.nextInt(num_colors) ;
+                    }
+                }
+            };
+            threads[t].start();
+        }
+        //waiting for threads to die
+        for(int t =0 ; t < Constants.THREAD_NUM; ++t){
+            try {
+                threads[t].join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
 
         //start doing the counting, starting at bottom of partition tree
         // then go through all of the subtemplates except for the primary
