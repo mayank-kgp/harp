@@ -351,21 +351,86 @@ public class colorcount {
 
 
     private float colorful_count(int s){
-        float cc = 0.0f;
+
         int num_verts_sub = subtemplates[s].num_vertices();
 
         int active_index = part.get_active_index(s);
         int num_verts_a = num_verts_table[active_index];
         int num_combinations = choose_table[num_verts_sub][num_verts_a];
-        int set_count_loop = 0;
-        int total_count_loop = 0;
-        int read_count_loop = 0;
+
 
         long elt = System.currentTimeMillis();
 
-        int[] valid_nbrs = new int[max_degree];
-        assert(valid_nbrs != null);
-        int valid_nbrs_count = 0;
+        int[] chunks = divide_chunks(num_verts_graph, Constants.THREAD_NUM);
+        Thread[] threads = new Thread[Constants.THREAD_NUM];
+        final int[] set_count_loop = new int[Constants.THREAD_NUM];
+        final int[] total_count_loop = new int[Constants.THREAD_NUM];
+        final int[] read_count_loop = new int[Constants.THREAD_NUM];
+        final float[] cc = new float[Constants.THREAD_NUM];
+        for (int t = 0; t < Constants.THREAD_NUM; ++t) {
+            final int index = t;
+            threads[t] = new Thread() {
+                public void run() {
+
+                    int[] valid_nbrs = new int[max_degree];
+                    assert(valid_nbrs != null);
+                    int valid_nbrs_count = 0;
+                    for (int v = chunks[index]; v < chunks[index + 1]; ++v) {
+                        valid_nbrs_count = 0;
+
+                        if( dt.is_vertex_init_active(v)){
+                            int[] adjs = g.adjacent_vertices(v);
+                            int end = g.out_degree(v);
+                            float[] counts_a = dt.get_active(v);
+                            ++read_count_loop[index];
+                            for(int i = 0; i < end; ++i){
+                                int adj_i = adjs[i];
+                                if(dt.is_vertex_init_passive(adj_i)){
+                                    valid_nbrs[valid_nbrs_count++] = adj_i;
+                                }
+                            }
+
+                            if(valid_nbrs_count != 0){
+                                int num_combinations_verts_sub = choose_table[num_colors][num_verts_sub];
+
+                                for(int n = 0; n < num_combinations_verts_sub; ++n){
+                                    float color_count = 0.0f;
+                                    int[] comb_indexes_a = comb_num_indexes[0][s][n];
+                                    int[] comb_indexes_p = comb_num_indexes[1][s][n];
+                                    int p = num_combinations -1;
+                                    for(int a = 0; a < num_combinations; ++a, --p){
+                                        float count_a = counts_a[comb_indexes_a[a]];
+                                        if( count_a > 0){
+                                            for(int i = 0; i < valid_nbrs_count; ++i){
+                                                color_count += count_a * dt.get_passive(valid_nbrs[i], comb_indexes_p[p]);
+                                                ++read_count_loop[index];
+                                            }
+                                        }
+                                    }
+
+                                    if( color_count > 0.0){
+                                        cc[index] += color_count;
+                                        ++set_count_loop[index];
+
+                                        if(s != 0)
+                                            dt.set(v, comb_num_indexes_set[s][n], color_count);
+                                        else if(do_graphlet_freq || do_vert_output)
+                                            final_vert_counts[v] += (double)color_count;
+                                    }
+                                    ++total_count_loop[index];
+                                }
+                            }
+                        }
+
+
+                    }
+                    valid_nbrs = null;
+                }
+            };
+            threads[t].start();
+        }
+        /*The following part is replaced by multi-threading*/
+/*
         for(int v = 0; v < num_verts_graph; ++v){
             valid_nbrs_count = 0;
 
@@ -412,14 +477,33 @@ public class colorcount {
                     }
                 }
             }
+        }*/
+
+        //waiting for threads to die
+        for(int t =0 ; t < Constants.THREAD_NUM; ++t){
+            try {
+                threads[t].join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
+
+        set_count = 0;
+        total_count= 0;
+        read_count = 0;
+        int retval = 0;
+        //reduction
+        for(int i = 0; i < Constants.THREAD_NUM; ++i){
+            set_count += set_count_loop[i];
+            total_count += total_count_loop[i];
+            read_count += read_count_loop[i];
+            retval += cc[i];
+        }
+
         elt = System.currentTimeMillis() - elt;
         //System.out.println("time: "+ elt +"ms");
-        valid_nbrs = null;
-        set_count = set_count_loop;
-        total_count = total_count_loop;
-        read_count_loop = read_count_loop;
-        return cc;
+
+        return retval;
     }
 
     private void create_tables(){
