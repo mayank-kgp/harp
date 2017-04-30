@@ -172,10 +172,6 @@ public class colorcount {
 
         //recording the start and end index
         int[] chunks = divide_chunks(num_verts, Constants.THREAD_NUM);
-        for(int i =0; i < chunks.length; i++)
-            System.out.println(chunks[i]);;
-        System.out.println("++====++");
-
 
         Thread[] threads = new Thread[Constants.THREAD_NUM];
         for(int t = 0; t < Constants.THREAD_NUM; ++t){
@@ -297,6 +293,7 @@ public class colorcount {
 
 
     private void init_table_node(int s){
+
         int set_count_loop = 0;
         if( !labeled){
             for (int v = 0; v < num_verts_graph; ++v) {
