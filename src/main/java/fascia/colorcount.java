@@ -502,7 +502,6 @@ public class colorcount {
 
         elt = System.currentTimeMillis() - elt;
         //System.out.println("time: "+ elt +"ms");
-LOG.info("count:"+retval);
         return retval;
     }
 

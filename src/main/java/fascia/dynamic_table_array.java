@@ -42,13 +42,14 @@ public class dynamic_table_array extends dynamic_table{
         cur_table = table[subtemplate];
         cur_sub = subtemplate;
 
-        //#ifdef _OPENMP
-        //#pragma omp parallel for
-        //#endif
-
+        /*
+        #ifdef _OPENMP
+        #pragma omp parallel for
+        #endif
         for(int v = 0; v < num_verts; ++v){
             cur_table[v] = null;
         }
+        */
 
         is_sub_inited[subtemplate] = true;
 
