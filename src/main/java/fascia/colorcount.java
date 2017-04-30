@@ -491,7 +491,7 @@ public class colorcount {
         set_count = 0;
         total_count= 0;
         read_count = 0;
-        int retval = 0;
+        float retval = 0;
         //reduction
         for(int i = 0; i < Constants.THREAD_NUM; ++i){
             set_count += set_count_loop[i];
@@ -502,7 +502,7 @@ public class colorcount {
 
         elt = System.currentTimeMillis() - elt;
         //System.out.println("time: "+ elt +"ms");
-
+LOG.info("count:"+retval);
         return retval;
     }
 
