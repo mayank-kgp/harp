@@ -294,6 +294,7 @@ public class colorcount {
 
     private void init_table_node(int s){
 
+         /*
         int set_count_loop = 0;
         if( !labeled){
             for (int v = 0; v < num_verts_graph; ++v) {
@@ -302,7 +303,35 @@ public class colorcount {
                 dt.set(v, comb_num_indexes_set[s][n], 1.0f);
                 set_count_loop++;
             }
+        }*/
+         //replace unlabeled implementation with multi-threading
+
+        if( !labeled) {
+            int[] chunks = divide_chunks(num_verts_graph, Constants.THREAD_NUM);
+            Thread[] threads = new Thread[Constants.THREAD_NUM];
+            for (int t = 0; t < Constants.THREAD_NUM; ++t) {
+                final int index = t;
+                threads[t] = new Thread() {
+                    public void run() {
+                        for (int v = chunks[index]; v < chunks[index + 1]; ++v) {
+                            int n = colors_g[v];
+                            dt.set(v, comb_num_indexes_set[s][n], 1.0f);
+                        }
+                    }
+                };
+                threads[t].start();
+            }
+            //waiting for threads to die
+            for(int t =0 ; t < Constants.THREAD_NUM; ++t){
+                try {
+                    threads[t].join();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+            set_count = num_verts_graph;
         }else{
+            int set_count_loop  = 0;
             int[] labels_sub = part.get_labels(s);
             int label_s = labels_sub[0];
             for (int v = 0; v < num_verts_graph; ++v){
@@ -313,8 +342,11 @@ public class colorcount {
                     set_count_loop++;
                 }
             }
+            set_count = set_count_loop;
         }
-        set_count = set_count_loop;
+
+
+
     }
 
 
