@@ -1,0 +1,4 @@
+-Please port the Makefile depending on which cluster you are running in, Haswell or KNL
+-The implementation can run with the runTests scripts after having compiled the platform dependent code
+-Note that for CPP-Fascia, .graph input graphs are requried and .fascia templates are required
+-Note that you should change the runTests scripts with your respective file paths/files
