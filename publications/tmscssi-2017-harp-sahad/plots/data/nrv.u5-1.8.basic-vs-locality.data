@@ -1,0 +1,8 @@
+# graph			basic		locality
+nrv			1	362		315			
+nrv-shuffle-20		2	371		315
+nrv-shuffle-40		3	362		307
+nrv-shuffle-60		4	362		313
+nrv-shuffle-80		5	362		318
+nrv-shuffle-100	 	6	365		307
+

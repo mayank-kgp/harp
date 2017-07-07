@@ -1,0 +1,34 @@
+\section{Reducing Cost in Intermediate Stage}
+\label{sec:enhanced-sahad}
+
+For general MapReduce problem, the set of keys that is processed in Mapper and
+Reducer varies among different jobs. Therefore, MapReduce uses external
+shuffling and sorting
+in-between Mappers and Reducers to deploy the keys to computing nodes. 
+
+In our algorithm, the dynamic programming aggregates counts based on the root
+node of the subtree, and therefore the key is the node index $v$. This
+pre-knowledge allows us to always predefine a reducer that is corresponding to a
+set of nodes. We also assign the predefined reducers to computing nodes prior to the
+beginning of the dynamic programming. Therefore, a data entry with key $v$ will be
+directly sent to the corresponding computing node and processed by designated
+Reducer. Using this mechanism, we can reduce the computation cost of the
+intermediate stage by eliminating the cost of shuffling and sorting.
+
+In addition, the network communication cost among computing nodes is also a
+bottleneck in most of the parallellization frameworks. With the predefined
+reducers, the communication cost is $O(E_{out})$. Here $E_{out}$ represents the
+number of edges among partitions. To study the performance variations regarding
+$E_{out}$, we explore different partitioning schemes for distributing graph data
+to computing nodes.  Some partitioning schemes may introduce lower number of
+inter-partition edges $E_{out}$, but higher number of intra-partition edges.
+Here we investigate two partitioning schemes: the random partitioning and
+min-cut partitioning.
+
+We use~\cite{Web:metis} to perform minimum cut partitioning with the following
+two constraints: a) divide the network into partitions with roughly the same
+size, b) minimize the number of inter-partition edges. The purpose is to
+maintain load balancing among computing nodes, and reduce the communication cost
+$O(E_{out})$ by minimizing the number of inter-partition edges.
+
+

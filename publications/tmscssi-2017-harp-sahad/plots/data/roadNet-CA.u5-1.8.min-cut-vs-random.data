@@ -1,0 +1,7 @@
+# graph   	 		min-cut random-partition
+roadNet-CA			1	252	265
+roadNet-CA-shuffle-20		2	256	256
+roadNet-CA-shuffle-40		3	253	253
+roadNet-CA-shuffle-60		4	262	265
+roadNet-CA-shuffle-80		5	256	253
+roadNet-CA-shuffle-100		6	253	256		

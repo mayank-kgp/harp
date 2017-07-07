@@ -1,0 +1,16 @@
+filename=main
+pdf: ps
+	 ps2pdf ${filename}.ps
+
+ps: dvi
+	 dvips ${filename}.dvi
+
+dvi:
+	 latex ${filename}
+	 bibtex ${filename}||true
+	 latex ${filename}
+	 latex ${filename}
+
+
+clean:
+	 rm -f ${filename}.ps ${filename}.pdf ${filename}.log ${filename}.aux ${filename}.out ${filename}.dvi ${filename}.bbl ${filename}.blg ${filename}.lot ${filename}.nlo ${filename}.lof ${filename}.toc texput.log

@@ -1,0 +1,8 @@
+# graph				basic		locality
+roadNet-CA			1	295		252			
+roadNet-CA-shuffle-20		2	293		256
+roadNet-CA-shuffle-40		3	292		253
+roadNet-CA-shuffle-60		4	293		262
+roadNet-CA-shuffle-80		5	296		256
+roadNet-CA-shuffle-100	 	6	296		253	
+

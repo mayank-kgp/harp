@@ -1,0 +1,151 @@
+\begin{document}
+
+%\title{MapReduce Based Subgraph Counting: variations and performance study}
+\title{Finding and counting tree-like subgraphs using MapReduce}
+
+\author{{Zhao~Zhao, Meng~Li, Guanying~Wang, Ali~Butt, Maleq~Khan, \\
+	Madhav~Marathe, Judy~Qiu, Anil~Vullikanti}% <-this % stops a space
+
+\IEEEcompsocitemizethanks{
+
+	\IEEEcompsocthanksitem Zhao Zhao, Ali~Butt, Madhav Marathe and Anil Vullikanti are
+	with the Network Dynamics and Simulation Science Laboratory, Biocomplexity Institute \&
+        Department of Computer Science, Virginia Tech, VA, 24061.\protect\\
+% note need leading \protect in front of \\ to get a newline within \thanks as
+% \\ is fragile and will error, could use \hfil\break instead.
+	E-mail: zhaozhao@vt.edu, butta@cs.vt.edu, mmarathe@vt.edu, vsakumar@vt.edu 
+
+	\IEEEcompsocthanksitem Maleq Khan is with the Department of Electrical Engineering and Computer Science,
+	Texas A\&M University-Kingsville. \protect\\ 
+	E-mail: maleq.khan@tamuk.edu
+
+	\IEEEcompsocthanksitem Meng Li is with the Computer Science Department, Indiana University. \protect\\
+	Email: li526@umail.iu.edu
+		
+	\IEEEcompsocthanksitem Judy Qiu is with the Intelligent Systems Engineering Department, Indiana University. \protect\\
+	Email: xqiu@indiana.edu
+
+	\IEEEcompsocthanksitem Guanying Wang is working with Google Inc. \protect\\
+	Email:wang.guanying@gmail.com}% <-this % stops an unwanted space
+
+}
+
+% note the % following the last \IEEEmembership and also \thanks - 
+% these prevent an unwanted space from occurring between the last author name
+% and the end of the author line. i.e., if you had this:
+% 
+% \author{....lastname \thanks{...} \thanks{...} }
+%                     ^------------^------------^----Do not want these spaces!
+%
+% a space would be appended to the last name and could cause every name on that
+% line to be shifted left slightly. This is one of those "LaTeX things". For
+% instance, "\textbf{A} \textbf{B}" will typeset as "A B" not "AB". To get
+% "AB" then you have to do: "\textbf{A}\textbf{B}"
+% \thanks is no different in this regard, so shield the last } of each \thanks
+% that ends a line with a % and do not let a space in before the next \thanks.
+% Spaces after \IEEEmembership other than the last one are OK (and needed) as
+% you are supposed to have spaces between the names. For what it is worth,
+% this is a minor point as most people would not even notice if the said evil
+% space somehow managed to creep in.
+
+
+
+% The paper headers
+\markboth{IEEE Transactions on Multi-Scale Computing Systems}%
+{Shell \MakeLowercase{\textit{et al.}}:MapReduce Based Subgraph Counting:
+Variations and Performance Study}
+
+% The only time the second header will appear is for the odd numbered pages
+% after the title page when using the twoside option.
+% 
+% *** Note that you probably will NOT want to include the author's ***
+% *** name in the headers of peer review papers.                   ***
+% You can use \ifCLASSOPTIONpeerreview for conditional compilation here if
+% you desire.
+
+
+
+% The publisher's ID mark at the bottom of the page is less important with
+% Computer Society journal papers as those publications place the marks
+% outside of the main text columns and, therefore, unlike regular IEEE
+% journals, the available text space is not reduced by their presence.
+% If you want to put a publisher's ID mark on the page you can do it like
+% this:
+%\IEEEpubid{0000--0000/00\$00.00~\copyright~2015 IEEE}
+% or like this to get the Computer Society new two part style.
+%\IEEEpubid{\makebox[\columnwidth]{\hfill 0000--0000/00/\$00.00~\copyright~2015 IEEE}%
+%\hspace{\columnsep}\makebox[\columnwidth]{Published by the IEEE Computer Society\hfill}}
+% Remember, if you use this you must call \IEEEpubidadjcol in the second
+% column for its text to clear the IEEEpubid mark (Computer Society jorunal
+% papers don't need this extra clearance.)
+
+
+
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
+
+
+
+% for Computer Society papers, we must declare the abstract and index terms
+% PRIOR to the title within the \IEEEtitleabstractindextext IEEEtran
+% command as these need to go into the title area created by \maketitle.
+% As a general rule, do not put math, special symbols or citations
+% in the abstract or keywords.
+\IEEEtitleabstractindextext{%
+
+\begin{abstract}
+
+Several variants of the subgraph isomorphism problem, e.g., finding, counting
+and estimating frequencies of subgraphs in networks arise in a number of real
+world applications, such as genetic network analysis in bioinformatics, web
+analysis, disease diffusion prediction and social network analysis. These
+problems are computationally challenging to scale to very large networks with
+millions of nodes. In this paper, we present \sahad{}, a MapReduce based
+algorithm for detecting and counting trees of bounded size using the elegant
+color coding technique, developed by N. Alon, R. Yuster and U. Zwick, Journal of
+the ACM (JACM) 1995.  \sahad{} is a randomized algorithm, and we show rigorous
+bounds on the approximation quality and the performance. We implement \sahad{}
+on two different frameworks: the standard Hadoop model and Harp, a more high
+performance computing environment, and evaluate its performance on a variety of
+synthetic and real networks. \sahad{} scales to very large networks comprising
+of $10^7-10^8$ nodes and $10^8-10^9$ edges and tree-like (acyclic) templates
+with up to 12 nodes.  Further, we extend our results by implementing our
+algorithm using the Harp framework.  The new implementation gives an order of
+magnitude improvement in performance over the standard Hadoop implementation.
+
+
+\end{abstract}
+
+% Note that keywords are not normally used for peerreview papers.
+\begin{IEEEkeywords}
+subgraph isomorphism, graph partitioning, MapReduce, Hadoop, Harp
+\end{IEEEkeywords}}
+
+
+% make the title area
+\maketitle
+
+
+% To allow for easy dual compilation without having to reenter the
+% abstract/keywords data, the \IEEEtitleabstractindextext text will
+% not be used in maketitle, but will appear (i.e., to be "transported")
+% here as \IEEEdisplaynontitleabstractindextext when the compsoc 
+% or transmag modes are not selected <OR> if conference mode is selected 
+% - because all conference papers position the abstract like regular
+% papers do.
+\IEEEdisplaynontitleabstractindextext
+% \IEEEdisplaynontitleabstractindextext has no effect when using
+% compsoc or transmag under a non-conference mode.
+
+
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+\IEEEpeerreviewmaketitle
+

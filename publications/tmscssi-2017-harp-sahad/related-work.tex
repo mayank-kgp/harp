@@ -1,0 +1,64 @@
+\section{Related Work}
+\label{sec:related-work}
+
+As mentioned earlier, the subgraph isomorphism problem and its variant has been
+studied extensively by theoretical computer scientists;
+see~\cite{valiant1979complexity,hunt1998complexity,fomin2012faster,flum2004parameterized,curticapean2014complexity,marx2014everything}
+for complexity theoretic results.  Marx and Pilipczuk~\cite{marx2014everything}
+undertake  a comprehensive study of the decision problem and provide strong
+lower bounds including fixed parameter intractability results. They also study
+the complexity of the problem as a function of structural properties of $G$ and
+$H$.
+
+A variety of different algorithms and heuristics have been developed for
+different domain specific versions of subgraph isomorphism problems.  One
+version involves finding frequent subgraphs, and many approaches for this
+problem use the Apriori method from frequent item set mining
+\cite{inokuchi2000apriori, kuramochi2005finding, getoor2005link}. These
+approaches involve candidate generation during a breadth first search on the
+subset lattice and a determination of the support of item sets by subset test. A
+variety of optimizations have been developed, e.g., using a DFS order to avoid
+the cost of candidate generation~\cite{huan2004spin, yan2005mining} or pruning
+techniques, e.g.,~\cite{kuramochi2005finding}.  A related problem is that of
+computing the ``graphlet frequency distribution'', which generalizes the degree
+distribution~\cite{przulj2007biological}.
+
+Another class of results for frequent subgraph finding is based on the powerful
+technique of ``color coding'' (which also forms the basis of our paper), e.g.,
+\cite{alon2008biomolecular, huffner2008algorithm, zhao2010subgraph}, which has
+been used for approximating the number of embeddings of templates that are
+trees or ``tree-like''.
+
+In~\cite{alon2008biomolecular}, Alon \emph{et al}. use color coding to compute
+the distribution of treelets with sizes 8, 9 and 10, on the protein-protein
+interaction networks of Yeast. The color coding technique is further explored
+and improved in~\cite{huffner2008algorithm}, in terms of worst case performance
+and practical considerations. For example, by increasing the number of colors,
+they speed up the color coding algorithm with up to 2 orders of magnitude. They
+also reduce the memory usage for minimum weight paths finding, by carefully
+removing unsatisfied candidates, and reducing the color set storage. A recent
+work developed by Venkatesan \emph{et al}~\cite{chakaravarthy2016subgraph}
+extends color coding to subgraphs with treewidth upto 2, and they scale their
+algorithm to graph with upto 2.7 million edges.
+
+Most of these approaches in bioinformatics applications involve small templates,
+and have only been scaled to relatively small graphs with at most $10^4$ nodes
+(apart from~\cite{zhao2010subgraph}, which shows scaling to much larger graphs
+by means of a parallel implementation). Other settings in relational databases
+and data mining have involved queries for specific labeled subgraphs. Some of
+the approaches for these problems have combined relational database techniques,
+based on careful indexing and translation of queries, with such depth-first
+exploration strategy that is distributed over different partitions of the graph
+e.g.,~\cite{sakr2009graphrel, ronen2009evaluating, brocheler2010cosi}, and scale
+to very large graphs.  For instance, Br\"{o}cheler \emph{et al}.
+\cite{brocheler2010cosi} demonstrate labeled subgraph queries with up to 7-node
+templates on graphs with over half a billion edges, by carefully partitioning
+the massive network using minimum edge cuts, and distributing the partitions on
+15 computing nodes. A shared-memory parallelization with OpenMP implementation
+of the color coding approach is given in~\cite{slota2013fast}. This algorithm
+achieves a speed up of 12 in a graph with 1.5 million nodes and 31 million
+edges. A more recent work \cite{slota2015parallel} parallelize the dynamic
+processing of color-coding algorithm to enumerate subgraphs and is able to
+handle networks as large as 2 billion edges, with template size up to 10.   
+
+
