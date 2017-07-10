@@ -9,17 +9,17 @@
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>
-        <dependency>
-            <groupId>edu.iu.harp</groupId>
-            <artifactId>harp-project</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
-            <groupId>edu.iu.harp</groupId>
-            <artifactId>harp-app</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
+        <!-- <dependency> -->
+        <!--     <groupId>edu.iu.harp</groupId> -->
+        <!--     <artifactId>harp-project</artifactId> -->
+        <!--     <version>1.0-SNAPSHOT</version> -->
+        <!-- </dependency> -->
+        <!--  -->
+        <!-- <dependency> -->
+        <!--     <groupId>edu.iu.harp</groupId> -->
+        <!--     <artifactId>harp-app</artifactId> -->
+        <!--     <version>1.0-SNAPSHOT</version> -->
+        <!-- </dependency> -->
 
         <dependency>
             <groupId>org.apache.hadoop</groupId>
@@ -105,7 +105,29 @@
             <version>4.12</version>
         </dependency>
 
+        <dependency>
+            <groupId>habanero-java-lib</groupId>
+            <artifactId>habanero-java-lib</artifactId>
+            <version>0.1.4-SNAPSHOT</version>
+        </dependency>
+
+        <!-- <dependency> -->
+        <!--     <groupId>HJlib</groupId> -->
+        <!--     <artifactId>HJlib</artifactId> -->
+        <!--     <scope>system</scope> -->
+        <!--     <version>1.0</version> -->
+        <!--     <systemPath>${HOME}/Lib/HJlib/hjlib-cooperative-0.1.4-SNAPSHOT.jar</systemPath> -->
+        <!-- </dependency> -->
+
     </dependencies>
+
+    <repositories>
+        <repository>
+            <id>rice-habanero</id>
+            <name>Habanero Repository - Rice University</name>
+            <url>http://www.cs.rice.edu/~vs3/hjlib/code/maven-repo</url>
+        </repository>
+    </repositories>
 
     <build>
         <plugins>
@@ -116,6 +138,10 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
+                    <excludes>
+                        <exclude>**/fileformat/*</exclude>
+                        <exclude>**/sahad/**/*</exclude>
+                    </excludes>
                 </configuration>
             </plugin>
         </plugins>

@@ -57,7 +57,7 @@ public class Fascia {
 
     }
 
-    public Fascia(String[] args){
+    public Fascia(String[] args)  {
         FasciaOptions foption = new FasciaOptions(args);
 
         String graph_file = foption.graph_file;
@@ -85,7 +85,7 @@ public class Fascia {
     }
 
     private void run_single(String graph_file, String template_file, boolean labeled, boolean do_vert, boolean do_gdd,
-                            int iterations, boolean do_outerloop, boolean calculate_automorphism, boolean verbose, boolean timing) {
+                            int iterations, boolean do_outerloop, boolean calculate_automorphism, boolean verbose, boolean timing)  {
 
         Graph g = new Graph();
         Graph t = new Graph();
@@ -115,7 +115,8 @@ public class Fascia {
             System.err.println("outerloop mode skipped");
         }else{
 
-            colorcount graph_count = new colorcount();
+            // colorcount graph_count = new colorcount();
+            colorcount_HJ graph_count = new colorcount_HJ();
             graph_count.init(g, calculate_automorphism, do_gdd, do_vert, verbose);
             full_count += graph_count.do_full_count(t, iterations);
 
@@ -130,7 +131,7 @@ public class Fascia {
 
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args)  {
 
         long begin = System.currentTimeMillis();
         Fascia fascia = new Fascia(args);
