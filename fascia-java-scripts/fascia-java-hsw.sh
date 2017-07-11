@@ -13,12 +13,17 @@ ResDir=/N/u/lc37/Project/harp-sahad/Results/Fascia-Java
 # exit 1;
 # fi
 
-graph=miami.graph
-template=u5-1.graph
+# graph=miami.graph
+graph=gnp.1.20.graph
+# template=u5-1.fascia
+template=u3-1.fascia
 thd=24
 paral=HJLIB
 # paral=JThd
+Itr=10
+# Itr=100
+# Itr=1000
 
-echo "Start Exp on: $graph with template: $template and thread num: $thd parallel imple: $paral"
-java -cp ${LIBJARS} -javaagent:${HOME}/Lib/HJlib/hjlib-cooperative-0.1.4-SNAPSHOT.jar fascia.Fascia fascia -g ${DataDir}/graphs/$graph -t ${DataDir}/templates/$template -thread $thd -r > $ResDir/Fascia-Java-$graph-$template-Thd$thd-Paral-$paral.log 
-echo "End Exp on: $graph with template: $template and thread num: $thd parallel imple: $paral"
+echo "Start Exp on: $graph with template: $template and thread num: $thd itr: $Itr parallel imple: $paral"
+java -cp ${LIBJARS} -javaagent:${HOME}/Lib/HJlib/hjlib-cooperative-0.1.4-SNAPSHOT.jar fascia.Fascia fascia -g ${DataDir}/graphs/$graph -t ${DataDir}/templates/$template -thread $thd -r -i $Itr > $ResDir/Fascia-Java-$graph-$template-Thd$thd-Itr$Itr-Paral-$paral.log 
+echo "End Exp on: $graph with template: $template and thread num: $thd itr: $Itr parallel imple: $paral"
