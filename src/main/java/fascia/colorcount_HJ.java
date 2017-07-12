@@ -5,11 +5,11 @@ import org.apache.log4j.Logger;
 import java.util.Arrays;
 import java.util.Random;
 
-import edu.rice.hj.api.HjPoint;
-import edu.rice.hj.api.HjRegion.HjRegion1D;
-import edu.rice.hj.api.HjRegion.HjRegion2D;
-import edu.rice.hj.api.HjRegion.HjRegion3D;
-import edu.rice.hj.api.SuspendableException;
+// import edu.rice.hj.api.HjPoint;
+// import edu.rice.hj.api.HjRegion.HjRegion1D;
+// import edu.rice.hj.api.HjRegion.HjRegion2D;
+// import edu.rice.hj.api.HjRegion.HjRegion3D;
+// import edu.rice.hj.api.SuspendableException;
 
 import static edu.rice.hj.Module0.launchHabaneroApp;
 import static edu.rice.hj.Module1.forallChunked;
