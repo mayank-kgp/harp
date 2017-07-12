@@ -1,8 +1,0 @@
-node: j-012.juliet.futuresystems.org
-node: j-055.juliet.futuresystems.org
-node: j-060.juliet.futuresystems.org
-node: j-063.juliet.futuresystems.org
-In getProgress : 0
-in current key hdfs://j-011:9010/user/mengli/sahad-data/nyc/nyc-u-e-4/xac.
- get Current Value hdfs://j-011:9010/user/mengli/sahad-data/nyc/nyc-u-e-4/xac.
-In getProgress : 1
