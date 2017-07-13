@@ -64,7 +64,7 @@ git clone git@github.com:01org/daal.git
 # enter the src directory
 cd daal
 # compile and install
-make daal PLAT=lnx32e
+make daal PLAT=lnx32e -j256
 # setup the DAALROOT environment variables
 source __release_lnx/daal/bin/daalvars.sh intel64
 ```
@@ -83,7 +83,7 @@ Compile and make the lib files
 # enter daal src directory
 cd harp-daal-app/daal-src
 # compile and install
-make daal PLAT=lnx32e
+make daal PLAT=lnx32e -j256
 # setup the DAALROOT environment variables
 source ../__release_lnx/daal/bin/daalvars.sh intel64
 ```
