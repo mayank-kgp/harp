@@ -55,7 +55,7 @@ fastutil-7.0.13.jar has data structures used by harp-app.
 
 ### Install DAAL Framework
 
-There are two options to install DAAL library for Harp-DAAL 
+There are two options(second option recommended) to install DAAL library for Harp-DAAL -
 
 1. Installation from latest Intel DAAL source code (https://github.com/01org/daal)
 ```bash
